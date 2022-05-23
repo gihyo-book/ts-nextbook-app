@@ -1,4 +1,3 @@
-import SvgIcon from '@material-ui/core/SvgIcon'
 import {
   Search,
   PersonOutline,
@@ -10,7 +9,8 @@ import {
   Close,
   GitHub,
   Person,
-} from '@material-ui/icons'
+} from '@mui/icons-material'
+import SvgIcon from '@mui/material/SvgIcon'
 import styled from 'styled-components'
 import { space, SpaceProps, LayoutProps } from 'styled-system'
 import { theme } from 'themes'
