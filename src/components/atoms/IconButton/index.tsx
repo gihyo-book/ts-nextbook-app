@@ -1,0 +1,98 @@
+import SvgIcon from '@material-ui/core/SvgIcon'
+import {
+  Search,
+  PersonOutline,
+  ShoppingCart,
+  CheckBoxOutlineBlank,
+  CheckBox,
+  Cancel,
+  CloudUpload,
+  Close,
+  GitHub,
+  Person,
+} from '@material-ui/icons'
+import styled from 'styled-components'
+import { space, SpaceProps, LayoutProps } from 'styled-system'
+import { theme } from 'themes'
+
+// list out color types
+export type ThemeColors = keyof typeof theme.colors
+
+interface IconWrapperProps extends SpaceProps, LayoutProps {
+  cursor?: string
+  color?: ThemeColors
+  backgroundColor?: string
+}
+
+const IconWrapper = styled.div<IconWrapperProps>`
+  ${space}
+  display: inline-block;
+  font-size: ${({ size }) => size}px;
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  cursor: ${({ cursor }) => cursor ?? 'pointer'};
+  color: ${({ theme, color }) => {
+    if (color) {
+      return theme.colors[color]
+    }
+
+    return theme.colors.icon
+  }};
+  svg {
+    display: block;
+  }
+`
+
+export interface IconButtonProps extends SpaceProps, LayoutProps {
+  onClick?: React.MouseEventHandler<SVGSVGElement>
+  color?: ThemeColors
+  className?: string
+  backgroundColor?: string
+  size?: number
+}
+
+/**
+ * アイコンボタン
+ */
+function withIconStyle(
+  Icon: typeof SvgIcon,
+): React.ComponentType<IconButtonProps> {
+  const IconWithStyle: React.FC<IconButtonProps> = (props: IconButtonProps) => {
+    const { onClick, className, size = 24, ...rest } = props
+    const cursor = onClick ? 'pointer' : ''
+
+    return (
+      <IconWrapper cursor={cursor} size={size} {...rest}>
+        <Icon
+          className={className}
+          fontSize="inherit"
+          color="inherit"
+          onClick={onClick}
+        />
+      </IconWrapper>
+    )
+  }
+
+  return IconWithStyle
+}
+
+export const CloseIcon = withIconStyle(Close)
+
+export const SearchIcon = withIconStyle(Search)
+
+export const CloudUploadIcon = withIconStyle(CloudUpload)
+
+export const CancelIcon = withIconStyle(Cancel)
+
+export const CheckBoxOutlineBlankIcon = withIconStyle(CheckBoxOutlineBlank)
+
+export const CheckBoxIcon = withIconStyle(CheckBox)
+
+export const PersonIcon = withIconStyle(Person)
+
+export const GitHubIcon = withIconStyle(GitHub)
+
+export const PersonOutlineIcon = withIconStyle(PersonOutline)
+
+export const ShoppingCartIcon = withIconStyle(ShoppingCart)
