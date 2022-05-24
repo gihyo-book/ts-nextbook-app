@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import {
   space,
   layout,
@@ -10,13 +9,19 @@ import {
   SpaceProps,
   BorderProps,
   PositionProps,
-} from 'styled-system'
+  SizingProps,
+} from '@xstyled/styled-components'
+import styled from 'styled-components'
 
 export type BoxProps = ColorProps &
   LayoutProps &
   SpaceProps &
   BorderProps &
-  PositionProps
+  PositionProps &
+  SizingProps & {
+    height?: number | string
+    width?: number | string
+  }
 
 const Box = styled.div<BoxProps>`
   ${space}

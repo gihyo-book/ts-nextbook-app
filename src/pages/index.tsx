@@ -43,12 +43,12 @@ const HomePage: NextPage<HomePageProps> = ({
     <Layout>
       <Flex p={2} justifyContent="center" backgroundColor="primary">
         <Flex
-          width={{ _: '100%', md: '1040px' }}
+          w={{ _: '100%', md: '1040px' }}
           justifyContent="space-between"
           alignItems="center"
           flexDirection={{ _: 'column', md: 'row' }}
         >
-          <Box width="100%">
+          <Box w="100%">
             <Text as="h1" mb="0px" color="white" variant="extraLarge">
               Gihyo C2Cで
             </Text>
@@ -56,7 +56,7 @@ const HomePage: NextPage<HomePageProps> = ({
               お気に入りのアイテムを見つけよう
             </Text>
           </Box>
-          <Box width="100%">
+          <Box w="100%">
             <Text as="p" color="white" variant="mediumLarge">
               Gihyo
               C2Cは実践的なNext.jsアプリケーション開発で使われるデモアプリです。モックサーバを使用しています。
@@ -80,7 +80,7 @@ const HomePage: NextPage<HomePageProps> = ({
         </Flex>
       </Flex>
       <Flex pb={2} justifyContent="center">
-        <Box px={{ _: 2, md: 0 }} width={{ _: '100%', md: '1040px' }}>
+        <Box px={{ _: 2, md: 0 }} w={{ _: '100%', md: '1040px' }}>
           <Box mb={3}>
             <Text as="h2" variant="large">
               トップス

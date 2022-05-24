@@ -1,6 +1,6 @@
+import styled from '@xstyled/styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
-import styled from 'styled-components'
 import Button from 'components/atoms/Button'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
@@ -73,7 +73,7 @@ const CartProduct: React.FC<CartProductProps> = ({
             <Flex mt={{ _: 2, md: 0 }}>
               {/* 購入ボタン */}
               <Button
-                width={{ _: '100px', md: '200px' }}
+                w={{ _: '100px', md: '200px' }}
                 onClick={() => onBuyButtonClick && onBuyButtonClick(id)}
               >
                 購入
@@ -81,7 +81,7 @@ const CartProduct: React.FC<CartProductProps> = ({
               {/* 削除ボタン (モバイル) */}
               <Button
                 ml={1}
-                width={{ _: '100px', md: '200px' }}
+                w={{ _: '100px', md: '200px' }}
                 display={{ _: 'block', md: 'none' }}
                 variant="danger"
                 onClick={() => onRemoveButtonClick && onRemoveButtonClick(id)}

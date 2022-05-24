@@ -26,7 +26,7 @@ const SellPage: NextPage = () => {
     <Layout>
       <Flex py={{ _: 2, md: 4 }} px={{ _: 2, md: 0 }} justifyContent="center">
         <Flex
-          width="800px"
+          w="800px"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
@@ -34,7 +34,7 @@ const SellPage: NextPage = () => {
           <Box display={{ _: 'none', md: 'block' }} mb={2}>
             <AppLogo />
           </Box>
-          <Box width="100%">
+          <Box w="100%">
             {/*
               商品投稿フォームコンテナ
               商品情報を入力し、プロダクトAPIを通じて商品を保存

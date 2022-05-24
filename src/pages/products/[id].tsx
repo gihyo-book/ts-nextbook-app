@@ -106,11 +106,11 @@ const ProductPage: NextPage<ProductPageProps> = ({
             </Link>
           </Box>
         </Box>
-        <Box p={2} width={{ _: '100%', md: '700px' }}>
+        <Box p={2} w={{ _: '100%', md: '700px' }}>
           <Flex
             justifyContent="space-between"
             flexDirection="column"
-            height={{ _: '', md: '100%' }}
+            h={{ _: '', md: '100%' }}
           >
             {/* 商品概要を表示、改行ごとにテキストコンポーネントでラップ */}
             <Box>

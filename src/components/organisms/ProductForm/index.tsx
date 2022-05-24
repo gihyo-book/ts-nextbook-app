@@ -188,7 +188,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           )}
         </Box>
       </Box>
-      <Button width="100%" type="submit">
+      <Button w="100%" type="submit">
         出品
       </Button>
     </form>

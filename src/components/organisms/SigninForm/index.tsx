@@ -61,7 +61,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
           </Text>
         )}
       </Box>
-      <Button width="100%" type="submit">
+      <Button w="100%" type="submit">
         サインイン
       </Button>
     </form>

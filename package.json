@@ -17,6 +17,8 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.0",
+    "@xstyled/styled-components": "^3.6.0",
+    "@xstyled/util": "^3.5.1",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-content-loader": "^6.2.0",

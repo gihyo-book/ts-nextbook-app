@@ -49,7 +49,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <meta
           key="viewport"
           name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=5"
+          content="w=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=5"
         />
         {/* <title key="title">{SITE_TITLE}</title>
         <meta name="title" content={SITE_TITLE} key="meta:title" />

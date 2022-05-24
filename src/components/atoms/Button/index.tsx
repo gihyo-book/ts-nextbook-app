@@ -1,6 +1,4 @@
-import styled from 'styled-components'
-import {
-  variant,
+import styled, {
   color,
   border,
   typography,
@@ -9,17 +7,43 @@ import {
   ColorProps,
   TypographyProps,
   BorderProps,
+  BorderRadiusProps,
   LayoutProps,
   SpaceProps,
-} from 'styled-system'
+  SizingProps,
+} from '@xstyled/styled-components'
+import { getThemeValue, merge, warn, is, assign, Props } from '@xstyled/util'
+
+const variant: any =
+  ({
+    key = null,
+    default: defaultValue,
+    variants = {},
+    prop = 'variant',
+  }: {
+    key?: string | null
+    default?: string | null
+    variants: { [key: string]: any }
+    prop?: string
+  }) =>
+  (props: Props) => {
+    const themeVariants = is(key) ? getThemeValue(props, key) : null
+    const computedVariants = merge(assign({}, variants), themeVariants)
+    const value = props[prop] !== undefined ? props[prop] : defaultValue
+    const result = getThemeValue(props, value, computedVariants)
+    warn(is(result), `variant "${value}" not found`)
+    return result
+  }
 
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
 export type ButtonProps = ColorProps &
   TypographyProps &
   BorderProps &
+  BorderRadiusProps &
   LayoutProps &
   SpaceProps &
+  SizingProps &
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: ButtonVariant
   }

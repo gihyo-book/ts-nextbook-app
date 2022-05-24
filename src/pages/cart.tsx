@@ -16,7 +16,7 @@ const CartPage: NextPage = () => {
   return (
     <Layout>
       <Flex py={2} px={{ _: 2, md: 0 }} justifyContent="center">
-        <Box width="1240px">
+        <Box w="1240px">
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">

@@ -11,8 +11,11 @@ import {
   Person,
 } from '@mui/icons-material'
 import SvgIcon from '@mui/material/SvgIcon'
-import styled from 'styled-components'
-import { space, SpaceProps, LayoutProps } from 'styled-system'
+import styled, {
+  space,
+  SpaceProps,
+  LayoutProps,
+} from '@xstyled/styled-components'
 import { theme } from 'themes'
 
 // list out color types
@@ -22,6 +25,7 @@ interface IconWrapperProps extends SpaceProps, LayoutProps {
   cursor?: string
   color?: ThemeColors
   backgroundColor?: string
+  size?: number
 }
 
 const IconWrapper = styled.div<IconWrapperProps>`

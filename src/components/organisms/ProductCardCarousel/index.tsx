@@ -9,7 +9,7 @@ const ProductCardCarousel: React.FC = ({
   children?: React.ReactNode
 }) => {
   return (
-    <Flex overflow={{ _: 'scroll', md: 'hidden' }} width="100%">
+    <Flex overflow={{ _: 'scroll', md: 'hidden' }} w="100%">
       {children}
     </Flex>
   )

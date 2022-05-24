@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import { CloseIcon } from 'components/atoms/IconButton'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'

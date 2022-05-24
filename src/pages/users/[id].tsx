@@ -35,7 +35,7 @@ const UserPage: NextPage<UserPageProps> = ({
   return (
     <Layout>
       <Flex py={2} px={{ _: 2, md: 0 }} justifyContent="center">
-        <Box width="1180px">
+        <Box w="1180px">
           <Box mb={2}>
             <Breadcrumb>
               <BreadcrumbItem>

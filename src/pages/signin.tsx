@@ -24,7 +24,7 @@ const SigninPage: NextPage = () => {
     <Layout>
       <Flex py={4} px={{ _: 2, md: 0 }} justifyContent="center">
         <Flex
-          width="400px"
+          w="400px"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
@@ -32,7 +32,7 @@ const SigninPage: NextPage = () => {
           <Box mb={2}>
             <AppLogo />
           </Box>
-          <Box width="100%">
+          <Box w="100%">
             {/*
               サインインフォームコンテナ
               SigninFormのユーザー名・パスワードから認証APIを呼び出し、
