@@ -1,13 +1,18 @@
 import Image, { ImageProps } from 'next/image'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import { layout, LayoutProps, ResponsiveValue } from 'styled-system'
 
+
+// TODO: ResponsiveValueがなにか後で見てザクッと型書く
+// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/styled-system/index.d.ts
+// の型をそのまま持ってくれば使える。
 type ScaleImageProps =
   | Omit<ImageProps, 'quality'> & {
       containerWidth?: ResponsiveValue<string>
       containerHeight?: ResponsiveValue<string>
     }
 
+// TODO: styledでスタイルを生成するときはプロパティをちゃんと拾わないとCSSに反映されない
 const ScaleEffectImageContainer = styled.div<
   Pick<LayoutProps, 'width' | 'height'>
 >`

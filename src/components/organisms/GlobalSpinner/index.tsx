@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import Spinner from 'components/atoms/Spinner'
 import { useGlobalSpinnerContext } from 'contexts/GlobalSpinnerContext'
 

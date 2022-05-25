@@ -14,6 +14,8 @@ import styled, {
 } from '@xstyled/styled-components'
 import { getThemeValue, merge, warn, is, assign, Props } from '@xstyled/util'
 
+// これxstyled v1にあった関数をそのまま持ってきてる
+// Props type https://github.com/gregberge/xstyled/blob/main/packages/util/src/types.ts
 const variant: any =
   ({
     key = null,

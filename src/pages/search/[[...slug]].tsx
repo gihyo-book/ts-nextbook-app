@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import BreadcrumbItem from 'components/atoms/BreadcrumbItem'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'

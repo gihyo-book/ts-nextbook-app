@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import ImagePreview from './'
 import Dropzone from 'components/molecules/Dropzone'
 

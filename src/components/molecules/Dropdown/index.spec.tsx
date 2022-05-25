@@ -5,7 +5,7 @@ import {
   fireEvent,
   RenderResult,
 } from '@testing-library/react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@xstyled/styled-components'
 import Dropdown from '.'
 import { theme } from 'themes'
 

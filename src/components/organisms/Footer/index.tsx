@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import { GitHubIcon } from 'components/atoms/IconButton'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'

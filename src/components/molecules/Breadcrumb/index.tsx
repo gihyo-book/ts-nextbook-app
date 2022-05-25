@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import Flex from 'components/layout/Flex'
 
 const BreadcrumbRoot = styled(Flex)`

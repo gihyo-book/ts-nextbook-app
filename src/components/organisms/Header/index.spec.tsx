@@ -1,5 +1,5 @@
 import { render, screen, RenderResult } from '@testing-library/react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@xstyled/styled-components'
 import Header from '.'
 import { AuthContextProvider } from 'contexts/AuthContext'
 import { theme } from 'themes'

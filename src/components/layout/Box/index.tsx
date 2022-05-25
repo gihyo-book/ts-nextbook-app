@@ -11,7 +11,7 @@ import {
   PositionProps,
   SizingProps,
 } from '@xstyled/styled-components'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 
 export type BoxProps = ColorProps &
   LayoutProps &

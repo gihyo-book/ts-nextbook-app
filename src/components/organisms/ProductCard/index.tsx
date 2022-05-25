@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import ScaleImage from 'components/atoms/ScaleImage'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'

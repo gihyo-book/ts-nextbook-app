@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import AppLogo from 'components/atoms/AppLogo'
 import Button from 'components/atoms/Button'
 import {

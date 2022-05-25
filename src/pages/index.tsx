@@ -40,8 +40,8 @@ const HomePage: NextPage<HomePageProps> = ({
   }
 
   return (
-    <Layout>
-      <Flex p={2} justifyContent="center" backgroundColor="primary">
+    <Layout backgroundColor="red">
+      <Flex p={2} justifyContent="center" backgroundColor="red">
         <Flex
           w={{ _: '100%', md: '1040px' }}
           justifyContent="space-between"
@@ -49,10 +49,10 @@ const HomePage: NextPage<HomePageProps> = ({
           flexDirection={{ _: 'column', md: 'row' }}
         >
           <Box w="100%">
-            <Text as="h1" mb="0px" color="white" variant="extraLarge">
+            <Text as="h1" mb="0px" color="white" backgroundColor="red" variant="extraLarge">
               Gihyo C2Cで
             </Text>
-            <Text as="h1" mt="0px" color="white" variant="extraLarge">
+            <Text as="h1" mt="0px" color="white" backgroundColor="primary" variant="extraLarge">
               お気に入りのアイテムを見つけよう
             </Text>
           </Box>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css } from '@xstyled/styled-components'
 
 const StyledSpinner = styled.svg<{ size: number; isAutoCentering: boolean }>`
   animation: rotate 2s linear infinite;

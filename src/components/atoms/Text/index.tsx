@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import {
   variant,
   typography,
@@ -8,8 +8,7 @@ import {
   TypographyProps,
   ColorProps,
   SpaceProps,
-  LayoutProps,
-} from 'styled-system'
+  LayoutProps, } from 'styled-system'
 
 export type TextVariant =
   | 'extraSmall'

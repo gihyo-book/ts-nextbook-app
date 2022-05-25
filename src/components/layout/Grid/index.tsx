@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import { grid, GridProps } from 'styled-system'
 import Box, { BoxProps } from 'components/layout/Box'
 

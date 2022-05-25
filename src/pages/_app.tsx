@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from '@xstyled/styled-components'
 import { SWRConfig } from 'swr'
 import GlobalSpinner from 'components/organisms/GlobalSpinner'
 import { AuthContextProvider } from 'contexts/AuthContext'

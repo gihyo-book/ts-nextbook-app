@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 import Dropzone from 'components/molecules/Dropzone'

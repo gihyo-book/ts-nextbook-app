@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, RenderResult } from '@testing-library/react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@xstyled/styled-components'
 import Dropzone from '.'
 import { theme } from 'themes'
 

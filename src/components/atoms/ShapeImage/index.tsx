@@ -1,5 +1,5 @@
 import Image, { ImageProps } from 'next/image'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 
 type ImageShape = 'circle' | 'square'
 type ShapeImageProps = ImageProps & { shape?: ImageShape }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react'
-import styled from 'styled-components'
+import styled from '@xstyled/styled-components'
 import Text from 'components/atoms/Text'
 import Flex from 'components/layout/Flex'
 
