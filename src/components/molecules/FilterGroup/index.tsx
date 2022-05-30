@@ -50,9 +50,9 @@ const FilterGroup: React.FC<FilterGroupProps> = ({
       <Text fontWeight="bold" variant="mediumLarge">
         {title}
       </Text>
-      <Box mt={2}>
+      <Box marginTop="var(--size-2)">
         {items.map(({ label, name }, i) => (
-          <Box key={i} mt={i === 0 ? '0px' : '4px'}>
+          <Box key={i} marginTop={i === 0 ? '0px' : '4px'}>
             <CheckBox
               name={name}
               label={label}

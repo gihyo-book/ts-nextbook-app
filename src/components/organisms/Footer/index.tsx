@@ -19,45 +19,51 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <Flex flexDirection={{ _: 'column', md: 'row' }}>
-        <Box minWidth={{ _: 1, md: '120px' }} pr={{ _: 0, md: 1 }}>
+        <Box
+          minWidth={{ base: 'var(--size-1)', md: '120px' }}
+          paddingRight={{ base: '0px', md: 'var(--size-1)' }}
+        >
           <nav>
-            <Box mb={2}>
+            <Box marginBottom="var(--size-2)">
               <Link href="/" passHref>
                 <Anchor as="a">トップ</Anchor>
               </Link>
             </Box>
-            <Box mb={2}>
+            <Box marginBottom="var(--size-2)">
               <Link href="/" passHref>
                 <Anchor as="a">採用</Anchor>
               </Link>
             </Box>
-            <Box mb={2}>
+            <Box marginBottom="var(--size-2)">
               <Link href="/" passHref>
                 <Anchor as="a">お知らせ</Anchor>
               </Link>
             </Box>
           </nav>
         </Box>
-        <Box minWidth={{ _: 1, md: '120px' }} pr={{ _: 0, md: 1 }}>
+        <Box
+          minWidth={{ base: 'var(--size-1)', md: '120px' }}
+          paddingRight={{ base: '0px', md: 'var(--size-1)' }}
+        >
           <nav>
-            <Box mb={2}>
+            <Box marginBottom="var(--size-2)">
               <Link href="/" passHref>
                 <Anchor as="a">利用規約</Anchor>
               </Link>
             </Box>
-            <Box mb={2}>
+            <Box marginBottom="var(--size-2)">
               <Link href="/" passHref>
                 <Anchor as="a">プライバシーポリシー</Anchor>
               </Link>
             </Box>
-            <Box mb={2}>
+            <Box marginBottom="var(--size-2)">
               <Link href="/" passHref>
                 <Anchor as="a">配送と返品</Anchor>
               </Link>
             </Box>
           </nav>
         </Box>
-        <Box minWidth={{ _: 1, md: '120px' }}>
+        <Box minWidth={{ base: 'var(--size-1)', md: '120px' }}>
           <nav>
             <Anchor as="a" href="https://github.com/" target="_blank">
               <GitHubIcon size={22} />
@@ -65,7 +71,7 @@ const Footer: React.FC = () => {
           </nav>
         </Box>
       </Flex>
-      <Box pt={3} pb={2}>
+      <Box paddingTop="var(--size-3)" paddingBottom="var(--size-2)">
         <Text>© 2021 Gijutsuhyoronsha Co., Ltd.. All rights reserved.</Text>
       </Box>
     </footer>

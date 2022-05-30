@@ -48,7 +48,11 @@ const Header: React.FC = () => {
 
   return (
     <HeaderRoot>
-      <Flex px={3} justifyContent="space-between">
+      <Flex
+        paddingLeft="var(--size-3)"
+        paddingRight="var(--size-3)"
+        justifyContent="space-between"
+      >
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Link href="/" passHref>
@@ -58,28 +62,28 @@ const Header: React.FC = () => {
             </Link>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search" passHref>
                 <Anchor as="a">すべて</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/clothes" passHref>
                 <Anchor as="a">トップス</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/book" passHref>
                 <Anchor as="a">本</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/shoes" passHref>
                 <Anchor as="a">シューズ</Anchor>
               </Link>
@@ -88,7 +92,7 @@ const Header: React.FC = () => {
         </Nav>
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
-            <Box display={{ _: 'block', md: 'none' }}>
+            <Box display={{ base: 'block', md: 'none' }}>
               <Link href="/search" passHref>
                 <Anchor as="a">
                   <SearchIcon />

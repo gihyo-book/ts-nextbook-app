@@ -9,7 +9,7 @@ const Layout: React.FC = ({ children }: { children?: React.ReactNode }) => {
       <Header />
       <main>{children}</main>
       <Separator />
-      <Box p={3}>
+      <Box padding="var(--size-3)">
         <Footer />
       </Box>
     </>

@@ -54,8 +54,13 @@ const SearchPage: NextPage = () => {
 
   return (
     <Layout>
-      <Box px={{ _: 2, md: 3 }} py={2}>
-        <Box mb={1}>
+      <Box
+        paddingLeft={{ base: 'var(--size-2)', md: 'var(--size-3)' }}
+        paddingRight={{ base: 'var(--size-2)', md: 'var(--size-3)' }}
+        paddingTop="var(--size-2)"
+        paddingBottom="var(--size-2)"
+      >
+        <Box marginBottom="var(--size-1)">
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
@@ -85,7 +90,11 @@ const SearchPage: NextPage = () => {
         </Box>
         <Flex>
           <Flex flexDirection={{ _: 'column', md: 'row' }}>
-            <Box as="aside" minWidth="200px" mb={{ _: 2, md: 0 }}>
+            <Box
+              as="aside"
+              minWidth="200px"
+              marginBottom={{ base: 'var(--size-2)', md: '0px' }}
+            >
               {/* 商品の状態のフィルタ */}
               <FilterGroup
                 title="商品の状態"
@@ -96,7 +105,7 @@ const SearchPage: NextPage = () => {
                 value={conditions}
                 onChange={handleChange}
               />
-              <Box pt={1}>
+              <Box paddingTop="var(--size-1)">
                 <Text as="h2" fontWeight="bold" variant="mediumLarge">
                   カテゴリ
                 </Text>
@@ -108,7 +117,7 @@ const SearchPage: NextPage = () => {
                 {/* カテゴリのリンク */}
                 {Object.keys(categoryNameDict).map(
                   (category: string, i: number) => (
-                    <Box key={i} mt={1}>
+                    <Box key={i} marginTop="var(--size-1)">
                       <Link href={`/search/${category}`} passHref>
                         <Anchor as="a">
                           {categoryNameDict[category as Category]}

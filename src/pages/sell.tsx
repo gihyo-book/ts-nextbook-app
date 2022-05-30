@@ -24,14 +24,23 @@ const SellPage: NextPage = () => {
 
   return (
     <Layout>
-      <Flex py={{ _: 2, md: 4 }} px={{ _: 2, md: 0 }} justifyContent="center">
+      <Flex
+        paddingTop={{ base: 'var(--size-2)', md: 'var(--size-4)' }}
+        paddingBottom={{ base: 'var(--size-2)', md: 'var(--size-4)' }}
+        paddingLeft={{ base: 'var(--size-2)', md: '0px' }}
+        paddingRight={{ base: 'var(--size-2)', md: '0px' }}
+        justifyContent="center"
+      >
         <Flex
           width="800px"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
         >
-          <Box display={{ _: 'none', md: 'block' }} mb={2}>
+          <Box
+            display={{ base: 'none', md: 'block' }}
+            marginBottom="var(--size-2)"
+          >
             <AppLogo />
           </Box>
           <Box width="100%">

@@ -21,7 +21,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
   numberOfProducts,
   description,
 }: UserProfileProps) => {
-  const profileImageSize = variant === 'small' ? 100 : 120
+  const profileImageSize = variant === 'small' ? '100px' : '120px'
 
   return (
     <Flex>
@@ -35,7 +35,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           width={profileImageSize}
         />
       </Box>
-      <Box p={1}>
+      <Box padding="var(--size-1)">
         <Flex
           height="100%"
           flexDirection="column"

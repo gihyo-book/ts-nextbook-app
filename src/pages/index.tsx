@@ -41,9 +41,13 @@ const HomePage: NextPage<HomePageProps> = ({
 
   return (
     <Layout>
-      <Flex p={2} justifyContent="center" backgroundColor="primary">
+      <Flex
+        padding="var(--size-2)"
+        justifyContent="center"
+        backgroundColor="primary"
+      >
         <Flex
-          width={{ _: '100%', md: '1040px' }}
+          width={{ base: '100%', md: '1040px' }}
           justifyContent="space-between"
           alignItems="center"
           flexDirection={{ _: 'column', md: 'row' }}
@@ -79,15 +83,19 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
         </Flex>
       </Flex>
-      <Flex pb={2} justifyContent="center">
-        <Box px={{ _: 2, md: 0 }} width={{ _: '100%', md: '1040px' }}>
-          <Box mb={3}>
+      <Flex paddingBottom="var(--size-2)" justifyContent="center">
+        <Box
+          paddingLeft={{ base: 'var(--size-2)', md: '0px' }}
+          paddingRight={{ base: 'var(--size-2)', md: '0px' }}
+          width={{ base: '100%', md: '1040px' }}
+        >
+          <Box marginBottom="var(--size-3)">
             <Text as="h2" variant="large">
               トップス
             </Text>
             {renderProductCardCarousel(clothesProducts)}
           </Box>
-          <Box mb={3}>
+          <Box marginBottom="var(--size-3)">
             <Text as="h2" variant="large">
               本
             </Text>

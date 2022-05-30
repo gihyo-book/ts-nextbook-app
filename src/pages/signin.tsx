@@ -22,14 +22,20 @@ const SigninPage: NextPage = () => {
 
   return (
     <Layout>
-      <Flex py={4} px={{ _: 2, md: 0 }} justifyContent="center">
+      <Flex
+        paddingTop="var(--size-2)"
+        paddingBottom="var(--size-2)"
+        paddingLeft={{ base: 'var(--size-2)', md: '0px' }}
+        paddingRight={{ base: 'var(--size-2)', md: '0px' }}
+        justifyContent="center"
+      >
         <Flex
           width="400px"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
         >
-          <Box mb={2}>
+          <Box marginBottom="var(--size-2)">
             <AppLogo />
           </Box>
           <Box width="100%">

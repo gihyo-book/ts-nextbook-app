@@ -35,6 +35,13 @@ a {
 ol, ul {
   list-style: none;
 }
+
+:root {
+  --size-1: 8px;
+  --size-2: 16px;
+  --size-3: 32px;
+  --size-4: 64px;
+}
 `
 
 const context: ApiContext = {

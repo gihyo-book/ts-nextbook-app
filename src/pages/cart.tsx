@@ -15,7 +15,13 @@ const CartPage: NextPage = () => {
 
   return (
     <Layout>
-      <Flex py={2} px={{ _: 2, md: 0 }} justifyContent="center">
+      <Flex
+        paddingTop="var(--size-2)"
+        paddingBottom="var(--size-2)"
+        paddingLeft={{ base: 'var(--size-2)', md: '0px' }}
+        paddingRight={{ base: 'var(--size-2)', md: '0px' }}
+        justifyContent="center"
+      >
         <Box width="1240px">
           <Breadcrumb>
             <BreadcrumbItem>
