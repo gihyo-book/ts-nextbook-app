@@ -29,7 +29,10 @@ const SellPage: NextPage = () => {
           base: 'var(--size-spaces-2)',
           md: 'var(--size-spaces-4)',
         }}
-        paddingBottom={{ base: 'var(--size-spaces-2)', md: 'var(--size-spaces-4)' }}
+        paddingBottom={{
+          base: 'var(--size-spaces-2)',
+          md: 'var(--size-spaces-4)',
+        }}
         paddingLeft={{ base: 'var(--size-spaces-2)', md: '0px' }}
         paddingRight={{ base: 'var(--size-spaces-2)', md: '0px' }}
         justifyContent="center"

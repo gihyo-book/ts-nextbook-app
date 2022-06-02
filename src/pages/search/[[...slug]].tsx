@@ -55,8 +55,14 @@ const SearchPage: NextPage = () => {
   return (
     <Layout>
       <Box
-        paddingLeft={{ base: 'var(--size-spaces-2)', md: 'var(--size-spaces-3)' }}
-        paddingRight={{ base: 'var(--size-spaces-2)', md: 'var(--size-spaces-3)' }}
+        paddingLeft={{
+          base: 'var(--size-spaces-2)',
+          md: 'var(--size-spaces-3)',
+        }}
+        paddingRight={{
+          base: 'var(--size-spaces-2)',
+          md: 'var(--size-spaces-3)',
+        }}
         paddingTop="var(--size-spaces-2)"
         paddingBottom="var(--size-spaces-2)"
       >
