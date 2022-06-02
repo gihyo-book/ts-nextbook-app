@@ -1,23 +1,5 @@
 import styled from 'styled-components'
-import {
-  space,
-  layout,
-  color,
-  border,
-  position,
-  ColorProps,
-  LayoutProps,
-  SpaceProps,
-  BorderProps,
-  PositionProps,
-} from 'styled-system'
-import { convertStylePropsString, Responsive } from 'types/responsive'
-
-// export type BoxProps = ColorProps &
-//   LayoutProps &
-//   SpaceProps &
-//   BorderProps &
-//   PositionProps
+import { convertStylePropsString, Responsive } from 'utils/styles'
 
 export type BoxProps = {
   color?: Responsive<string>

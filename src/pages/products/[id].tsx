@@ -59,7 +59,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
         py={2}
         px={{ _: 2, md: 0 }}
         justifyContent="center"
-        flexDirection={{ _: 'column', md: 'row' }}
+        flexDirection={{ base: 'column', md: 'row' }}
       >
         <Box>
           <Breadcrumb>
@@ -81,8 +81,8 @@ const ProductPage: NextPage<ProductPageProps> = ({
             <BreadcrumbItem>{product.title}</BreadcrumbItem>
           </Breadcrumb>
           <Flex
-            paddingTop="var(--size-2)"
-            paddingBottom="var(--size-1)"
+            paddingTop="var(--size-spaces-2)"
+            paddingBottom="var(--size-spaces-1)"
             justifyContent="center"
           >
             <ProductCard
@@ -93,7 +93,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             />
           </Flex>
           <Separator />
-          <Box paddingTop="var(--size-1)">
+          <Box paddingTop="var(--size-spaces-1)">
             <Text as="h2" variant="large" mt={0}>
               出品者
             </Text>
@@ -110,7 +110,10 @@ const ProductPage: NextPage<ProductPageProps> = ({
             </Link>
           </Box>
         </Box>
-        <Box padding="var(--size-2)" width={{ base: '100%', md: '700px' }}>
+        <Box
+          padding="var(--size-spaces-2)"
+          width={{ base: '100%', md: '700px' }}
+        >
           <Flex
             justifyContent="space-between"
             flexDirection="column"

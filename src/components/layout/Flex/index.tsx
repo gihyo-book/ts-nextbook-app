@@ -1,13 +1,24 @@
 import styled from 'styled-components'
-import { flexbox, FlexboxProps } from 'styled-system'
 import Box, { BoxProps } from 'components/layout/Box'
-import { convertStylePropsString } from 'types/responsive'
+import { convertStylePropsString, Responsive } from 'utils/styles'
 
-type FlexProps = BoxProps & FlexboxProps
+type FlexProps = BoxProps & {
+  alignItems?: Responsive<string>
+  alignContent?: Responsive<string>
+  justifyContent?: Responsive<string>
+  justifyItems?: Responsive<string>
+  flexWrap?: Responsive<string>
+  flexBasis?: Responsive<string>
+  flexDirection?: Responsive<string>
+  flexGrow?: Responsive<string>
+  flexShrink?: Responsive<string>
+  justifySelf?: Responsive<string>
+  alignSelf?: Responsive<string>
+  order?: Responsive<string>
+}
 
 const Flex = styled(Box)<FlexProps>`
   ${(props) => convertStylePropsString(props)}
-  ${flexbox}
 `
 
 Flex.defaultProps = {

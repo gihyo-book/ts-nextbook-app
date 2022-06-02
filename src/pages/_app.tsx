@@ -37,10 +37,10 @@ ol, ul {
 }
 
 :root {
-  --size-1: 8px;
-  --size-2: 16px;
-  --size-3: 32px;
-  --size-4: 64px;
+  --size-spaces-1: 8px;
+  --size-spaces-2: 16px;
+  --size-spaces-3: 32px;
+  --size-spaces-4: 64px;
 }
 `
 

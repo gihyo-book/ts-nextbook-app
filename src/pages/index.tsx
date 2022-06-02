@@ -42,7 +42,7 @@ const HomePage: NextPage<HomePageProps> = ({
   return (
     <Layout>
       <Flex
-        padding="var(--size-2)"
+        padding="var(--size-spaces-2)"
         justifyContent="center"
         backgroundColor="primary"
       >
@@ -50,7 +50,7 @@ const HomePage: NextPage<HomePageProps> = ({
           width={{ base: '100%', md: '1040px' }}
           justifyContent="space-between"
           alignItems="center"
-          flexDirection={{ _: 'column', md: 'row' }}
+          flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box width="100%">
             <Text as="h1" mb="0px" color="white" variant="extraLarge">
@@ -83,19 +83,19 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
         </Flex>
       </Flex>
-      <Flex paddingBottom="var(--size-2)" justifyContent="center">
+      <Flex paddingBottom="var(--size-spaces-2)" justifyContent="center">
         <Box
-          paddingLeft={{ base: 'var(--size-2)', md: '0px' }}
-          paddingRight={{ base: 'var(--size-2)', md: '0px' }}
+          paddingLeft={{ base: 'var(--size-spaces-2)', md: '0px' }}
+          paddingRight={{ base: 'var(--size-spaces-2)', md: '0px' }}
           width={{ base: '100%', md: '1040px' }}
         >
-          <Box marginBottom="var(--size-3)">
+          <Box marginBottom="var(--size-spaces-3)">
             <Text as="h2" variant="large">
               トップス
             </Text>
             {renderProductCardCarousel(clothesProducts)}
           </Box>
-          <Box marginBottom="var(--size-3)">
+          <Box marginBottom="var(--size-spaces-3)">
             <Text as="h2" variant="large">
               本
             </Text>

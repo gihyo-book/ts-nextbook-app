@@ -40,8 +40,8 @@ const ProductForm: React.FC<ProductFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Box marginBottom="var(--size-3)">
-        <Box marginBottom="var(--size-2)">
+      <Box marginBottom="var(--size-spaces-3)">
+        <Box marginBottom="var(--size-spaces-2)">
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             商品の写真
           </Text>
@@ -66,13 +66,13 @@ const ProductForm: React.FC<ProductFormProps> = ({
         )}
       </Box>
 
-      <Box marginBottom="var(--size-3)">
-        <Box marginBottom="var(--size-2)">
+      <Box marginBottom="var(--size-spaces-3)">
+        <Box marginBottom="var(--size-spaces-2)">
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             商品情報
           </Text>
         </Box>
-        <Box marginBottom="var(--size-1)">
+        <Box marginBottom="var(--size-spaces-1)">
           <Text as="label" variant="medium">
             タイトル
           </Text>
@@ -89,7 +89,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             </Text>
           )}
         </Box>
-        <Box marginBottom="var(--size-1)">
+        <Box marginBottom="var(--size-spaces-1)">
           <Text as="label" variant="medium">
             概要
           </Text>
@@ -113,7 +113,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             </Text>
           )}
         </Box>
-        <Box marginBottom="var(--size-1)">
+        <Box marginBottom="var(--size-spaces-1)">
           <Text as="label" variant="medium">
             カテゴリ
           </Text>
@@ -142,7 +142,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             </Text>
           )}
         </Box>
-        <Box marginBottom="var(--size-1)">
+        <Box marginBottom="var(--size-spaces-1)">
           <Text as="label" variant="medium">
             商品の状態
           </Text>

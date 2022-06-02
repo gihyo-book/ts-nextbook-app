@@ -49,8 +49,8 @@ const Header: React.FC = () => {
   return (
     <HeaderRoot>
       <Flex
-        paddingLeft="var(--size-3)"
-        paddingRight="var(--size-3)"
+        paddingLeft="var(--size-spaces-3)"
+        paddingRight="var(--size-spaces-3)"
         justifyContent="space-between"
       >
         <Nav as="nav" height="56px" alignItems="center">

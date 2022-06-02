@@ -33,7 +33,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Box marginBottom="var(--size-1)">
+      <Box marginBottom="var(--size-spaces-1)">
         <Input
           {...register('username', { required: true })}
           name="username"
@@ -47,7 +47,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
           </Text>
         )}
       </Box>
-      <Box marginBottom="var(--size-2)">
+      <Box marginBottom="var(--size-spaces-2)">
         <Input
           {...register('password', { required: true })}
           name="password"

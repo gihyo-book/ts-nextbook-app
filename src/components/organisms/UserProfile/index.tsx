@@ -35,7 +35,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           width={profileImageSize}
         />
       </Box>
-      <Box padding="var(--size-1)">
+      <Box padding="var(--size-spaces-1)">
         <Flex
           height="100%"
           flexDirection="column"

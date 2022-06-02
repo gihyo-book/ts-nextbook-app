@@ -55,12 +55,12 @@ const SearchPage: NextPage = () => {
   return (
     <Layout>
       <Box
-        paddingLeft={{ base: 'var(--size-2)', md: 'var(--size-3)' }}
-        paddingRight={{ base: 'var(--size-2)', md: 'var(--size-3)' }}
-        paddingTop="var(--size-2)"
-        paddingBottom="var(--size-2)"
+        paddingLeft={{ base: 'var(--size-spaces-2)', md: 'var(--size-spaces-3)' }}
+        paddingRight={{ base: 'var(--size-spaces-2)', md: 'var(--size-spaces-3)' }}
+        paddingTop="var(--size-spaces-2)"
+        paddingBottom="var(--size-spaces-2)"
       >
-        <Box marginBottom="var(--size-1)">
+        <Box marginBottom="var(--size-spaces-1)">
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
@@ -89,11 +89,11 @@ const SearchPage: NextPage = () => {
           </Breadcrumb>
         </Box>
         <Flex>
-          <Flex flexDirection={{ _: 'column', md: 'row' }}>
+          <Flex flexDirection={{ base: 'column', md: 'row' }}>
             <Box
               as="aside"
               minWidth="200px"
-              marginBottom={{ base: 'var(--size-2)', md: '0px' }}
+              marginBottom={{ base: 'var(--size-spaces-2)', md: '0px' }}
             >
               {/* 商品の状態のフィルタ */}
               <FilterGroup
@@ -105,7 +105,7 @@ const SearchPage: NextPage = () => {
                 value={conditions}
                 onChange={handleChange}
               />
-              <Box paddingTop="var(--size-1)">
+              <Box paddingTop="var(--size-spaces-1)">
                 <Text as="h2" fontWeight="bold" variant="mediumLarge">
                   カテゴリ
                 </Text>
@@ -117,7 +117,7 @@ const SearchPage: NextPage = () => {
                 {/* カテゴリのリンク */}
                 {Object.keys(categoryNameDict).map(
                   (category: string, i: number) => (
-                    <Box key={i} marginTop="var(--size-1)">
+                    <Box key={i} marginTop="var(--size-spaces-1)">
                       <Link href={`/search/${category}`} passHref>
                         <Anchor as="a">
                           {categoryNameDict[category as Category]}

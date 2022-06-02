@@ -23,10 +23,10 @@ const SigninPage: NextPage = () => {
   return (
     <Layout>
       <Flex
-        paddingTop="var(--size-2)"
-        paddingBottom="var(--size-2)"
-        paddingLeft={{ base: 'var(--size-2)', md: '0px' }}
-        paddingRight={{ base: 'var(--size-2)', md: '0px' }}
+        paddingTop="var(--size-spaces-2)"
+        paddingBottom="var(--size-spaces-2)"
+        paddingLeft={{ base: 'var(--size-spaces-2)', md: '0px' }}
+        paddingRight={{ base: 'var(--size-spaces-2)', md: '0px' }}
         justifyContent="center"
       >
         <Flex
@@ -35,7 +35,7 @@ const SigninPage: NextPage = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Box marginBottom="var(--size-2)">
+          <Box marginBottom="var(--size-spaces-2)">
             <AppLogo />
           </Box>
           <Box width="100%">

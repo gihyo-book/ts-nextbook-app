@@ -50,7 +50,7 @@ const CartProduct: React.FC<CartProductProps> = ({
             </a>
           </Link>
         </Box>
-        <Box padding="var(--size-1)">
+        <Box padding="var(--size-spaces-1)">
           <Flex
             height="100%"
             flexDirection="column"
@@ -70,7 +70,7 @@ const CartProduct: React.FC<CartProductProps> = ({
                 {price}円
               </Text>
             </Box>
-            <Flex marginTop={{ base: 'var(--size-2)', md: '0px' }}>
+            <Flex marginTop={{ base: 'var(--size-spaces-2)', md: '0px' }}>
               {/* 購入ボタン */}
               <Button
                 width={{ _: '100px', md: '200px' }}

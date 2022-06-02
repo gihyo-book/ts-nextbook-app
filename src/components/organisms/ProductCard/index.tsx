@@ -105,7 +105,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </ProductCardImage>
       {variant === 'small' && (
-        <Box marginTop="var(--size-1)">
+        <Box marginTop="var(--size-spaces-1)">
           <Text as="h2" variant="medium" m={0} p={0}>
             {title}
           </Text>
