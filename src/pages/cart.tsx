@@ -16,10 +16,10 @@ const CartPage: NextPage = () => {
   return (
     <Layout>
       <Flex
-        paddingTop="var(--size-spaces-2)"
-        paddingBottom="var(--size-spaces-2)"
-        paddingLeft={{ base: 'var(--size-spaces-2)', md: '0px' }}
-        paddingRight={{ base: 'var(--size-spaces-2)', md: '0px' }}
+        paddingTop="space-2"
+        paddingBottom="space-2"
+        paddingLeft={{ base: 'space-2', md: '0px' }}
+        paddingRight={{ base: 'space-2', md: '0px' }}
         justifyContent="center"
       >
         <Box width="1240px">

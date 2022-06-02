@@ -7,51 +7,101 @@ type ResponsiveProp<T> = {
 }
 export type Responsive<T> = T | ResponsiveProp<T>
 
-export function convertStylePropsString(props: {
-  [key: string]: Responsive<any>
-}): string {
-  const result = []
-  for (const key in props) {
-    if (
-      typeof props[key] == 'string' ||
-      typeof props[key] == 'number' ||
-      typeof props[key] == 'boolean'
-    ) {
-      result.push(`${camelToKebabCase(key)}: ${props[key]};`)
-    } else if (
-      props[key] &&
-      ('sm' in props[key] ||
-        'md' in props[key] ||
-        'lg' in props[key] ||
-        'xl' in props[key] ||
-        'base' in props[key])
-    ) {
-      const breakpoints: { [key: string]: string } = {
-        sm: '40em',
-        md: '52em',
-        lg: '64em',
-        xl: '80em',
-      }
-      const responsiveProp = props[key]
-      for (const responsiveKey in responsiveProp) {
-        if (responsiveKey === 'base') {
-          result.push(
-            `${camelToKebabCase(key)}: ${responsiveProp[responsiveKey]};`,
-          )
-        } else if (breakpoints[responsiveKey]) {
-          const breakpoint = breakpoints[responsiveKey]
-          const style = `${camelToKebabCase(key)}: ${
-            responsiveProp[responsiveKey]
-          };`
-          result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
-        }
+export type Color =
+  | 'primary'
+  | 'primaryDark'
+  | 'primaryLight'
+  | 'secondary'
+  | 'secondaryDark'
+  | 'secondaryLight'
+  | 'border'
+  | 'danger'
+  | 'dangerDark'
+  | 'gray'
+  | 'black'
+  | 'white'
+
+export type Space = 'space-1' | 'space-2' | 'space-3' | 'space-4'
+
+export function toResponsiveToStyle<T>(propKey: string, prop?: Responsive<T>) {
+  if (prop === undefined) return undefined
+
+  if (isResponsivePropType(prop)) {
+    const breakpoints: { [key: string]: string } = {
+      sm: '40em',
+      md: '52em',
+      lg: '64em',
+      xl: '80em',
+    }
+    const result = []
+    for (const responsiveKey in prop) {
+      if (responsiveKey === 'base') {
+        result.push(`${propKey}: ${toStyleValue(prop[responsiveKey])};`)
+      } else if (
+        responsiveKey === 'sm' ||
+        responsiveKey === 'md' ||
+        responsiveKey === 'lg' ||
+        responsiveKey === 'xl'
+      ) {
+        const breakpoint = breakpoints[responsiveKey]
+        const style = `${propKey}: ${toStyleValue(prop[responsiveKey])};`
+        result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
       }
     }
+    return result.join('\n')
   }
 
-  console.log(result)
+  return `${propKey}: ${toStyleValue(prop)};`
+}
 
-  return result.join('\n')
+function toStyleValue<T>(value: T) {
+  if (isColor(value)) {
+    return `var(--color-${camelToKebabCase(value)})`
+  } else if (isSpace(value)) {
+    return `var(--size-${value})`
+  }
+
+  return value
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isColor(color: any): color is Color {
+  return (
+    color === 'primary' ||
+    color === 'primaryDark' ||
+    color === 'primaryLight' ||
+    color === 'secondary' ||
+    color === 'secondaryDark' ||
+    color === 'secondaryLight' ||
+    color === 'border' ||
+    color === 'danger' ||
+    color === 'dangerDark' ||
+    color === 'gray' ||
+    color === 'black' ||
+    color === 'white'
+  )
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isSpace(space: any): space is Space {
+  return (
+    space === 'space-1' ||
+    space === 'space-2' ||
+    space === 'space-3' ||
+    space === 'space-4'
+  )
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
+  return (
+    prop &&
+    (prop.base !== undefined ||
+      prop.sm !== undefined ||
+      prop.md !== undefined ||
+      prop.lg !== undefined ||
+      prop.xl !== undefined)
+  )
 }
 
 function camelToKebabCase(str: string) {

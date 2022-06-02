@@ -56,17 +56,17 @@ const SearchPage: NextPage = () => {
     <Layout>
       <Box
         paddingLeft={{
-          base: 'var(--size-spaces-2)',
-          md: 'var(--size-spaces-3)',
+          base: 'space-2',
+          md: 'space-3',
         }}
         paddingRight={{
-          base: 'var(--size-spaces-2)',
-          md: 'var(--size-spaces-3)',
+          base: 'space-2',
+          md: 'space-3',
         }}
-        paddingTop="var(--size-spaces-2)"
-        paddingBottom="var(--size-spaces-2)"
+        paddingTop="space-2"
+        paddingBottom="space-2"
       >
-        <Box marginBottom="var(--size-spaces-1)">
+        <Box marginBottom="space-1">
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
@@ -99,7 +99,7 @@ const SearchPage: NextPage = () => {
             <Box
               as="aside"
               minWidth="200px"
-              marginBottom={{ base: 'var(--size-spaces-2)', md: '0px' }}
+              marginBottom={{ base: 'space-2', md: '0px' }}
             >
               {/* 商品の状態のフィルタ */}
               <FilterGroup
@@ -111,7 +111,7 @@ const SearchPage: NextPage = () => {
                 value={conditions}
                 onChange={handleChange}
               />
-              <Box paddingTop="var(--size-spaces-1)">
+              <Box paddingTop="space-1">
                 <Text as="h2" fontWeight="bold" variant="mediumLarge">
                   カテゴリ
                 </Text>
@@ -123,7 +123,7 @@ const SearchPage: NextPage = () => {
                 {/* カテゴリのリンク */}
                 {Object.keys(categoryNameDict).map(
                   (category: string, i: number) => (
-                    <Box key={i} marginTop="var(--size-spaces-1)">
+                    <Box key={i} marginTop="space-1">
                       <Link href={`/search/${category}`} passHref>
                         <Anchor as="a">
                           {categoryNameDict[category as Category]}

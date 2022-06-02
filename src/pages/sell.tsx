@@ -26,15 +26,15 @@ const SellPage: NextPage = () => {
     <Layout>
       <Flex
         paddingTop={{
-          base: 'var(--size-spaces-2)',
-          md: 'var(--size-spaces-4)',
+          base: 'space-2',
+          md: 'space-4',
         }}
         paddingBottom={{
-          base: 'var(--size-spaces-2)',
-          md: 'var(--size-spaces-4)',
+          base: 'space-2',
+          md: 'space-4',
         }}
-        paddingLeft={{ base: 'var(--size-spaces-2)', md: '0px' }}
-        paddingRight={{ base: 'var(--size-spaces-2)', md: '0px' }}
+        paddingLeft={{ base: 'space-2', md: '0px' }}
+        paddingRight={{ base: 'space-2', md: '0px' }}
         justifyContent="center"
       >
         <Flex
@@ -45,7 +45,7 @@ const SellPage: NextPage = () => {
         >
           <Box
             display={{ base: 'none', md: 'block' }}
-            marginBottom="var(--size-spaces-2)"
+            marginBottom="space-2"
           >
             <AppLogo />
           </Box>

@@ -21,7 +21,10 @@ const HomePage: NextPage<HomePageProps> = ({
     return (
       <ProductCardCarousel>
         {products.map((p: Product, i: number) => (
-          <Box pl={i === 0 ? 0 : 2} key={p.id}>
+          <Box
+            paddingLeft={i === 0 ? '0px' : 'space-2'}
+            key={p.id}
+          >
             <Link href={`/products/${p.id}`} passHref>
               <a>
                 <ProductCard
@@ -41,11 +44,7 @@ const HomePage: NextPage<HomePageProps> = ({
 
   return (
     <Layout>
-      <Flex
-        padding="var(--size-spaces-2)"
-        justifyContent="center"
-        backgroundColor="primary"
-      >
+      <Flex padding="space-2" justifyContent="center" backgroundColor="primary">
         <Flex
           width={{ base: '100%', md: '1040px' }}
           justifyContent="space-between"
@@ -83,19 +82,19 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
         </Flex>
       </Flex>
-      <Flex paddingBottom="var(--size-spaces-2)" justifyContent="center">
+      <Flex paddingBottom="space-2" justifyContent="center">
         <Box
-          paddingLeft={{ base: 'var(--size-spaces-2)', md: '0px' }}
-          paddingRight={{ base: 'var(--size-spaces-2)', md: '0px' }}
+          paddingLeft={{ base: 'space-2', md: '0px' }}
+          paddingRight={{ base: 'space-2', md: '0px' }}
           width={{ base: '100%', md: '1040px' }}
         >
-          <Box marginBottom="var(--size-spaces-3)">
+          <Box marginBottom="space-3">
             <Text as="h2" variant="large">
               トップス
             </Text>
             {renderProductCardCarousel(clothesProducts)}
           </Box>
-          <Box marginBottom="var(--size-spaces-3)">
+          <Box marginBottom="space-3">
             <Text as="h2" variant="large">
               本
             </Text>
