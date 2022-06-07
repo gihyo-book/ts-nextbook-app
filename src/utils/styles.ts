@@ -1,4 +1,4 @@
-import type { ResponsiveProp, Responsive, Color, Space } from './types'
+import type { ResponsiveProp, Responsive, Color, Space } from 'types'
 
 export function toResponsiveToStyle<T>(propKey: string, prop?: Responsive<T>) {
   if (prop === undefined) return undefined

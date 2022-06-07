@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Color, toResponsiveToStyle, Responsive, Space } from 'utils/styles'
+import type { Color, Responsive, Space } from 'types/styles'
+import { toResponsiveToStyle } from 'utils/styles'
 
 export type BoxProps = {
   color?: Responsive<Color>
