@@ -1,18 +1,19 @@
 import Image, { ImageProps } from 'next/image'
 import styled from 'styled-components'
-import { layout, LayoutProps, ResponsiveValue } from 'styled-system'
 
 type ScaleImageProps =
   | Omit<ImageProps, 'quality'> & {
-      containerWidth?: ResponsiveValue<string>
-      containerHeight?: ResponsiveValue<string>
+      containerWidth?: number
+      containerHeight?: number
     }
 
-const ScaleEffectImageContainer = styled.div<
-  Pick<LayoutProps, 'width' | 'height'>
->`
+const ScaleEffectImageContainer = styled.div<{
+  width: number | string
+  height: number | string
+}>`
   overflow: hidden;
-  ${layout}
+  width: ${({ width }) => `${width}`.replace('px', '')}px
+  height: ${({ height }) => `${height}`.replace('px', '')}px
 `
 
 const ScaleEffectImage = styled(Image)`
