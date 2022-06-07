@@ -71,10 +71,7 @@ const Footer: React.FC = () => {
           </nav>
         </Box>
       </Flex>
-      <Box
-        paddingTop="space-3"
-        paddingBottom="space-2"
-      >
+      <Box paddingTop="space-3" paddingBottom="space-2">
         <Text>© 2021 Gijutsuhyoronsha Co., Ltd.. All rights reserved.</Text>
       </Box>
     </footer>

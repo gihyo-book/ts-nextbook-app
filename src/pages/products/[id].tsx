@@ -56,8 +56,10 @@ const ProductPage: NextPage<ProductPageProps> = ({
   return (
     <Layout>
       <Flex
-        py={2}
-        px={{ _: 2, md: 0 }}
+        paddingTop="space-2"
+        paddingBottom="space-2"
+        paddingLeft={{ base: 'space-2', md: '0px' }}
+        paddingRight={{ base: 'space-2', md: '0px' }}
         justifyContent="center"
         flexDirection={{ base: 'column', md: 'row' }}
       >
@@ -110,10 +112,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             </Link>
           </Box>
         </Box>
-        <Box
-          padding="space-2"
-          width={{ base: '100%', md: '700px' }}
-        >
+        <Box padding="space-2" width={{ base: '100%', md: '700px' }}>
           <Flex
             justifyContent="space-between"
             flexDirection="column"

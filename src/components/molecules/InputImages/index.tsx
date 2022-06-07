@@ -24,8 +24,8 @@ interface InputImagesProps {
   images: FileData[]
   maximumNumber?: number
   hasError?: boolean
-  width?: string | number
-  height?: string | number
+  width?: string
+  height?: string
   onChange: (images: FileData[]) => void
 }
 

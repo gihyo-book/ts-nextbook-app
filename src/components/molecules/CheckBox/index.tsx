@@ -54,7 +54,7 @@ const CheckBox: React.FC<CheckBoxProps> = (props: CheckBoxProps) => {
         readOnly={!onChange}
         onChange={onChange}
       />
-      <Flex alignItems="center">
+      <Flex alignItems="">
         {/* チェックボックスのON/OFFの描画 */}
         {checked ?? isChecked ? (
           <CheckBoxIcon size={20} onClick={onClick} />

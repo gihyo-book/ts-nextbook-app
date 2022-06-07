@@ -1,19 +1,30 @@
 import styled from 'styled-components'
 import Box, { BoxProps } from 'components/layout/Box'
-import { toResponsiveToStyle, Responsive } from 'utils/styles'
+import {
+  toResponsiveToStyle,
+  Responsive,
+  CSSPropertyAlignItems,
+  CSSPropertyAlignContent,
+  CSSPropertyJustifyContent,
+  CSSPropertyJustifyItems,
+  CSSPropertyFlexDirection,
+  CSSPropertyJustifySelf,
+  CSSPropertyFlexWrap,
+  CSSPropertyAlignSelf,
+} from 'utils/styles'
 
 type FlexProps = BoxProps & {
-  alignItems?: Responsive<string>
-  alignContent?: Responsive<string>
-  justifyContent?: Responsive<string>
-  justifyItems?: Responsive<string>
-  flexWrap?: Responsive<string>
+  alignItems?: Responsive<CSSPropertyAlignItems>
+  alignContent?: Responsive<CSSPropertyAlignContent>
+  justifyContent?: Responsive<CSSPropertyJustifyContent>
+  justifyItems?: Responsive<CSSPropertyJustifyItems>
+  flexWrap?: Responsive<CSSPropertyFlexWrap>
   flexBasis?: Responsive<string>
-  flexDirection?: Responsive<string>
+  flexDirection?: Responsive<CSSPropertyFlexDirection>
   flexGrow?: Responsive<string>
   flexShrink?: Responsive<string>
-  justifySelf?: Responsive<string>
-  alignSelf?: Responsive<string>
+  justifySelf?: Responsive<CSSPropertyJustifySelf>
+  alignSelf?: Responsive<CSSPropertyAlignSelf>
   order?: Responsive<string>
 }
 

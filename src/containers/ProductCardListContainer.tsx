@@ -33,10 +33,10 @@ const ProductCardListContainer: React.FC<ProductCardListContainerProps> = ({
       {isLoading &&
         Array.from(Array(16), (_, k) => (
           <Box key={k}>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <RectLoader width={320} height={320} />
             </Box>
-            <Box display={{ _: 'block', md: 'none' }}>
+            <Box display={{ base: 'block', md: 'none' }}>
               <RectLoader width={160} height={160} />
             </Box>
           </Box>

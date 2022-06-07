@@ -21,8 +21,8 @@ const CloseBox = styled(Flex)`
 interface ImagePreviewProps {
   src?: string
   alt?: string
-  height?: number | string
-  width?: number | string
+  height?: string
+  width?: string
   onRemove?: (src: string) => void
 }
 

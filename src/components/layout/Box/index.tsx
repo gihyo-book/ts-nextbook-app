@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { Color, toResponsiveToStyle, Responsive, Space } from 'utils/styles'
 
 export type BoxProps = {
-  color?: Responsive<string | Color>
-  backgroundColor?: Responsive<string | Color>
+  color?: Responsive<Color>
+  backgroundColor?: Responsive<Color>
   width?: Responsive<string>
   height?: Responsive<string>
   minWidth?: Responsive<string>
@@ -12,16 +12,16 @@ export type BoxProps = {
   border?: Responsive<string>
   overflow?: Responsive<string>
   // spaces
-  margin?: Responsive<string | Space>
-  marginTop?: Responsive<string | Space>
-  marginRight?: Responsive<string | Space>
-  marginBottom?: Responsive<string | Space>
-  marginLeft?: Responsive<string | Space>
-  padding?: Responsive<string | Space>
-  paddingTop?: Responsive<string | Space>
-  paddingRight?: Responsive<string | Space>
-  paddingBottom?: Responsive<string | Space>
-  paddingLeft?: Responsive<string | Space>
+  margin?: Responsive<Space>
+  marginTop?: Responsive<Space>
+  marginRight?: Responsive<Space>
+  marginBottom?: Responsive<Space>
+  marginLeft?: Responsive<Space>
+  padding?: Responsive<Space>
+  paddingTop?: Responsive<Space>
+  paddingRight?: Responsive<Space>
+  paddingBottom?: Responsive<Space>
+  paddingLeft?: Responsive<Space>
 }
 
 const Box = styled.div<BoxProps>`

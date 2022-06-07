@@ -1,27 +1,4 @@
-type ResponsiveProp<T> = {
-  base?: T
-  sm?: T
-  md?: T
-  lg?: T
-  xl?: T
-}
-export type Responsive<T> = T | ResponsiveProp<T>
-
-export type Color =
-  | 'primary'
-  | 'primaryDark'
-  | 'primaryLight'
-  | 'secondary'
-  | 'secondaryDark'
-  | 'secondaryLight'
-  | 'border'
-  | 'danger'
-  | 'dangerDark'
-  | 'gray'
-  | 'black'
-  | 'white'
-
-export type Space = 'space-1' | 'space-2' | 'space-3' | 'space-4'
+import type { ResponsiveProp, Responsive, Color, Space } from './types'
 
 export function toResponsiveToStyle<T>(propKey: string, prop?: Responsive<T>) {
   if (prop === undefined) return undefined

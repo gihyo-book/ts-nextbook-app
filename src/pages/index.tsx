@@ -21,10 +21,7 @@ const HomePage: NextPage<HomePageProps> = ({
     return (
       <ProductCardCarousel>
         {products.map((p: Product, i: number) => (
-          <Box
-            paddingLeft={i === 0 ? '0px' : 'space-2'}
-            key={p.id}
-          >
+          <Box paddingLeft={i === 0 ? '0px' : 'space-2'} key={p.id}>
             <Link href={`/products/${p.id}`} passHref>
               <a>
                 <ProductCard

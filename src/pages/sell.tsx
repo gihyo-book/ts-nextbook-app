@@ -43,10 +43,7 @@ const SellPage: NextPage = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Box
-            display={{ base: 'none', md: 'block' }}
-            marginBottom="space-2"
-          >
+          <Box display={{ base: 'none', md: 'block' }} marginBottom="space-2">
             <AppLogo />
           </Box>
           <Box width="100%">
