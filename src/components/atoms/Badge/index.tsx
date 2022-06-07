@@ -1,19 +1,18 @@
 import styled from 'styled-components'
-import { color, ColorProps } from 'styled-system'
 
 type BadgeProps = {
   content: string
   backgroundColor: string
 }
 
-const BadgeWrapper = styled.div<ColorProps>`
+const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   border-radius: 20px;
   height: 20px;
   min-width: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  ${color};
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `
 
 const BadgeText = styled.p`

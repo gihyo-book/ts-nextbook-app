@@ -12,20 +12,19 @@ import {
 } from '@mui/icons-material'
 import SvgIcon from '@mui/material/SvgIcon'
 import styled from 'styled-components'
-import { space, SpaceProps, LayoutProps } from 'styled-system'
 import { theme } from 'themes'
 
 // list out color types
 export type ThemeColors = keyof typeof theme.colors
 
-interface IconWrapperProps extends SpaceProps, LayoutProps {
+interface IconWrapperProps {
+  size: number
   cursor?: string
   color?: ThemeColors
   backgroundColor?: string
 }
 
 const IconWrapper = styled.div<IconWrapperProps>`
-  ${space}
   display: inline-block;
   font-size: ${({ size }) => size}px;
   width: ${({ size }) => size}px;
@@ -44,7 +43,7 @@ const IconWrapper = styled.div<IconWrapperProps>`
   }
 `
 
-export interface IconButtonProps extends SpaceProps, LayoutProps {
+export interface IconButtonProps {
   onClick?: React.MouseEventHandler<SVGSVGElement>
   color?: ThemeColors
   className?: string

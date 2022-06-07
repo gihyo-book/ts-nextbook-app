@@ -37,6 +37,33 @@ export type Space =
   | 'space-4'
   | (string & {})
 
+export type FontSize =
+  | 'size-1'
+  | 'size-2'
+  | 'size-3'
+  | 'size-4'
+  | 'size-5'
+  | 'size-6'
+  | (string & {})
+
+export type LetterSpacing =
+  | 'spacing-1'
+  | 'spacing-2'
+  | 'spacing-3'
+  | 'spacing-4'
+  | 'spacing-5'
+  | 'spacing-6'
+  | (string & {})
+
+export type LineHeight =
+  | 'height-1'
+  | 'height-2'
+  | 'height-3'
+  | 'height-4'
+  | 'height-5'
+  | 'height-6'
+  | (string & {})
+
 /**
  * Flex
  */
