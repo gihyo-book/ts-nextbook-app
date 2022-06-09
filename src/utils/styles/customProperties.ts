@@ -1,3 +1,6 @@
+/**
+ * CSSカスタムプロパティのスペース幅
+ */
 export const spacings = {
   'space-1': '8px',
   'space-2': '16px',
@@ -5,6 +8,9 @@ export const spacings = {
   'space-4': '64px',
 }
 
+/**
+ * CSSカスタムプロパティのフォントサイズ
+ */
 export const fontSizes = {
   'font-size-1': '12px',
   'font-size-2': '14px',
@@ -14,6 +20,9 @@ export const fontSizes = {
   'font-size-6': '32px',
 }
 
+/**
+ * CSSカスタムプロパティの文字幅
+ */
 export const letterSpacings = {
   'letter-spacing-1': '0.06px',
   'letter-spacing-2': '0.07px',
@@ -23,6 +32,9 @@ export const letterSpacings = {
   'letter-spacing-6': '0.1px',
 }
 
+/**
+ * CSSカスタムプロパティの行の高さ
+ */
 export const lineHeights = {
   'line-height-1': '17px',
   'line-height-2': '19px',

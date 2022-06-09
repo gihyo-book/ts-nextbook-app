@@ -12,7 +12,6 @@ export type BoxProps = {
   display?: Responsive<string>
   border?: Responsive<string>
   overflow?: Responsive<string>
-  // spaces
   margin?: Responsive<Space>
   marginTop?: Responsive<Space>
   marginRight?: Responsive<Space>
@@ -25,6 +24,10 @@ export type BoxProps = {
   paddingLeft?: Responsive<Space>
 }
 
+/**
+ * Boxコンポーネント
+ * レイアウトの調整に利用する
+ */
 const Box = styled.div<BoxProps>`
   ${(props) => toResponsiveToStyle('color', props.color)}
   ${(props) => toResponsiveToStyle('background-color', props.backgroundColor)}

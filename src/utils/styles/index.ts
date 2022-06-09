@@ -11,6 +11,9 @@ import {
 } from './customProperties'
 import type { ResponsiveProp, Responsive } from 'types'
 
+/**
+ * CSSカスタムプロパティで使用するプレフィックス
+ */
 const CUSTOM_PROPERTIES_PREFIX = '--gihyo-variables-'
 
 type Keys =
@@ -20,11 +23,20 @@ type Keys =
   | keyof Colors
   | keyof lineHeights
 
+/**
+ * CSSカスタムプロパティの値を取得
+ * @param key 定義済みのCSSカスタムプロパティのキー
+ * @returns CSSカスタムプロパティの値
+ */
 export function getCustomPropertyVar(key: Keys) {
   return `var(${CUSTOM_PROPERTIES_PREFIX}${key})`
 }
 
-export function exportCustomProperies(): string {
+/**
+ * CSSカスタムプロパティを定義を行うためのテキストを出力
+ * @returns CSSカスタムプロパティの定義
+ */
+export function exportCustomProperiesDefinition(): string {
   const customProperties: { [key: string]: string } = {
     ...spacings,
     ...fontSizes,
@@ -39,6 +51,12 @@ export function exportCustomProperies(): string {
     .join('\n')
 }
 
+/**
+ * Responsive型のCSSのテキストに変換
+ * @param propKey CSSプロパティ
+ * @param prop Responsive型
+ * @returns CSSのテキスト
+ */
 export function toResponsiveToStyle<T>(propKey: string, prop?: Responsive<T>) {
   if (prop === undefined) return undefined
 
@@ -52,25 +70,36 @@ export function toResponsiveToStyle<T>(propKey: string, prop?: Responsive<T>) {
     const result = []
     for (const responsiveKey in prop) {
       if (responsiveKey === 'base') {
-        result.push(`${propKey}: ${toStyleValue(prop[responsiveKey])};`)
+        // デフォルトのスタイル
+        result.push(
+          `${propKey}: ${toCustomPropertyValueIfNeeded(prop[responsiveKey])};`,
+        )
       } else if (
         responsiveKey === 'sm' ||
         responsiveKey === 'md' ||
         responsiveKey === 'lg' ||
         responsiveKey === 'xl'
       ) {
+        // メディアクエリでのスタイル
         const breakpoint = breakpoints[responsiveKey]
-        const style = `${propKey}: ${toStyleValue(prop[responsiveKey])};`
+        const style = `${propKey}: ${toCustomPropertyValueIfNeeded(
+          prop[responsiveKey],
+        )};`
         result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
       }
     }
     return result.join('\n')
   }
 
-  return `${propKey}: ${toStyleValue(prop)};`
+  return `${propKey}: ${toCustomPropertyValueIfNeeded(prop)};`
 }
 
-function toStyleValue<T>(value: T) {
+/**
+ * 必要であればCSSカスタムプロパティの値に変換
+ * @param value CSSプロパティ
+ * @returns CSSプロパティの値 or CSSカスタムプロパティの値
+ */
+function toCustomPropertyValueIfNeeded<T>(value: T) {
   const customProperties: { [key: string]: string } = {
     ...spacings,
     ...fontSizes,

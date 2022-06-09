@@ -97,7 +97,6 @@ const Button = styled.button<ButtonProps>`
   ${({ variant, color, backgroundColor, pseudoClass }) => {
     if (variant && variants[variant]) {
       const styles = []
-      console.log(variants[variant].color)
       !color &&
         styles.push(toResponsiveToStyle('color', variants[variant].color))
       !backgroundColor &&
@@ -107,7 +106,6 @@ const Button = styled.button<ButtonProps>`
             variants[variant].backgroundColor,
           ),
         )
-      console.log(variants[variant].pseudoClass)
       !pseudoClass &&
         styles.push(
           `&:hover {

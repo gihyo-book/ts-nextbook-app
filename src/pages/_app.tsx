@@ -9,7 +9,7 @@ import { ShoppingCartContextProvider } from 'contexts/ShoppingCartContext'
 import { theme } from 'themes'
 import type { ApiContext } from 'types'
 import { fetcher } from 'utils'
-import { exportCustomProperies } from 'utils/styles'
+import { exportCustomProperiesDefinition } from 'utils/styles'
 
 // グローバルのスタイル
 const GlobalStyle = createGlobalStyle`
@@ -38,7 +38,7 @@ ol, ul {
 }
 
 :root {
-  ${exportCustomProperies()}
+  ${exportCustomProperiesDefinition()}
 }
 `
 
