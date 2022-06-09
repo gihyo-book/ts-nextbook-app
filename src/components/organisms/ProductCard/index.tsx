@@ -39,11 +39,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const { size, imgSize } = (() => {
     switch (variant) {
       case 'detail':
-        return { size: { _: '320px', md: '540px' }, imgSize: 540 }
+        return { size: { base: '320px', md: '540px' }, imgSize: 540 }
       case 'listing':
-        return { size: { _: '160px', md: '320px' }, imgSize: 320 }
+        return { size: { base: '160px', md: '320px' }, imgSize: 320 }
       default:
-        return { size: { _: '160px' }, imgSize: 160 }
+        return { size: { base: '160px' }, imgSize: 160 }
     }
   })()
 

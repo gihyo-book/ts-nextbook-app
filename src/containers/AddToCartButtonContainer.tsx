@@ -29,7 +29,7 @@ const AddToCartButtonContainer: React.FC<AddToCartButtonContainerProps> = ({
 
   return (
     <Button
-      width={{ _: '100%', md: '400px' }}
+      width={{ base: '100%', md: '400px' }}
       height="66px"
       onClick={handleAddToCartButtonClick}
     >

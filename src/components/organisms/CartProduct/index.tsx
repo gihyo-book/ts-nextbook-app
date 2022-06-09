@@ -73,16 +73,16 @@ const CartProduct: React.FC<CartProductProps> = ({
             <Flex marginTop={{ base: 'space-2', md: '0px' }}>
               {/* 購入ボタン */}
               <Button
-                width={{ _: '100px', md: '200px' }}
+                width={{ base: '100px', md: '200px' }}
                 onClick={() => onBuyButtonClick && onBuyButtonClick(id)}
               >
                 購入
               </Button>
               {/* 削除ボタン (モバイル) */}
               <Button
-                ml={1}
-                width={{ _: '100px', md: '200px' }}
-                display={{ _: 'block', md: 'none' }}
+                marginLeft="space-1"
+                width={{ base: '100px', md: '200px' }}
+                display={{ base: 'block', md: 'none' }}
                 variant="danger"
                 onClick={() => onRemoveButtonClick && onRemoveButtonClick(id)}
               >

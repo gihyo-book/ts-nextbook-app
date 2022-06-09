@@ -23,6 +23,7 @@ export type TextProps = {
   fontWeight?: Responsive<string>
   letterSpacing?: Responsive<LetterSpacing>
   lineHeight?: Responsive<LineHeight>
+  textAlign?: Responsive<string>
   color?: Responsive<Color>
   backgroundColor?: Responsive<Color>
   width?: Responsive<string>
