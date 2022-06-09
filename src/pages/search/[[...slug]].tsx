@@ -137,7 +137,7 @@ const SearchPage: NextPage = () => {
             <Box>
               <Text
                 as="h2"
-                display={{ _: 'block', md: 'none' }}
+                display={{ base: 'block', md: 'none' }}
                 fontWeight="bold"
                 variant="mediumLarge"
               >

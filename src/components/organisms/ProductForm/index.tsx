@@ -60,7 +60,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           )}
         />
         {errors.image && (
-          <Text color="danger" variant="small" pl={1}>
+          <Text color="danger" variant="small" paddingLeft="space-1">
             Product image is required
           </Text>
         )}
@@ -84,7 +84,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             hasError={!!errors.title}
           />
           {errors.title && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft="space-1">
               タイトルの入力は必須です
             </Text>
           )}
@@ -108,7 +108,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.description && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft="space-1">
               概要の入力は必須です
             </Text>
           )}
@@ -137,7 +137,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.category && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft="space-1">
               カテゴリの選択は必須です
             </Text>
           )}
@@ -165,7 +165,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.condition && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft="space-1">
               商品の状態の入力は必須です
             </Text>
           )}
@@ -182,7 +182,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             hasError={!!errors.price}
           />
           {errors.price && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft="space-1">
               価格の入力は必須です
             </Text>
           )}

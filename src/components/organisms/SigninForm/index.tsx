@@ -42,7 +42,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
           hasError={!!errors.username}
         />
         {errors.username && (
-          <Text color="danger" variant="small" pl={1}>
+          <Text color="danger" variant="small" paddingLeft="space-1">
             ユーザ名は必須です
           </Text>
         )}
@@ -56,7 +56,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
           hasError={!!errors.password}
         />
         {errors.password && (
-          <Text color="danger" variant="small" pl={1}>
+          <Text color="danger" variant="small" paddingLeft="space-1">
             パスワードは必須です
           </Text>
         )}

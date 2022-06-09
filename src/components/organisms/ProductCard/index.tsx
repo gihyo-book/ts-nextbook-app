@@ -54,13 +54,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Box>
             <Text
               as="h2"
-              fontSize={{ _: 3, md: 4 }}
-              letterSpacing={{ _: 3, md: 4 }}
-              lineHeight={{ _: '32px', md: '48px' }}
+              fontSize={{ base: 'size-3', md: 'size-4' }}
+              letterSpacing={{ base: 'spacing-3', md: 'spacing-4' }}
+              lineHeight={{ base: '32px', md: '48px' }}
               backgroundColor="white"
-              m={0}
-              px={2}
-              py={0}
+              margin="0px"
+              paddingRight="space-2"
+              paddingLeft="space-2"
+              paddingTop="0px"
+              paddingBottom="0px"
             >
               {title}
             </Text>
@@ -70,10 +72,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
               display="inline-block"
               variant="medium"
               backgroundColor="white"
-              fontSize={{ _: 2, md: 3 }}
-              letterSpacing={{ _: 2, md: 3 }}
-              m={0}
-              p={{ _: 1, md: 2 }}
+              fontSize={{ base: 'size-2', md: 'size-3' }}
+              letterSpacing={{ base: 'spacing-2', md: 'spacing-3' }}
+              margin="0px"
+              padding={{ base: 'space-1', md: 'space-2' }}
             >
               {price}円
             </Text>
@@ -106,7 +108,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </ProductCardImage>
       {variant === 'small' && (
         <Box marginTop="space-1">
-          <Text as="h2" variant="medium" m={0} p={0}>
+          <Text as="h2" variant="medium" margin="0px" padding="0px">
             {title}
           </Text>
           <Text as="span" variant="medium">

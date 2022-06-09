@@ -49,10 +49,10 @@ const HomePage: NextPage<HomePageProps> = ({
           flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box width="100%">
-            <Text as="h1" mb="0px" color="white" variant="extraLarge">
+            <Text as="h1" marginBottom="0px" color="white" variant="extraLarge">
               Gihyo C2Cで
             </Text>
-            <Text as="h1" mt="0px" color="white" variant="extraLarge">
+            <Text as="h1" marginTop="0px" color="white" variant="extraLarge">
               お気に入りのアイテムを見つけよう
             </Text>
           </Box>

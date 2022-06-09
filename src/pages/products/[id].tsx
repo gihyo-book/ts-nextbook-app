@@ -96,7 +96,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
           </Flex>
           <Separator />
           <Box paddingTop="space-1">
-            <Text as="h2" variant="large" mt={0}>
+            <Text as="h2" variant="large" marginTop="0px">
               出品者
             </Text>
             <Link href={`/users/${product.owner.id}`}>

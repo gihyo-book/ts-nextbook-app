@@ -42,14 +42,20 @@ const UserProfile: React.FC<UserProfileProps> = ({
           justifyContent="space-between"
         >
           <Box>
-            <Text as="p" fontWeight="bold" variant="mediumLarge" mt={0} mb={1}>
+            <Text
+              as="p"
+              fontWeight="bold"
+              variant="mediumLarge"
+              marginTop="0px"
+              marginBottom="space-1"
+            >
               {username}
             </Text>
-            <Text mb={1} mt={0} as="p">
+            <Text marginBottom="space-1" marginTop="0px" as="p">
               {numberOfProducts}点出品済
             </Text>
             {variant === 'normal' && (
-              <Text m={0} as="p">
+              <Text margin="0px" as="p">
                 {description}
               </Text>
             )}

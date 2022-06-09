@@ -20,6 +20,7 @@ export type TextVariant =
 export type TextProps = {
   variant?: TextVariant
   fontSize?: Responsive<FontSize>
+  fontWeight?: Responsive<string>
   letterSpacing?: Responsive<LetterSpacing>
   lineHeight?: Responsive<LineHeight>
   color?: Responsive<Color>

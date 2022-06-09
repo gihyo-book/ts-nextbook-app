@@ -60,13 +60,13 @@ const CartProduct: React.FC<CartProductProps> = ({
               <Text
                 fontWeight="bold"
                 variant="mediumLarge"
-                mt={0}
-                mb={1}
+                marginTop="0px"
+                marginBottom="space-1"
                 as="p"
               >
                 {title}
               </Text>
-              <Text m={0} as="p">
+              <Text margin="0px" as="p">
                 {price}円
               </Text>
             </Box>
