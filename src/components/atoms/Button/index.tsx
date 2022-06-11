@@ -96,8 +96,7 @@ const Button = styled.button<ButtonProps>`
   ${({ variant, color, backgroundColor, pseudoClass, theme }) => {
     if (variant && variants[variant]) {
       const styles = []
-      !color &&
-        styles.push(toValue('color', variants[variant].color.replace, theme))
+      !color && styles.push(toValue('color', variants[variant].color, theme))
       !backgroundColor &&
         styles.push(
           toValue('background-color', variants[variant].backgroundColor, theme),
