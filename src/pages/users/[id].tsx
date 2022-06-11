@@ -35,14 +35,14 @@ const UserPage: NextPage<UserPageProps> = ({
   return (
     <Layout>
       <Flex
-        paddingTop="space-2"
-        paddingBottom="space-2"
-        paddingLeft={{ base: 'space-2', md: '0px' }}
-        paddingRight={{ base: 'space-2', md: '0px' }}
+        paddingTop={2}
+        paddingBottom={2}
+        paddingLeft={{ base: 2, md: 0 }}
+        paddingRight={{ base: 2, md: 0 }}
         justifyContent="center"
       >
         <Box width="1180px">
-          <Box marginBottom="space-2">
+          <Box marginBottom={2}>
             <Breadcrumb>
               <BreadcrumbItem>
                 <Link href="/">
@@ -53,14 +53,14 @@ const UserPage: NextPage<UserPageProps> = ({
             </Breadcrumb>
           </Box>
           <Box>
-            <Box marginBottom="space-1">
+            <Box marginBottom={1}>
               {/*
                 ユーザープロファイルコンテナ
                 ユーザー情報を表示する。useUserで常に最新のデータを取得する。
               */}
               <UserProfileContainer userId={id} user={user} />
             </Box>
-            <Box marginBottom="space-1">
+            <Box marginBottom={1}>
               <Separator />
             </Box>
             {/*

@@ -33,7 +33,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Box marginBottom="space-1">
+      <Box marginBottom={1}>
         <Input
           {...register('username', { required: true })}
           name="username"
@@ -42,12 +42,12 @@ const SigninForm: React.FC<SigninFormProps> = ({
           hasError={!!errors.username}
         />
         {errors.username && (
-          <Text color="danger" variant="small" paddingLeft="space-1">
+          <Text color="danger" variant="small" paddingLeft={1}>
             ユーザ名は必須です
           </Text>
         )}
       </Box>
-      <Box marginBottom="space-2">
+      <Box marginBottom={2}>
         <Input
           {...register('password', { required: true })}
           name="password"
@@ -56,7 +56,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
           hasError={!!errors.password}
         />
         {errors.password && (
-          <Text color="danger" variant="small" paddingLeft="space-1">
+          <Text color="danger" variant="small" paddingLeft={1}>
             パスワードは必須です
           </Text>
         )}

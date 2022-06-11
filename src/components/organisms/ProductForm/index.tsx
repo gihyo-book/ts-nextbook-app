@@ -40,8 +40,8 @@ const ProductForm: React.FC<ProductFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Box marginBottom="space-3">
-        <Box marginBottom="space-2">
+      <Box marginBottom={3}>
+        <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             商品の写真
           </Text>
@@ -60,19 +60,19 @@ const ProductForm: React.FC<ProductFormProps> = ({
           )}
         />
         {errors.image && (
-          <Text color="danger" variant="small" paddingLeft="space-1">
+          <Text color="danger" variant="small" paddingLeft={1}>
             Product image is required
           </Text>
         )}
       </Box>
 
-      <Box marginBottom="space-3">
-        <Box marginBottom="space-2">
+      <Box marginBottom={3}>
+        <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             商品情報
           </Text>
         </Box>
-        <Box marginBottom="space-1">
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             タイトル
           </Text>
@@ -84,12 +84,12 @@ const ProductForm: React.FC<ProductFormProps> = ({
             hasError={!!errors.title}
           />
           {errors.title && (
-            <Text color="danger" variant="small" paddingLeft="space-1">
+            <Text color="danger" variant="small" paddingLeft={1}>
               タイトルの入力は必須です
             </Text>
           )}
         </Box>
-        <Box marginBottom="space-1">
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             概要
           </Text>
@@ -108,12 +108,12 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.description && (
-            <Text color="danger" variant="small" paddingLeft="space-1">
+            <Text color="danger" variant="small" paddingLeft={1}>
               概要の入力は必須です
             </Text>
           )}
         </Box>
-        <Box marginBottom="space-1">
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             カテゴリ
           </Text>
@@ -137,12 +137,12 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.category && (
-            <Text color="danger" variant="small" paddingLeft="space-1">
+            <Text color="danger" variant="small" paddingLeft={1}>
               カテゴリの選択は必須です
             </Text>
           )}
         </Box>
-        <Box marginBottom="space-1">
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             商品の状態
           </Text>
@@ -165,7 +165,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.condition && (
-            <Text color="danger" variant="small" paddingLeft="space-1">
+            <Text color="danger" variant="small" paddingLeft={1}>
               商品の状態の入力は必須です
             </Text>
           )}
@@ -182,7 +182,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             hasError={!!errors.price}
           />
           {errors.price && (
-            <Text color="danger" variant="small" paddingLeft="space-1">
+            <Text color="danger" variant="small" paddingLeft={1}>
               価格の入力は必須です
             </Text>
           )}

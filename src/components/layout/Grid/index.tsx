@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import Box, { BoxProps } from 'components/layout/Box'
 import type { CSSPropertyGridArea, CSSPropertyGridAutoFlow, CSSPropertyGridColumn, CSSPropertyGridRow, Responsive } from 'types/styles'
-import { toResponsiveToStyle } from 'utils/styles'
+import { toValue } from 'utils/styles'
 
 type GridProps = BoxProps & {
   gridGap?: Responsive<string>
@@ -20,18 +20,18 @@ type GridProps = BoxProps & {
 }
 
 const Grid = styled(Box)<GridProps>`
-  ${(props) => toResponsiveToStyle('grid-gap', props.gridGap)}
-  ${(props) => toResponsiveToStyle('grid-column-gap', props.gridColumnGap)}
-  ${(props) => toResponsiveToStyle('grid-row-gap', props.gridRowGap)}
-  ${(props) => toResponsiveToStyle('grid-row', props.gridRow)}
-  ${(props) => toResponsiveToStyle('grid-auto-flow', props.gridAutoFlow)}
-  ${(props) => toResponsiveToStyle('grid-auto-columns', props.gridAutoColumns)}
-  ${(props) => toResponsiveToStyle('grid-auto-rows', props.gridAutoRows)}
-  ${(props) => toResponsiveToStyle('grid-template-columns', props.gridTemplateColumns)}
-  ${(props) => toResponsiveToStyle('grid-template-rows', props.gridTemplateRows)}
-  ${(props) => toResponsiveToStyle('grid-template-tows', props.gridTemplateRows)}
-  ${(props) => toResponsiveToStyle('grid-template-areas', props.gridTemplateAreas)}
-  ${(props) => toResponsiveToStyle('grid-area', props.gridArea)}
+  ${(props) => toValue('grid-gap', props.gridGap, props.theme)}
+  ${(props) => toValue('grid-column-gap', props.gridColumnGap, props.theme)}
+  ${(props) => toValue('grid-row-gap', props.gridRowGap, props.theme)}
+  ${(props) => toValue('grid-row', props.gridRow, props.theme)}
+  ${(props) => toValue('grid-auto-flow', props.gridAutoFlow, props.theme)}
+  ${(props) => toValue('grid-auto-columns', props.gridAutoColumns, props.theme)}
+  ${(props) => toValue('grid-auto-rows', props.gridAutoRows, props.theme)}
+  ${(props) => toValue('grid-template-columns', props.gridTemplateColumns, props.theme)}
+  ${(props) => toValue('grid-template-rows', props.gridTemplateRows, props.theme)}
+  ${(props) => toValue('grid-template-tows', props.gridTemplateRows, props.theme)}
+  ${(props) => toValue('grid-template-areas', props.gridTemplateAreas, props.theme)}
+  ${(props) => toValue('grid-area', props.gridArea, props.theme)}
 `
 
 Grid.defaultProps = {

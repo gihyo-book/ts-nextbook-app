@@ -35,7 +35,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           width={profileImageSize}
         />
       </Box>
-      <Box padding="space-1">
+      <Box padding={1}>
         <Flex
           height="100%"
           flexDirection="column"
@@ -46,16 +46,16 @@ const UserProfile: React.FC<UserProfileProps> = ({
               as="p"
               fontWeight="bold"
               variant="mediumLarge"
-              marginTop="0px"
-              marginBottom="space-1"
+              marginTop={0}
+              marginBottom={1}
             >
               {username}
             </Text>
-            <Text marginBottom="space-1" marginTop="0px" as="p">
+            <Text marginBottom={1} marginTop={0} as="p">
               {numberOfProducts}点出品済
             </Text>
             {variant === 'normal' && (
-              <Text margin="0px" as="p">
+              <Text margin={0} as="p">
                 {description}
               </Text>
             )}

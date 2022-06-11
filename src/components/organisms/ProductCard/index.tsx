@@ -58,11 +58,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
               letterSpacing={{ base: 'spacing-3', md: 'spacing-4' }}
               lineHeight={{ base: '32px', md: '48px' }}
               backgroundColor="white"
-              margin="0px"
-              paddingRight="space-2"
-              paddingLeft="space-2"
-              paddingTop="0px"
-              paddingBottom="0px"
+              margin={0}
+              paddingRight={2}
+              paddingLeft={2}
+              paddingTop={0}
+              paddingBottom={0}
             >
               {title}
             </Text>
@@ -74,8 +74,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
               backgroundColor="white"
               fontSize={{ base: 'size-2', md: 'size-3' }}
               letterSpacing={{ base: 'spacing-2', md: 'spacing-3' }}
-              margin="0px"
-              padding={{ base: 'space-1', md: 'space-2' }}
+              margin={0}
+              padding={{ base: 1, md: 2 }}
             >
               {price}円
             </Text>
@@ -107,8 +107,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </ProductCardImage>
       {variant === 'small' && (
-        <Box marginTop="space-1">
-          <Text as="h2" variant="medium" margin="0px" padding="0px">
+        <Box marginTop={1}>
+          <Text as="h2" variant="medium" margin={0} padding={0}>
             {title}
           </Text>
           <Text as="span" variant="medium">

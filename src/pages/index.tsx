@@ -21,7 +21,7 @@ const HomePage: NextPage<HomePageProps> = ({
     return (
       <ProductCardCarousel>
         {products.map((p: Product, i: number) => (
-          <Box paddingLeft={i === 0 ? '0px' : 'space-2'} key={p.id}>
+          <Box paddingLeft={i === 0 ? 0 : 2} key={p.id}>
             <Link href={`/products/${p.id}`} passHref>
               <a>
                 <ProductCard
@@ -41,7 +41,7 @@ const HomePage: NextPage<HomePageProps> = ({
 
   return (
     <Layout>
-      <Flex padding="space-2" justifyContent="center" backgroundColor="primary">
+      <Flex padding={2} justifyContent="center" backgroundColor="primary">
         <Flex
           width={{ base: '100%', md: '1040px' }}
           justifyContent="space-between"
@@ -49,10 +49,10 @@ const HomePage: NextPage<HomePageProps> = ({
           flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box width="100%">
-            <Text as="h1" marginBottom="0px" color="white" variant="extraLarge">
+            <Text as="h1" marginBottom={0} color="white" variant="extraLarge">
               Gihyo C2Cで
             </Text>
-            <Text as="h1" marginTop="0px" color="white" variant="extraLarge">
+            <Text as="h1" marginTop={0} color="white" variant="extraLarge">
               お気に入りのアイテムを見つけよう
             </Text>
           </Box>
@@ -65,7 +65,7 @@ const HomePage: NextPage<HomePageProps> = ({
                 as="a"
                 style={{ textDecoration: 'underline' }}
                 target="_blank"
-                href="https://github.com"
+                href="https://github.com/gihyo-book/ts-nextbook-app"
                 variant="mediumLarge"
                 color="white"
               >
@@ -79,19 +79,19 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
         </Flex>
       </Flex>
-      <Flex paddingBottom="space-2" justifyContent="center">
+      <Flex paddingBottom={2} justifyContent="center">
         <Box
-          paddingLeft={{ base: 'space-2', md: '0px' }}
-          paddingRight={{ base: 'space-2', md: '0px' }}
+          paddingLeft={{ base: 2, md: 0 }}
+          paddingRight={{ base: 2, md: 0 }}
           width={{ base: '100%', md: '1040px' }}
         >
-          <Box marginBottom="space-3">
+          <Box marginBottom={3}>
             <Text as="h2" variant="large">
               トップス
             </Text>
             {renderProductCardCarousel(clothesProducts)}
           </Box>
-          <Box marginBottom="space-3">
+          <Box marginBottom={3}>
             <Text as="h2" variant="large">
               本
             </Text>

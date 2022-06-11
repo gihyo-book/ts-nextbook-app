@@ -11,7 +11,7 @@ import type {
   CSSPropertyFlexWrap,
   CSSPropertyAlignSelf,
 } from 'types/styles'
-import { toResponsiveToStyle } from 'utils/styles'
+import { toValue } from 'utils/styles'
 
 type FlexProps = BoxProps & {
   alignItems?: Responsive<CSSPropertyAlignItems>
@@ -29,18 +29,18 @@ type FlexProps = BoxProps & {
 }
 
 const Flex = styled(Box)<FlexProps>`
-  ${(props) => toResponsiveToStyle('align-items', props.alignItems)}
-  ${(props) => toResponsiveToStyle('align-content', props.alignContent)}
-  ${(props) => toResponsiveToStyle('justify-content', props.justifyContent)}
-  ${(props) => toResponsiveToStyle('justify-items', props.justifyItems)}
-  ${(props) => toResponsiveToStyle('flex-wrap', props.flexWrap)}
-  ${(props) => toResponsiveToStyle('flex-basis', props.flexBasis)}
-  ${(props) => toResponsiveToStyle('flex-direction', props.flexDirection)}
-  ${(props) => toResponsiveToStyle('flex-grow', props.flexGrow)}
-  ${(props) => toResponsiveToStyle('flex-shrink', props.flexShrink)}
-  ${(props) => toResponsiveToStyle('justify-self', props.justifySelf)}
-  ${(props) => toResponsiveToStyle('align-self', props.alignSelf)}
-  ${(props) => toResponsiveToStyle('order', props.order)}
+  ${(props) => toValue('align-items', props.alignItems, props.theme)}
+  ${(props) => toValue('align-content', props.alignContent, props.theme)}
+  ${(props) => toValue('justify-content', props.justifyContent, props.theme)}
+  ${(props) => toValue('justify-items', props.justifyItems, props.theme)}
+  ${(props) => toValue('flex-wrap', props.flexWrap, props.theme)}
+  ${(props) => toValue('flex-basis', props.flexBasis, props.theme)}
+  ${(props) => toValue('flex-direction', props.flexDirection, props.theme)}
+  ${(props) => toValue('flex-grow', props.flexGrow, props.theme)}
+  ${(props) => toValue('flex-shrink', props.flexShrink, props.theme)}
+  ${(props) => toValue('justify-self', props.justifySelf, props.theme)}
+  ${(props) => toValue('align-self', props.alignSelf, props.theme)}
+  ${(props) => toValue('order', props.order, props.theme)}
 `
 
 Flex.defaultProps = {

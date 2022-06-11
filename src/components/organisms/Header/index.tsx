@@ -18,13 +18,13 @@ import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 
 const HeaderRoot = styled.header`
   height: 88px;
-  padding: ${({ theme }) => theme.space.medium} 0px;
+  padding: ${({ theme }) => theme.space[2]} 0px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `
 
 const Nav = styled(Flex)`
   & > span:not(:first-child) {
-    margin-left: ${({ theme }) => theme.space.medium};
+    margin-left: ${({ theme }) => theme.space[2]};
   }
 `
 
@@ -48,11 +48,7 @@ const Header: React.FC = () => {
 
   return (
     <HeaderRoot>
-      <Flex
-        paddingLeft="space-3"
-        paddingRight="space-3"
-        justifyContent="space-between"
-      >
+      <Flex paddingLeft={3} paddingRight={3} justifyContent="space-between">
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Link href="/" passHref>

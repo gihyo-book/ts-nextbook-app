@@ -73,13 +73,13 @@ const Template: ComponentStory<typeof Dropzone> = (args) => {
 
   return (
     <>
-      <Box marginBottom="space-1">
+      <Box marginBottom={1}>
         <Dropzone {...args} value={files} onDrop={handleDrop} />
       </Box>
-      <Box marginBottom="space-1">
+      <Box marginBottom={1}>
         <Button onClick={fetchData}>画像を追加</Button>
       </Box>
-      <Box marginBottom="space-2">
+      <Box marginBottom={2}>
         <Button onClick={clearImages}>全ての画像をクリア</Button>
       </Box>
       <Box>

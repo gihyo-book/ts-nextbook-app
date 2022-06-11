@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import type {
-  Color,
-  Responsive,
+import type { Responsive } from 'types/styles'
+import {
+  toValue,
   Space,
+  Color,
   FontSize,
   LetterSpacing,
   LineHeight,
-} from 'types/styles'
-import { getCustomPropertyVar, toResponsiveToStyle } from 'utils/styles'
+} from 'utils/styles'
 
 export type TextVariant =
   | 'extraSmall'
@@ -48,34 +48,34 @@ export type TextProps = {
 
 const variants = {
   extraSmall: {
-    fontSize: getCustomPropertyVar('font-size-1'),
-    letterSpacing: getCustomPropertyVar('letter-spacing-1'),
-    lineHeight: getCustomPropertyVar('line-height-1'),
+    fontSize: 'extraSmall',
+    letterSpacing: 0,
+    lineHeight: 0,
   },
   small: {
-    fontSize: getCustomPropertyVar('font-size-2'),
-    letterSpacing: getCustomPropertyVar('letter-spacing-2'),
-    lineHeight: getCustomPropertyVar('line-height-2'),
+    fontSize: 'small',
+    letterSpacing: 1,
+    lineHeight: 1,
   },
   medium: {
-    fontSize: getCustomPropertyVar('font-size-3'),
-    letterSpacing: getCustomPropertyVar('letter-spacing-3'),
-    lineHeight: getCustomPropertyVar('line-height-3'),
+    fontSize: 'medium',
+    letterSpacing: 2,
+    lineHeight: 2,
   },
   mediumLarge: {
-    fontSize: getCustomPropertyVar('font-size-4'),
-    letterSpacing: getCustomPropertyVar('letter-spacing-4'),
-    lineHeight: getCustomPropertyVar('line-height-4'),
+    fontSize: 'mediumLarge',
+    letterSpacing: 3,
+    lineHeight: 3,
   },
   large: {
-    fontSize: getCustomPropertyVar('font-size-5'),
-    letterSpacing: getCustomPropertyVar('letter-spacing-5'),
-    lineHeight: getCustomPropertyVar('line-height-5'),
+    fontSize: 'large',
+    letterSpacing: 4,
+    lineHeight: 4,
   },
   extraLarge: {
-    fontSize: getCustomPropertyVar('font-size-6'),
-    letterSpacing: getCustomPropertyVar('letter-spacing-6'),
-    lineHeight: getCustomPropertyVar('line-height-6'),
+    fontSize: 'extraLarge',
+    letterSpacing: 5,
+    lineHeight: 5,
   },
 }
 
@@ -83,39 +83,47 @@ const variants = {
  * テキスト
  */
 const Text = styled.span<TextProps>`
-  ${({ variant, fontSize, letterSpacing, lineHeight }) => {
+  ${({ variant, fontSize, letterSpacing, lineHeight, theme }) => {
     if (variant && variants[variant]) {
       const styles = []
-      !fontSize && styles.push(`font-size: ${variants[variant].fontSize};`)
+      // !fontSize && styles.push(`font-size: ${variants[variant].fontSize};`)
+      // !letterSpacing &&
+      //   styles.push(`letter-spacing: ${variants[variant].letterSpacing};`)
+      // !lineHeight &&
+      //   styles.push(`line-height: ${variants[variant].lineHeight};`)
+      !fontSize &&
+        styles.push(toValue('font-size', variants[variant].fontSize, theme))
       !letterSpacing &&
-        styles.push(`letter-spacing: ${variants[variant].letterSpacing};`)
+        styles.push(
+          toValue('letter-spacing', variants[variant].letterSpacing, theme),
+        )
       !lineHeight &&
-        styles.push(`line-height: ${variants[variant].lineHeight};`)
+        styles.push(toValue('line-height', variants[variant].lineHeight, theme))
       return styles.join('\n')
     }
   }}
-  ${(props) => toResponsiveToStyle('font-size', props.fontSize)}
-  ${(props) => toResponsiveToStyle('letter-spacing', props.letterSpacing)}
-  ${(props) => toResponsiveToStyle('line-height', props.lineHeight)}
-  ${(props) => toResponsiveToStyle('color', props.color)}
-  ${(props) => toResponsiveToStyle('background-color', props.backgroundColor)}
-  ${(props) => toResponsiveToStyle('width', props.width)}
-  ${(props) => toResponsiveToStyle('height', props.height)}
-  ${(props) => toResponsiveToStyle('min-width', props.minWidth)}
-  ${(props) => toResponsiveToStyle('min-height', props.minHeight)}
-  ${(props) => toResponsiveToStyle('display', props.display)}
-  ${(props) => toResponsiveToStyle('border', props.border)}
-  ${(props) => toResponsiveToStyle('overflow', props.overflow)}
-  ${(props) => toResponsiveToStyle('margin', props.margin)}
-  ${(props) => toResponsiveToStyle('margin-top', props.marginTop)}
-  ${(props) => toResponsiveToStyle('margin-left', props.marginLeft)}
-  ${(props) => toResponsiveToStyle('margin-bottom', props.marginBottom)}
-  ${(props) => toResponsiveToStyle('margin-right', props.marginRight)}
-  ${(props) => toResponsiveToStyle('padding', props.padding)}
-  ${(props) => toResponsiveToStyle('padding-top', props.paddingTop)}
-  ${(props) => toResponsiveToStyle('padding-left', props.paddingLeft)}
-  ${(props) => toResponsiveToStyle('padding-bottom', props.paddingBottom)}
-  ${(props) => toResponsiveToStyle('padding-right', props.paddingRight)}
+  ${(props) => toValue('font-size', props.fontSize, props.theme)}
+  ${(props) => toValue('letter-spacing', props.letterSpacing, props.theme)}
+  ${(props) => toValue('line-height', props.lineHeight, props.theme)}
+  ${(props) => toValue('color', props.color, props.theme)}
+  ${(props) => toValue('background-color', props.backgroundColor, props.theme)}
+  ${(props) => toValue('width', props.width, props.theme)}
+  ${(props) => toValue('height', props.height, props.theme)}
+  ${(props) => toValue('min-width', props.minWidth, props.theme)}
+  ${(props) => toValue('min-height', props.minHeight, props.theme)}
+  ${(props) => toValue('display', props.display, props.theme)}
+  ${(props) => toValue('border', props.border, props.theme)}
+  ${(props) => toValue('overflow', props.overflow, props.theme)}
+  ${(props) => toValue('margin', props.margin, props.theme)}
+  ${(props) => toValue('margin-top', props.marginTop, props.theme)}
+  ${(props) => toValue('margin-left', props.marginLeft, props.theme)}
+  ${(props) => toValue('margin-bottom', props.marginBottom, props.theme)}
+  ${(props) => toValue('margin-right', props.marginRight, props.theme)}
+  ${(props) => toValue('padding', props.padding, props.theme)}
+  ${(props) => toValue('padding-top', props.paddingTop, props.theme)}
+  ${(props) => toValue('padding-left', props.paddingLeft, props.theme)}
+  ${(props) => toValue('padding-bottom', props.paddingBottom, props.theme)}
+  ${(props) => toValue('padding-right', props.paddingRight, props.theme)}
 `
 
 Text.defaultProps = {

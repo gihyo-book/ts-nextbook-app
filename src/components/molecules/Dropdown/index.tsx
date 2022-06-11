@@ -88,7 +88,7 @@ const DropdownItem: React.FC<DropdownItemProps> = (
 
   return (
     <Flex alignItems="center">
-      <Text margin="0px" variant="small">
+      <Text margin={0} variant="small">
         {item.label ?? item.value}
       </Text>
     </Flex>

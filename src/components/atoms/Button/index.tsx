@@ -1,13 +1,13 @@
 import styled from 'styled-components'
+import { Responsive } from 'types'
 import {
+  toValue,
   Color,
   FontSize,
   LetterSpacing,
   LineHeight,
-  Responsive,
   Space,
-} from 'types'
-import { toResponsiveToStyle } from 'utils/styles'
+} from 'utils/styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
@@ -55,7 +55,7 @@ const variants = {
     border: 'none',
     pseudoClass: {
       hover: {
-        backgroundColor: 'primary-dark',
+        backgroundColor: 'primaryDark',
       },
       disabled: {
         backgroundColor: 'primary',
@@ -68,7 +68,7 @@ const variants = {
     border: 'none',
     pseudoClass: {
       hover: {
-        backgroundColor: 'secondary-dark',
+        backgroundColor: 'secondaryDark',
       },
       disabled: {
         backgroundColor: 'secondary',
@@ -81,7 +81,7 @@ const variants = {
     border: 'none',
     pseudoClass: {
       hover: {
-        backgroundColor: 'danger-dark',
+        backgroundColor: 'dangerDark',
       },
       disabled: {
         backgroundColor: 'danger',
@@ -94,71 +94,67 @@ const variants = {
  * ボタン
  */
 const Button = styled.button<ButtonProps>`
-  ${({ variant, color, backgroundColor, pseudoClass }) => {
+  ${({ variant, color, backgroundColor, pseudoClass, theme }) => {
     if (variant && variants[variant]) {
       const styles = []
       !color &&
-        styles.push(toResponsiveToStyle('color', variants[variant].color))
+        styles.push(toValue('color', variants[variant].color.replace, theme))
       !backgroundColor &&
         styles.push(
-          toResponsiveToStyle(
-            'background-color',
-            variants[variant].backgroundColor,
-          ),
+          toValue('background-color', variants[variant].backgroundColor, theme),
         )
       !pseudoClass &&
         styles.push(
           `&:hover {
-            ${toResponsiveToStyle(
+            ${toValue(
               'background-color',
               variants[variant].pseudoClass.hover.backgroundColor,
+              theme,
             )}
           }`.replaceAll('\n', ''),
         )
       !pseudoClass &&
         styles.push(
           `&:disabled {
-            ${toResponsiveToStyle(
+            ${toValue(
               'background-color',
               variants[variant].pseudoClass.disabled.backgroundColor,
+              theme,
             )}
           }`.replaceAll('\n', ''),
         )
       return styles.join('\n')
     }
   }}
-  ${(props) => toResponsiveToStyle('font-size', props.fontSize)}
-  ${(props) => toResponsiveToStyle('letter-spacing', props.letterSpacing)}
-  ${(props) => toResponsiveToStyle('line-height', props.lineHeight)}
-  ${(props) => toResponsiveToStyle('color', props.color)}
-  ${(props) => toResponsiveToStyle('background-color', props.backgroundColor)}
-  ${(props) => toResponsiveToStyle('width', props.width)}
-  ${(props) => toResponsiveToStyle('height', props.height)}
-  ${(props) => toResponsiveToStyle('min-width', props.minWidth)}
-  ${(props) => toResponsiveToStyle('min-height', props.minHeight)}
-  ${(props) => toResponsiveToStyle('display', props.display)}
-  ${(props) => toResponsiveToStyle('border', props.border)}
-  ${(props) => toResponsiveToStyle('overflow', props.overflow)}
-  ${(props) => toResponsiveToStyle('margin', props.margin)}
-  ${(props) => toResponsiveToStyle('margin-top', props.marginTop)}
-  ${(props) => toResponsiveToStyle('margin-left', props.marginLeft)}
-  ${(props) => toResponsiveToStyle('margin-bottom', props.marginBottom)}
-  ${(props) => toResponsiveToStyle('margin-right', props.marginRight)}
-  ${(props) => toResponsiveToStyle('padding', props.padding)}
-  ${(props) => toResponsiveToStyle('padding-top', props.paddingTop)}
-  ${(props) => toResponsiveToStyle('padding-left', props.paddingLeft)}
-  ${(props) => toResponsiveToStyle('padding-bottom', props.paddingBottom)}
-  ${(props) => toResponsiveToStyle('padding-right', props.paddingRight)}
+  ${(props) => toValue('font-size', props.fontSize, props.theme)}
+  ${(props) => toValue('letter-spacing', props.letterSpacing, props.theme)}
+  ${(props) => toValue('line-height', props.lineHeight, props.theme)}
+  ${(props) => toValue('color', props.color, props.theme)}
+  ${(props) => toValue('background-color', props.backgroundColor, props.theme)}
+  ${(props) => toValue('width', props.width, props.theme)}
+  ${(props) => toValue('height', props.height, props.theme)}
+  ${(props) => toValue('min-width', props.minWidth, props.theme)}
+  ${(props) => toValue('min-height', props.minHeight, props.theme)}
+  ${(props) => toValue('display', props.display, props.theme)}
+  ${(props) => toValue('border', props.border, props.theme)}
+  ${(props) => toValue('overflow', props.overflow, props.theme)}
+  ${(props) => toValue('margin', props.margin, props.theme)}
+  ${(props) => toValue('margin-top', props.marginTop, props.theme)}
+  ${(props) => toValue('margin-left', props.marginLeft, props.theme)}
+  ${(props) => toValue('margin-bottom', props.marginBottom, props.theme)}
+  ${(props) => toValue('margin-right', props.marginRight, props.theme)}
+  ${(props) => toValue('padding', props.padding, props.theme)}
+  ${(props) => toValue('padding-top', props.paddingTop, props.theme)}
+  ${(props) => toValue('padding-left', props.paddingLeft, props.theme)}
+  ${(props) => toValue('padding-bottom', props.paddingBottom, props.theme)}
+  ${(props) => toValue('padding-right', props.paddingRight, props.theme)}
   &:hover {
     ${(props) =>
-      toResponsiveToStyle(
-        'background-color',
-        props?.pseudoClass?.hover?.backgroundColor,
-      )}
+      toValue('background-color', props?.pseudoClass?.hover?.backgroundColor)}
   }
   &:disabled {
     ${(props) =>
-      toResponsiveToStyle(
+      toValue(
         'background-color',
         props?.pseudoClass?.disabled?.backgroundColor,
       )}
@@ -173,10 +169,10 @@ const Button = styled.button<ButtonProps>`
 
 Button.defaultProps = {
   variant: 'primary',
-  paddingLeft: 'space-2',
-  paddingRight: 'space-2',
-  paddingTop: 'space-1',
-  paddingBottom: 'space-1',
+  paddingLeft: 2,
+  paddingRight: 2,
+  paddingTop: 1,
+  paddingBottom: 1,
   color: 'white',
   display: 'inline-block',
   textAlign: 'center',

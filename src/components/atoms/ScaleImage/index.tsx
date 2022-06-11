@@ -1,7 +1,7 @@
 import Image, { ImageProps } from 'next/image'
 import styled from 'styled-components'
 import { Responsive } from 'types'
-import { toResponsiveToStyle } from 'utils/styles'
+import { toValue } from 'utils/styles'
 
 type ScaleImageProps =
   | Omit<ImageProps, 'quality'> & {
@@ -14,8 +14,8 @@ const ScaleEffectImageContainer = styled.div<{
   height: Responsive<string>
 }>`
   overflow: hidden;
-  ${({ width }) => toResponsiveToStyle('width', width)})
-  ${({ height }) => toResponsiveToStyle('height', height)})
+  ${({ width, theme }) => toValue('width', width, theme)}
+  ${({ height, theme }) => toValue('height', height, theme)}
 `
 
 const ScaleEffectImage = styled(Image)`
