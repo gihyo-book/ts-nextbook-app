@@ -3,6 +3,7 @@ import { theme } from 'themes'
 import type { ResponsiveProp, Responsive } from 'types'
 
 export type AppTheme = typeof theme
+
 type SpaceThemeKeys = keyof typeof theme.space
 type ColorThemeKeys = keyof typeof theme.colors
 type FontSizeThemeKeys = keyof typeof theme.fontSizes
@@ -16,12 +17,12 @@ export type LetterSpacing = LetterSpacingThemeKeys | (string & {})
 export type LineHeight = LineHeightThemeKeys | (string & {})
 
 /**
- * Responsive型のCSSのテキストに変換
+ * Responsive型をCSSプロパティと値に変換
  * @param propKey CSSプロパティ
  * @param prop Responsive型
- * @returns CSSのテキスト
+ * @returns CSSプロパティと値 (ex. background-color: white;)
  */
-export function toValue<T>(
+export function toPropValue<T>(
   propKey: string,
   prop?: Responsive<T>,
   theme?: AppTheme,
@@ -69,9 +70,9 @@ export function toValue<T>(
 }
 
 /**
- * 必要であればCSSカスタムプロパティの値に変換
+ * 必要であればThemeの値に変換
  * @param value CSSプロパティ
- * @returns CSSプロパティの値 or CSSカスタムプロパティの値
+ * @returns Themeの値 or 値
  */
 function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   const spaceKeys = new Set([

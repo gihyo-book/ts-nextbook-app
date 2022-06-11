@@ -11,7 +11,7 @@ import type {
   CSSPropertyFlexWrap,
   CSSPropertyAlignSelf,
 } from 'types/styles'
-import { toValue } from 'utils/styles'
+import { toPropValue } from 'utils/styles'
 
 type FlexProps = BoxProps & {
   alignItems?: Responsive<CSSPropertyAlignItems>
@@ -33,18 +33,19 @@ type FlexProps = BoxProps & {
  * flexboxの実現に利用する
  */
 const Flex = styled(Box)<FlexProps>`
-  ${(props) => toValue('align-items', props.alignItems, props.theme)}
-  ${(props) => toValue('align-content', props.alignContent, props.theme)}
-  ${(props) => toValue('justify-content', props.justifyContent, props.theme)}
-  ${(props) => toValue('justify-items', props.justifyItems, props.theme)}
-  ${(props) => toValue('flex-wrap', props.flexWrap, props.theme)}
-  ${(props) => toValue('flex-basis', props.flexBasis, props.theme)}
-  ${(props) => toValue('flex-direction', props.flexDirection, props.theme)}
-  ${(props) => toValue('flex-grow', props.flexGrow, props.theme)}
-  ${(props) => toValue('flex-shrink', props.flexShrink, props.theme)}
-  ${(props) => toValue('justify-self', props.justifySelf, props.theme)}
-  ${(props) => toValue('align-self', props.alignSelf, props.theme)}
-  ${(props) => toValue('order', props.order, props.theme)}
+  ${(props) => toPropValue('align-items', props.alignItems, props.theme)}
+  ${(props) => toPropValue('align-content', props.alignContent, props.theme)}
+  ${(props) =>
+    toPropValue('justify-content', props.justifyContent, props.theme)}
+  ${(props) => toPropValue('justify-items', props.justifyItems, props.theme)}
+  ${(props) => toPropValue('flex-wrap', props.flexWrap, props.theme)}
+  ${(props) => toPropValue('flex-basis', props.flexBasis, props.theme)}
+  ${(props) => toPropValue('flex-direction', props.flexDirection, props.theme)}
+  ${(props) => toPropValue('flex-grow', props.flexGrow, props.theme)}
+  ${(props) => toPropValue('flex-shrink', props.flexShrink, props.theme)}
+  ${(props) => toPropValue('justify-self', props.justifySelf, props.theme)}
+  ${(props) => toPropValue('align-self', props.alignSelf, props.theme)}
+  ${(props) => toPropValue('order', props.order, props.theme)}
 `
 
 Flex.defaultProps = {

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import type { Responsive } from 'types/styles'
 import {
-  toValue,
+  toPropValue,
   Space,
   Color,
   FontSize,
@@ -86,38 +86,41 @@ const Text = styled.span<TextProps>`
     if (variant && variants[variant]) {
       const styles = []
       !fontSize &&
-        styles.push(toValue('font-size', variants[variant].fontSize, theme))
+        styles.push(toPropValue('font-size', variants[variant].fontSize, theme))
       !letterSpacing &&
         styles.push(
-          toValue('letter-spacing', variants[variant].letterSpacing, theme),
+          toPropValue('letter-spacing', variants[variant].letterSpacing, theme),
         )
       !lineHeight &&
-        styles.push(toValue('line-height', variants[variant].lineHeight, theme))
+        styles.push(
+          toPropValue('line-height', variants[variant].lineHeight, theme),
+        )
       return styles.join('\n')
     }
   }}
-  ${(props) => toValue('font-size', props.fontSize, props.theme)}
-  ${(props) => toValue('letter-spacing', props.letterSpacing, props.theme)}
-  ${(props) => toValue('line-height', props.lineHeight, props.theme)}
-  ${(props) => toValue('color', props.color, props.theme)}
-  ${(props) => toValue('background-color', props.backgroundColor, props.theme)}
-  ${(props) => toValue('width', props.width, props.theme)}
-  ${(props) => toValue('height', props.height, props.theme)}
-  ${(props) => toValue('min-width', props.minWidth, props.theme)}
-  ${(props) => toValue('min-height', props.minHeight, props.theme)}
-  ${(props) => toValue('display', props.display, props.theme)}
-  ${(props) => toValue('border', props.border, props.theme)}
-  ${(props) => toValue('overflow', props.overflow, props.theme)}
-  ${(props) => toValue('margin', props.margin, props.theme)}
-  ${(props) => toValue('margin-top', props.marginTop, props.theme)}
-  ${(props) => toValue('margin-left', props.marginLeft, props.theme)}
-  ${(props) => toValue('margin-bottom', props.marginBottom, props.theme)}
-  ${(props) => toValue('margin-right', props.marginRight, props.theme)}
-  ${(props) => toValue('padding', props.padding, props.theme)}
-  ${(props) => toValue('padding-top', props.paddingTop, props.theme)}
-  ${(props) => toValue('padding-left', props.paddingLeft, props.theme)}
-  ${(props) => toValue('padding-bottom', props.paddingBottom, props.theme)}
-  ${(props) => toValue('padding-right', props.paddingRight, props.theme)}
+  ${(props) => toPropValue('font-size', props.fontSize, props.theme)}
+  ${(props) => toPropValue('letter-spacing', props.letterSpacing, props.theme)}
+  ${(props) => toPropValue('line-height', props.lineHeight, props.theme)}
+  ${(props) => toPropValue('color', props.color, props.theme)}
+  ${(props) =>
+    toPropValue('background-color', props.backgroundColor, props.theme)}
+  ${(props) => toPropValue('width', props.width, props.theme)}
+  ${(props) => toPropValue('height', props.height, props.theme)}
+  ${(props) => toPropValue('min-width', props.minWidth, props.theme)}
+  ${(props) => toPropValue('min-height', props.minHeight, props.theme)}
+  ${(props) => toPropValue('display', props.display, props.theme)}
+  ${(props) => toPropValue('border', props.border, props.theme)}
+  ${(props) => toPropValue('overflow', props.overflow, props.theme)}
+  ${(props) => toPropValue('margin', props.margin, props.theme)}
+  ${(props) => toPropValue('margin-top', props.marginTop, props.theme)}
+  ${(props) => toPropValue('margin-left', props.marginLeft, props.theme)}
+  ${(props) => toPropValue('margin-bottom', props.marginBottom, props.theme)}
+  ${(props) => toPropValue('margin-right', props.marginRight, props.theme)}
+  ${(props) => toPropValue('padding', props.padding, props.theme)}
+  ${(props) => toPropValue('padding-top', props.paddingTop, props.theme)}
+  ${(props) => toPropValue('padding-left', props.paddingLeft, props.theme)}
+  ${(props) => toPropValue('padding-bottom', props.paddingBottom, props.theme)}
+  ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
 `
 
 Text.defaultProps = {
