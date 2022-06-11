@@ -54,8 +54,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Box>
             <Text
               as="h2"
-              fontSize={{ base: 'size-3', md: 'size-4' }}
-              letterSpacing={{ base: 'spacing-3', md: 'spacing-4' }}
+              fontSize={{ base: 'mediumLarge', md: 'large' }}
+              letterSpacing={{ base: 3, md: 4 }}
               lineHeight={{ base: '32px', md: '48px' }}
               backgroundColor="white"
               margin={0}
@@ -72,8 +72,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
               display="inline-block"
               variant="medium"
               backgroundColor="white"
-              fontSize={{ base: 'size-2', md: 'size-3' }}
-              letterSpacing={{ base: 'spacing-2', md: 'spacing-3' }}
+              fontSize={{ base: 'medium', md: 'mediumLarge' }}
+              letterSpacing={{ base: 2, md: 4 }}
               margin={0}
               padding={{ base: 1, md: 2 }}
             >

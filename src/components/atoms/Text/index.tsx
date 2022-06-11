@@ -33,7 +33,6 @@ export type TextProps = {
   display?: Responsive<string>
   border?: Responsive<string>
   overflow?: Responsive<string>
-  // spaces
   margin?: Responsive<Space>
   marginTop?: Responsive<Space>
   marginRight?: Responsive<Space>
@@ -86,11 +85,6 @@ const Text = styled.span<TextProps>`
   ${({ variant, fontSize, letterSpacing, lineHeight, theme }) => {
     if (variant && variants[variant]) {
       const styles = []
-      // !fontSize && styles.push(`font-size: ${variants[variant].fontSize};`)
-      // !letterSpacing &&
-      //   styles.push(`letter-spacing: ${variants[variant].letterSpacing};`)
-      // !lineHeight &&
-      //   styles.push(`line-height: ${variants[variant].lineHeight};`)
       !fontSize &&
         styles.push(toValue('font-size', variants[variant].fontSize, theme))
       !letterSpacing &&

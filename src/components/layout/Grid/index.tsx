@@ -19,6 +19,10 @@ type GridProps = BoxProps & {
   gridArea?: Responsive<string>
 }
 
+/**
+ * Gridコンポーネント
+ * gridレイアウトの実現に利用する
+ */
 const Grid = styled(Box)<GridProps>`
   ${(props) => toValue('grid-gap', props.gridGap, props.theme)}
   ${(props) => toValue('grid-column-gap', props.gridColumnGap, props.theme)}

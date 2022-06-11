@@ -96,11 +96,7 @@ const SearchPage: NextPage = () => {
         </Box>
         <Flex>
           <Flex flexDirection={{ base: 'column', md: 'row' }}>
-            <Box
-              as="aside"
-              minWidth="200px"
-              marginBottom={{ base: 2, md: 0 }}
-            >
+            <Box as="aside" minWidth="200px" marginBottom={{ base: 2, md: 0 }}>
               {/* 商品の状態のフィルタ */}
               <FilterGroup
                 title="商品の状態"

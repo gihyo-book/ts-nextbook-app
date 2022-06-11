@@ -28,6 +28,10 @@ type FlexProps = BoxProps & {
   order?: Responsive<string>
 }
 
+/**
+ * Flexコンポーネント
+ * flexboxの実現に利用する
+ */
 const Flex = styled(Box)<FlexProps>`
   ${(props) => toValue('align-items', props.alignItems, props.theme)}
   ${(props) => toValue('align-content', props.alignContent, props.theme)}

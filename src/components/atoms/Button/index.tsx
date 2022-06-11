@@ -27,7 +27,6 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   display?: Responsive<string>
   border?: Responsive<string>
   overflow?: Responsive<string>
-  // spaces
   margin?: Responsive<Space>
   marginTop?: Responsive<Space>
   marginRight?: Responsive<Space>
