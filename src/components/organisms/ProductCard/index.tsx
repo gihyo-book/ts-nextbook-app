@@ -11,14 +11,17 @@ interface ProductCardProps {
   variant?: 'listing' | 'small' | 'detail'
 }
 
+// 商品カードのコンテナ
 const ProductCardContainer = styled.div`
   position: relative;
 `
 
-const ProductCardImage = styled.div`
+// 商品カード画像のコンテナ
+const ProductCardImageContainer = styled.div`
   z-index: 99;
 `
 
+// 商品カードの情報
 const ProductCardInfo = styled.div`
   position: absolute;
   z-index: 100;
@@ -82,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </Box>
         </ProductCardInfo>
       )}
-      <ProductCardImage>
+      <ProductCardImageContainer>
         {blurDataUrl && (
           <ScaleImage
             src={imageUrl}
@@ -105,7 +108,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             objectFit="cover"
           />
         )}
-      </ProductCardImage>
+      </ProductCardImageContainer>
       {variant === 'small' && (
         <Box marginTop={1}>
           <Text as="h2" variant="medium" margin={0} padding={0}>

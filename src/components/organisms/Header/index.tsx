@@ -16,22 +16,26 @@ import BadgeIconButton from 'components/molecules/BadgeIconButton'
 import { useAuthContext } from 'contexts/AuthContext'
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 
+// ヘッダーのルート
 const HeaderRoot = styled.header`
   height: 88px;
   padding: ${({ theme }) => theme.space[2]} 0px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `
 
+// ナビゲーション
 const Nav = styled(Flex)`
   & > span:not(:first-child) {
     margin-left: ${({ theme }) => theme.space[2]};
   }
 `
 
+// ナビゲーションのリンク
 const NavLink = styled.span`
   display: inline;
 `
 
+// アンカー
 const Anchor = styled(Text)`
   cursor: pointer;
   &:hover {
@@ -110,6 +114,7 @@ const Header: React.FC = () => {
           </NavLink>
           <NavLink>
             {(() => {
+              // 認証していたらアイコンを表示
               if (authUser) {
                 return (
                   <Link href={`/users/${authUser.id}`} passHref>
@@ -125,8 +130,10 @@ const Header: React.FC = () => {
                   </Link>
                 )
               } else if (isLoading) {
+                // ロード中はスピナーを表示
                 return <Spinner size={20} strokeWidth={2} />
               } else {
+                // サインインしてない場合はアイコンを表示
                 return (
                   <Link href="/signin" passHref>
                     <Anchor as="a">

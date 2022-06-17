@@ -26,6 +26,7 @@ const getFilesFromEvent = (e: React.DragEvent | React.ChangeEvent): File[] => {
   return []
 }
 
+// ファイルのContent-Type
 type FileType =
   | 'image/png'
   | 'image/jpeg'
@@ -54,6 +55,7 @@ type DropzoneRootProps = {
   height: string | number
 }
 
+// ドロップゾーンの外側の外観
 const DropzoneRoot = styled.div<DropzoneRootProps>`
   border: 1px dashed
     ${({ theme, isFocused, hasError }) => {
@@ -72,6 +74,7 @@ const DropzoneRoot = styled.div<DropzoneRootProps>`
     typeof height === 'number' ? `${height}px` : height};
 `
 
+// ドロップゾーンの中身
 const DropzoneContent = styled.div<{
   width: string | number
   height: string | number

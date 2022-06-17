@@ -10,6 +10,7 @@ import {
   LineHeight,
 } from 'utils/styles'
 
+// テキストバリアント
 export type TextVariant =
   | 'extraSmall'
   | 'small'
@@ -81,6 +82,7 @@ const variants = {
 
 /**
  * テキスト
+ * バリアント、色、タイポグラフィ、レイアウト、スペース関連のPropsを追加
  */
 const Text = styled.span<TextProps>`
   ${({ variant, fontSize, letterSpacing, lineHeight, theme }) => {
@@ -124,6 +126,7 @@ const Text = styled.span<TextProps>`
   ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
 `
 
+// デフォルトProps
 Text.defaultProps = {
   variant: 'medium',
   color: 'text',

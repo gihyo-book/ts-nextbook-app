@@ -50,6 +50,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 const variants = {
+  // プライマリ
   primary: {
     color: 'white',
     backgroundColor: 'primary',
@@ -63,6 +64,7 @@ const variants = {
       },
     },
   },
+  // セカンダリ
   secondary: {
     color: 'white',
     backgroundColor: 'secondary',
@@ -76,6 +78,7 @@ const variants = {
       },
     },
   },
+  // デンジャー
   danger: {
     color: 'white',
     backgroundColor: 'danger',
@@ -93,6 +96,7 @@ const variants = {
 
 /**
  * ボタン
+ * バリアント、色、タイポグラフィ、レイアウト、スペース関連のPropsを追加
  */
 const Button = styled.button<ButtonProps>`
   ${({ variant, color, backgroundColor, pseudoClass, theme }) => {
@@ -176,6 +180,7 @@ const Button = styled.button<ButtonProps>`
   border: none;
 `
 
+// デフォルトProps
 Button.defaultProps = {
   variant: 'primary',
   paddingLeft: 2,

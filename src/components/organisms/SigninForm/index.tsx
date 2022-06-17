@@ -34,6 +34,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box marginBottom={1}>
+        {/* サインインユーザー名の入力 */}
         <Input
           {...register('username', { required: true })}
           name="username"
@@ -48,6 +49,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
         )}
       </Box>
       <Box marginBottom={2}>
+        {/* サインインパスワードの入力 */}
         <Input
           {...register('password', { required: true })}
           name="password"

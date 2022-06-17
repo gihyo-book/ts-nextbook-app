@@ -5,6 +5,7 @@ type BadgeProps = {
   backgroundColor: string
 }
 
+// バッジの円形
 const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   border-radius: 20px;
   height: 20px;
@@ -15,6 +16,7 @@ const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
 `
 
+// バッジ内のテキスト
 const BadgeText = styled.p`
   color: white;
   font-size: 11px;

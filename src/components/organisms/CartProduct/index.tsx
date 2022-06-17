@@ -6,6 +6,7 @@ import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 
+// 削除ボタンのテキスト
 const RemoveText = styled(Text)`
   cursor: pointer;
   &:hover {

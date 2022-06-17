@@ -46,6 +46,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             商品の写真
           </Text>
         </Box>
+        {/* 商品画像の入力 */}
         <Controller
           control={control}
           name="image"
@@ -76,6 +77,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <Text as="label" variant="medium">
             タイトル
           </Text>
+          {/* 商品タイトルの入力 */}
           <Input
             {...register('title', { required: true })}
             name="title"
@@ -93,6 +95,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <Text as="label" variant="medium">
             概要
           </Text>
+          {/* 商品概要の入力 */}
           <Controller
             control={control}
             name="description"
@@ -117,6 +120,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <Text as="label" variant="medium">
             カテゴリ
           </Text>
+          {/* カテゴリのドロップダウン */}
           <Controller
             control={control}
             name="category"
@@ -146,6 +150,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <Text as="label" variant="medium">
             商品の状態
           </Text>
+          {/* 商品の状態のドロップダウン */}
           <Controller
             control={control}
             name="condition"
@@ -174,6 +179,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <Text as="label" variant="medium">
             価格 (円)
           </Text>
+          {/* 価格の入力 */}
           <Input
             {...register('price', { required: true })}
             name="price"

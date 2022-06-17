@@ -47,13 +47,13 @@ export const AuthContextProvider: React.FC<
   )
   const isLoading = !data && !error
 
-  // 認証API
+  // サインイン
   const signinInternal = async (username: string, password: string) => {
     await signin(context, { username, password })
     await mutate()
   }
 
-  // ログアウトAPI
+  // サインアウト
   const signoutInternal = async () => {
     await signout(context)
     await mutate()

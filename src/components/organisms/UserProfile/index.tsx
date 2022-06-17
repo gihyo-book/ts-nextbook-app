@@ -26,6 +26,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
   return (
     <Flex>
       <Box minWidth={profileImageSize}>
+        {/* ユーザー画像 */}
         <ShapeImage
           shape="circle"
           quality="85"
@@ -42,6 +43,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           justifyContent="space-between"
         >
           <Box>
+            {/* ユーザー名 */}
             <Text
               as="p"
               fontWeight="bold"
@@ -51,9 +53,11 @@ const UserProfile: React.FC<UserProfileProps> = ({
             >
               {username}
             </Text>
+            {/* 商品出店数 */}
             <Text marginBottom={1} marginTop={0} as="p">
               {numberOfProducts}点出品済
             </Text>
+            {/* ユーザー概要 */}
             {variant === 'normal' && (
               <Text margin={0} as="p">
                 {description}

@@ -8,10 +8,10 @@ import SigninFormContainer from 'containers/SigninFormContainer'
 
 const SigninPage: NextPage = () => {
   const router = useRouter()
-  // 認証後のコールバック
+  // 認証後のイベントハンドラ
   const handleSignin = async (err?: Error) => {
     if (!err) {
-      // サインインに成功し、クエリが指定されていたらそのURLに移動。
+      // サインインに成功し、クエリが指定されている場合はそのURLに移動。
       // デフォルトはトップページに移動。
       const redurectTo = (router.query['redirect_to'] as string) ?? '/'
 
