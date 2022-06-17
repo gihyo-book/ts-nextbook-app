@@ -35,7 +35,9 @@ export const useAuthContext = (): AuthContextType =>
  * 認証コンテキストプロバイダー
  * @param param0 パラメータ
  */
-export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({
+export const AuthContextProvider: React.FC<
+  React.PropsWithChildren<AuthContextProviderProps>
+> = ({
   context,
   authUser,
   children,

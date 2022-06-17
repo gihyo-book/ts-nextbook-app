@@ -19,14 +19,16 @@ const ShoppingCartContext = React.createContext<ShoppingCartContextType>({
 export const useShoppingCartContext = (): ShoppingCartContextType =>
   useContext<ShoppingCartContextType>(ShoppingCartContext)
 
+interface ShoppingCartContextProviderProps {
+  children?: React.ReactNode
+}
+
 /**
  * ショッピングカートコンテキストプロバイダー
  */
-export const ShoppingCartContextProvider: React.FC = ({
-  children,
-}: {
-  children?: React.ReactNode
-}) => {
+export const ShoppingCartContextProvider: React.FC<
+  ShoppingCartContextProviderProps
+> = ({ children }: ShoppingCartContextProviderProps) => {
   const products: Product[] = []
   const [cartState, dispatch] = useReducer(shopReducer, products)
 

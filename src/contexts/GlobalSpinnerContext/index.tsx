@@ -18,14 +18,16 @@ export const useGlobalSpinnerActionsContext = (): React.Dispatch<
     GlobalSpinnerActionsContext,
   )
 
+interface GlobalSpinnerContextProviderProps {
+  children?: React.ReactNode
+}
+
 /**
  * グローバルスピナーコンテキストプロバイダー
  */
-const GlobalSpinnerContextProvider: React.FC = ({
-  children,
-}: {
-  children?: React.ReactNode
-}) => {
+const GlobalSpinnerContextProvider: React.FC<
+  GlobalSpinnerContextProviderProps
+> = ({ children }: GlobalSpinnerContextProviderProps) => {
   const [isGlobalSpinnerOn, setGlobalSpinner] = useState(false)
 
   return (

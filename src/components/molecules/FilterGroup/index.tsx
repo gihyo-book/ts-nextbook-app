@@ -33,7 +33,7 @@ const FilterGroup: React.FC<FilterGroupProps> = ({
   }, [value])
 
   const handleChange = useCallback(
-    (e) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.name
       const newSelected = e.target.checked
         ? [...selected, value]

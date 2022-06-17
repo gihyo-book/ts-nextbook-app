@@ -146,20 +146,20 @@ const Dropzone: React.FC<DropzoneProps> = (props: DropzoneProps) => {
   }
 
   // ドラッグ状態のマウスポインタが範囲内入っている時
-  const handleDragOver = useCallback((e) => {
+  const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
   }, [])
 
   // ドラッグ状態のマウスポインタが範囲外に消えた時にフォーカスを外す
-  const handleDragLeave = useCallback((e) => {
+  const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setIsFocused(false)
   }, [])
 
   // ドラッグ状態のマウスポインタが範囲内に来た時にフォーカスを当てる
-  const handleDragEnter = useCallback((e) => {
+  const handleDragEnter = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setIsFocused(true)
