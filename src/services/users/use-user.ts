@@ -12,6 +12,11 @@ export type UseUser = {
   isError: boolean
 }
 
+/**
+ * ユーザーAPI（個別取得）のカスタムフック
+ * @param context APIコンテキスト
+ * @returns ユーザーとAPI呼び出しの状態
+ */
 const useUser = (
   context: ApiContext,
   { id, initial }: UseUserProps,

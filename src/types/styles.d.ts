@@ -44,7 +44,7 @@ export type CSSPropertyAlignItems =
   | 'baseline'
   | 'normal'
   | 'stretch'
-  // コードの補完
+  // コードの自動補完
   | (string & {})
 
 export type CSSPropertyAlignContent =

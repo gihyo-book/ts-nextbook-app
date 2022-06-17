@@ -6,6 +6,12 @@ export type SigninParams = {
   password: string
 }
 
+/**
+ * 認証API（サインイン）
+ * @param context APIコンテキスト
+ * @param params パラメータ
+ * @returns ログインユーザー
+ */
 const signin = async (
   context: ApiContext,
   params: SigninParams,

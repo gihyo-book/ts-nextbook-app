@@ -18,6 +18,12 @@ export type UseSearch = {
   isError: boolean
 }
 
+/**
+ * プロダクトAPI（一覧取得）のカスタムフック
+ * @param context APIコンテキスト
+ * @param params 検索条件
+ * @returns 商品一覧とAPI呼び出しの状態
+ */
 const useSearch = (
   context: ApiContext,
   {

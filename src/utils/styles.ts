@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
 import { theme } from 'themes'
 import type { ResponsiveProp, Responsive } from 'types'
 
+// Themenの型
 export type AppTheme = typeof theme
 
 type SpaceThemeKeys = keyof typeof theme.space
@@ -10,6 +12,7 @@ type FontSizeThemeKeys = keyof typeof theme.fontSizes
 type LetterSpacingThemeKeys = keyof typeof theme.letterSpacings
 type LineHeightThemeKeys = keyof typeof theme.lineHeights
 
+// 各Themeのキーの型
 export type Space = SpaceThemeKeys | (string & {})
 export type Color = ColorThemeKeys | (string & {})
 export type FontSize = FontSizeThemeKeys | (string & {})
@@ -123,7 +126,6 @@ function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   return value
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
   return (
     prop &&
@@ -135,24 +137,15 @@ function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
   )
 }
 
-function isSpaceThemeKeys(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  prop: any,
-  theme: AppTheme,
-): prop is SpaceThemeKeys {
+function isSpaceThemeKeys(prop: any, theme: AppTheme): prop is SpaceThemeKeys {
   return Object.keys(theme.space).filter((key) => key == prop).length > 0
 }
 
-function isColorThemeKeys(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  prop: any,
-  theme: AppTheme,
-): prop is ColorThemeKeys {
+function isColorThemeKeys(prop: any, theme: AppTheme): prop is ColorThemeKeys {
   return Object.keys(theme.colors).filter((key) => key == prop).length > 0
 }
 
 function isFontSizeThemeKeys(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prop: any,
   theme: AppTheme,
 ): prop is FontSizeThemeKeys {
@@ -160,7 +153,6 @@ function isFontSizeThemeKeys(
 }
 
 function isLetterSpacingThemeKeys(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prop: any,
   theme: AppTheme,
 ): prop is LetterSpacingThemeKeys {
@@ -170,7 +162,6 @@ function isLetterSpacingThemeKeys(
 }
 
 function isLineHeightThemeKeys(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prop: any,
   theme: AppTheme,
 ): prop is LineHeightThemeKeys {
