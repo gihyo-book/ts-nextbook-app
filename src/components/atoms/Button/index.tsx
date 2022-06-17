@@ -180,7 +180,6 @@ const Button = styled.button<ButtonProps>`
   border: none;
 `
 
-// デフォルトProps
 Button.defaultProps = {
   variant: 'primary',
   paddingLeft: 2,

@@ -126,7 +126,6 @@ const Text = styled.span<TextProps>`
   ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
 `
 
-// デフォルトProps
 Text.defaultProps = {
   variant: 'medium',
   color: 'text',
