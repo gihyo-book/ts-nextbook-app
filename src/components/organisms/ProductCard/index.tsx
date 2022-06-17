@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       case 'detail':
         return { size: { base: '320px', md: '540px' }, imgSize: 540 }
       case 'listing':
-        return { size: { base: '160px', md: '320px' }, imgSize: 320 }
+        return { size: { base: '160px', md: '240px' }, imgSize: 240 }
       default:
         return { size: { base: '160px' }, imgSize: 160 }
     }
@@ -54,8 +54,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Box>
             <Text
               as="h2"
-              fontSize={{ base: 'mediumLarge', md: 'large' }}
-              letterSpacing={{ base: 3, md: 4 }}
+              fontSize={{ base: 'medium', md: 'mediumLarge' }}
+              letterSpacing={{ base: 2, md: 3 }}
               lineHeight={{ base: '32px', md: '48px' }}
               backgroundColor="white"
               margin={0}
@@ -70,9 +70,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
               as="span"
               fontWeight="bold"
               display="inline-block"
-              variant="medium"
               backgroundColor="white"
-              fontSize={{ base: 'medium', md: 'mediumLarge' }}
+              fontSize={{ base: 'small', md: 'medium' }}
+              lineHeight={{ base: '8px', md: '12px' }}
               letterSpacing={{ base: 2, md: 4 }}
               margin={0}
               padding={{ base: 1, md: 2 }}
@@ -86,8 +86,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {blurDataUrl && (
           <ScaleImage
             src={imageUrl}
-            width={imgSize ?? 320}
-            height={imgSize ?? 320}
+            width={imgSize ?? 240}
+            height={imgSize ?? 240}
             containerWidth={size}
             containerHeight={size}
             objectFit="cover"
@@ -98,8 +98,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {!blurDataUrl && (
           <ScaleImage
             src={imageUrl}
-            width={imgSize ?? 320}
-            height={imgSize ?? 320}
+            width={imgSize ?? 240}
+            height={imgSize ?? 240}
             containerWidth={size}
             containerHeight={size}
             objectFit="cover"
