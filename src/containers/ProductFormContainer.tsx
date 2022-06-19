@@ -15,9 +15,7 @@ interface ProductFormContainerProps {
 /**
  * 商品投稿フォームコンテナ
  */
-const ProductFormContainer: React.FC<ProductFormContainerProps> = ({
-  onSave,
-}: ProductFormContainerProps) => {
+const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
   const { authUser } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
   // 出品ボタンを押した時

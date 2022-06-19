@@ -7,9 +7,7 @@ interface ProductCardCarouselProps {
 /**
  * 商品カードカルーセル
  */
-const ProductCardCarousel: React.FC<ProductCardCarouselProps> = ({
-  children,
-}: ProductCardCarouselProps) => {
+const ProductCardCarousel = ({ children }: ProductCardCarouselProps) => {
   return (
     <Flex overflow={{ base: 'scroll', md: 'hidden' }} width="100%">
       {children}

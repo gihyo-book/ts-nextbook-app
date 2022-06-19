@@ -24,9 +24,7 @@ interface ProductFormProps {
 /**
  * 商品投稿フォーム
  */
-const ProductForm: React.FC<ProductFormProps> = ({
-  onProductSave,
-}: ProductFormProps) => {
+const ProductForm = ({ onProductSave }: ProductFormProps) => {
   // React Hook Formの使用
   const {
     register,

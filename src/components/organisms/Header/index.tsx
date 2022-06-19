@@ -46,7 +46,7 @@ const Anchor = styled(Text)`
 /**
  * ヘッダー
  */
-const Header: React.FC = () => {
+const Header = () => {
   const { cart } = useShoppingCartContext()
   const { authUser, isLoading } = useAuthContext()
 

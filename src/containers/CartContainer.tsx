@@ -11,7 +11,7 @@ const context: ApiContext = {
 /**
  * カートコンテナ
  */
-const CartContainer: React.FC = () => {
+const CartContainer = () => {
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
   const { cart, removeProductFromCart } = useShoppingCartContext()
   // 削除ボタンを押した時、商品を削除

@@ -10,7 +10,7 @@ interface AddToCartButtonContainerProps {
 /**
  * カート追加ボタンコンテナ
  */
-const AddToCartButtonContainer: React.FC<AddToCartButtonContainerProps> = ({
+const AddToCartButtonContainer = ({
   product,
   onAddToCartButtonClick,
 }: AddToCartButtonContainerProps) => {

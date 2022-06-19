@@ -57,7 +57,7 @@ export interface IconButtonProps {
 function withIconStyle(
   Icon: typeof SvgIcon,
 ): React.ComponentType<IconButtonProps> {
-  const IconWithStyle: React.FC<IconButtonProps> = (props: IconButtonProps) => {
+  const IconWithStyle = (props: IconButtonProps) => {
     const { onClick, className, size = 24, ...rest } = props
     const cursor = onClick ? 'pointer' : ''
 

@@ -32,7 +32,7 @@ interface InputImagesProps {
 /**
  * インプットイメージ
  */
-const InputImages: React.FC<InputImagesProps> = (props: InputImagesProps) => {
+const InputImages = (props: InputImagesProps) => {
   const {
     images,
     maximumNumber,

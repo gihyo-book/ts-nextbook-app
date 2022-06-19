@@ -9,11 +9,7 @@ interface RectLoaderProps extends IContentLoaderProps {
 /**
  * レクトローダー
  */
-const RectLoader: React.FC<RectLoaderProps> = ({
-  width,
-  height,
-  ...rest
-}: RectLoaderProps) => (
+const RectLoader = ({ width, height, ...rest }: RectLoaderProps) => (
   <ContentLoader
     speed={2}
     width={width}

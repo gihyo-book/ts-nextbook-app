@@ -16,9 +16,7 @@ interface SigninFormProps {
 /**
  * サインインフォーム
  */
-const SigninForm: React.FC<SigninFormProps> = ({
-  onSignin,
-}: SigninFormProps) => {
+const SigninForm = ({ onSignin }: SigninFormProps) => {
   // React Hook Formの使用
   const {
     register,

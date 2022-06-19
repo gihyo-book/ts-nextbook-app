@@ -14,9 +14,7 @@ interface BreadcrumbProps {
 /**
  * パンくずリスト
  */
-const Breadcrumb: React.FC<BreadcrumbProps> = ({
-  children,
-}: BreadcrumbProps) => {
+const Breadcrumb = ({ children }: BreadcrumbProps) => {
   return <BreadcrumbRoot as="ol">{children}</BreadcrumbRoot>
 }
 

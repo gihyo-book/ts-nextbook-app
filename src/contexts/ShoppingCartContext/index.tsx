@@ -26,9 +26,9 @@ interface ShoppingCartContextProviderProps {
 /**
  * ショッピングカートコンテキストプロバイダー
  */
-export const ShoppingCartContextProvider: React.FC<
-  ShoppingCartContextProviderProps
-> = ({ children }: ShoppingCartContextProviderProps) => {
+export const ShoppingCartContextProvider = ({
+  children,
+}: ShoppingCartContextProviderProps) => {
   const products: Product[] = []
   const [cartState, dispatch] = useReducer(shopReducer, products)
 

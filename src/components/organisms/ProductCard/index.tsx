@@ -32,7 +32,7 @@ const ProductCardInfo = styled.div`
 /**
  * 商品カード
  */
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCard = ({
   title,
   price,
   imageUrl,

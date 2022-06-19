@@ -96,7 +96,7 @@ const DropzoneInputFile = styled.input`
  * ドロップゾーン
  * ファイルの入力を受け付ける
  */
-const Dropzone: React.FC<DropzoneProps> = (props: DropzoneProps) => {
+const Dropzone = (props: DropzoneProps) => {
   const {
     onDrop,
     onChange,

@@ -29,7 +29,7 @@ interface ImagePreviewProps {
 /**
  * イメージプレビュー
  */
-const ImagePreview: React.FC<ImagePreviewProps> = ({
+const ImagePreview = ({
   src,
   alt,
   height,

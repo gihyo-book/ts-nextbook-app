@@ -18,7 +18,7 @@ interface ProductCardListContainerProps {
 /**
  * 商品カードリストコンテナ
  */
-const ProductCardListContainer: React.FC<ProductCardListContainerProps> = ({
+const ProductCardListContainer = ({
   category,
   conditions,
 }: ProductCardListContainerProps) => {

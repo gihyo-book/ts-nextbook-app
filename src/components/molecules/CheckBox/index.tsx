@@ -25,7 +25,7 @@ const Label = styled.label`
 /**
  * チェックボックス
  */
-const CheckBox: React.FC<CheckBoxProps> = (props: CheckBoxProps) => {
+const CheckBox = (props: CheckBoxProps) => {
   const { id, label, onChange, checked, ...rest } = props
   const [isChecked, setIsChecked] = useState(checked)
   const ref = useRef<HTMLInputElement>(null)

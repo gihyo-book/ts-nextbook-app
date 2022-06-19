@@ -9,8 +9,8 @@ export default {
   title: 'organisms/GlobalSpinner',
 } as ComponentMeta<typeof GlobalSpinner>
 
-export const WithContextProvider: React.FC = () => {
-  const ChildComponent: React.FC = () => {
+export const WithContextProvider = () => {
+  const ChildComponent = () => {
     const setGlobalSpinner = useGlobalSpinnerActionsContext()
     const handleClick = () => {
       setGlobalSpinner(true)

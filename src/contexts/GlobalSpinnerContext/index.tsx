@@ -25,9 +25,9 @@ interface GlobalSpinnerContextProviderProps {
 /**
  * グローバルスピナーコンテキストプロバイダー
  */
-const GlobalSpinnerContextProvider: React.FC<
-  GlobalSpinnerContextProviderProps
-> = ({ children }: GlobalSpinnerContextProviderProps) => {
+const GlobalSpinnerContextProvider = ({
+  children,
+}: GlobalSpinnerContextProviderProps) => {
   const [isGlobalSpinnerOn, setGlobalSpinner] = useState(false)
 
   return (

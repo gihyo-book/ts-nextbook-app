@@ -9,9 +9,7 @@ interface SigninFormContainerProps {
 /**
  * サインインフォームコンテナ
  */
-const SigninFormContainer: React.FC<SigninFormContainerProps> = ({
-  onSignin,
-}: SigninFormContainerProps) => {
+const SigninFormContainer = ({ onSignin }: SigninFormContainerProps) => {
   const { signin } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
   // サインインボタンを押された時のイベントハンドラ

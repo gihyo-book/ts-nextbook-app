@@ -3,4 +3,4 @@ import Footer from './'
 
 export default { title: 'Organisms/Footer' } as ComponentMeta<typeof Footer>
 
-export const Standard: React.FC = () => <Footer />
+export const Standard = () => <Footer />

@@ -19,7 +19,7 @@ type FilterGroupProps = {
 /**
  * フィルターグループ
  */
-const FilterGroup: React.FC<FilterGroupProps> = ({
+const FilterGroup = ({
   title,
   items,
   value = [],

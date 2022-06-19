@@ -14,7 +14,7 @@ interface UserProfileProps {
 /**
  * ユーザープロファイル
  */
-const UserProfile: React.FC<UserProfileProps> = ({
+const UserProfile = ({
   variant = 'normal',
   username,
   profileImageUrl,

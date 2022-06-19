@@ -15,7 +15,7 @@ const Anchor = styled(Text)`
 /**
  * フッター
  */
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer>
       <Flex flexDirection={{ base: 'column', md: 'row' }}>

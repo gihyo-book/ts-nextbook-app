@@ -14,10 +14,7 @@ interface UserProfileContainerProps {
 /**
  * ユーザープロフィールコンテナ
  */
-const UserProfileContainer: React.FC<UserProfileContainerProps> = ({
-  userId,
-  user,
-}: UserProfileContainerProps) => {
+const UserProfileContainer = ({ userId, user }: UserProfileContainerProps) => {
   // ユーザー情報
   const { user: u } = useUser(context, { id: userId, initial: user })
 

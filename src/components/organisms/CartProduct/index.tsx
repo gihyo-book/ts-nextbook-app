@@ -26,7 +26,7 @@ type CartProductProps = {
 /**
  * カート商品
  */
-const CartProduct: React.FC<CartProductProps> = ({
+const CartProduct = ({
   id,
   imageUrl,
   title,

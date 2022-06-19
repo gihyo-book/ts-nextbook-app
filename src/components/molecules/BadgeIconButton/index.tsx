@@ -25,7 +25,7 @@ type BadgeIconButton = {
 /**
  * バッジ付きアイコンボタン
  */
-const BadgeIconButton: React.FC<BadgeIconButton> = ({
+const BadgeIconButton = ({
   icon,
   size = '24px',
   badgeContent,

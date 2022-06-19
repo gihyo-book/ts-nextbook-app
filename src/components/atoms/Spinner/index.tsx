@@ -49,7 +49,7 @@ type SpinnerProps = {
 /**
  * スピナー
  */
-const Spinner: React.FC<SpinnerProps> = (props: SpinnerProps) => {
+const Spinner = (props: SpinnerProps) => {
   const { size = 50, strokeWidth = 4, isAutoCentering = false } = props
 
   return (

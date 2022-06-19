@@ -8,9 +8,7 @@ interface ProductCardListProps {
 /**
  * 商品カードリスト
  */
-const ProductCardList: React.FC<
-  React.PropsWithChildren<ProductCardListProps>
-> = ({
+const ProductCardList = ({
   numberPerRow = 4,
   numberPerRowForMobile = 2,
   children,

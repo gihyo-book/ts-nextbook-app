@@ -26,10 +26,7 @@ const BadgeText = styled.p`
 /**
  * バッジ
  */
-const Badge: React.FC<BadgeProps> = ({
-  content,
-  backgroundColor,
-}: BadgeProps) => {
+const Badge = ({ content, backgroundColor }: BadgeProps) => {
   return (
     <BadgeWrapper backgroundColor={backgroundColor}>
       <BadgeText>{content}</BadgeText>

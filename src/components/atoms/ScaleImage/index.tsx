@@ -29,7 +29,7 @@ const ScaleEffectImage = styled(Image)`
 /**
  * スケールイメージ
  */
-const ScaleImage: React.FC<ScaleImageProps> = ({
+const ScaleImage = ({
   containerWidth,
   containerHeight,
   ...props
