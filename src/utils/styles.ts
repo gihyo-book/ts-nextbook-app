@@ -95,28 +95,37 @@ function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   const lineSpacingKeys = new Set(['letter-spacing'])
   const lineHeightKeys = new Set(['line-height'])
 
-  if (theme && spaceKeys.has(propKey) && isSpaceThemeKeys(value, theme)) {
+  if (
+    theme &&
+    theme.space &&
+    spaceKeys.has(propKey) &&
+    isSpaceThemeKeys(value, theme)
+  ) {
     return theme.space[value]
   } else if (
     theme &&
+    theme.colors &&
     colorKeys.has(propKey) &&
     isColorThemeKeys(value, theme)
   ) {
     return theme.colors[value]
   } else if (
     theme &&
+    theme.fontSizes &&
     fontSizeKeys.has(propKey) &&
     isFontSizeThemeKeys(value, theme)
   ) {
     return theme.fontSizes[value]
   } else if (
     theme &&
+    theme.letterSpacings &&
     lineSpacingKeys.has(propKey) &&
     isLetterSpacingThemeKeys(value, theme)
   ) {
     return theme.letterSpacings[value]
   } else if (
     theme &&
+    theme.lineHeights &&
     lineHeightKeys.has(propKey) &&
     isLineHeightThemeKeys(value, theme)
   ) {
