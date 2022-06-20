@@ -3,7 +3,7 @@
 import { theme } from 'themes'
 import type { ResponsiveProp, Responsive } from 'types'
 
-// Themenの型
+// Themeの型
 export type AppTheme = typeof theme
 
 type SpaceThemeKeys = keyof typeof theme.space
@@ -19,11 +19,20 @@ export type FontSize = FontSizeThemeKeys | (string & {})
 export type LetterSpacing = LetterSpacingThemeKeys | (string & {})
 export type LineHeight = LineHeightThemeKeys | (string & {})
 
+// ブレイクポイント
+const BREAKPOINTS: { [key: string]: string } = {
+  sm: '640px', // 640px以上
+  md: '768px', // 768px以上
+  lg: '1024px', // 1024px以上
+  xl: '1280px', // 1280px以上
+}
+
 /**
- * Responsive型をCSSプロパティと値に変換
+ * Responsive型をCSSプロパティとその値に変換
  * @param propKey CSSプロパティ
  * @param prop Responsive型
- * @returns CSSプロパティと値 (ex. background-color: white;)
+ * @param theme AppTheme
+ * @returns CSSプロパティとその値 (ex. background-color: white;)
  */
 export function toPropValue<T>(
   propKey: string,
@@ -33,12 +42,6 @@ export function toPropValue<T>(
   if (prop === undefined) return undefined
 
   if (isResponsivePropType(prop)) {
-    const breakpoints: { [key: string]: string } = {
-      sm: '40em',
-      md: '52em',
-      lg: '64em',
-      xl: '80em',
-    }
     const result = []
     for (const responsiveKey in prop) {
       if (responsiveKey === 'base') {
@@ -57,7 +60,7 @@ export function toPropValue<T>(
         responsiveKey === 'xl'
       ) {
         // メディアクエリでのスタイル
-        const breakpoint = breakpoints[responsiveKey]
+        const breakpoint = BREAKPOINTS[responsiveKey]
         const style = `${propKey}: ${toThemeValueIfNeeded(
           propKey,
           prop[responsiveKey],
@@ -73,9 +76,11 @@ export function toPropValue<T>(
 }
 
 /**
- * 必要であればThemeの値に変換
- * @param value CSSプロパティ
- * @returns Themeの値 or 値
+ * Themeに指定されたCSSプロパティの値に変換
+ * @param propKey CSSプロパティ
+ * @param value CSSプロパティの値
+ * @param theme AppTheme
+ * @returns CSSプロパティの値
  */
 function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   const spaceKeys = new Set([

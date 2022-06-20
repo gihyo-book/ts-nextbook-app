@@ -57,7 +57,7 @@ const ProductCard = ({
           <Box>
             <Text
               as="h2"
-              fontSize={{ base: 'medium', md: 'mediumLarge' }}
+              fontSize={{ base: 'small', md: 'mediumLarge' }}
               letterSpacing={{ base: 2, md: 3 }}
               lineHeight={{ base: '32px', md: '48px' }}
               backgroundColor="white"
@@ -74,7 +74,7 @@ const ProductCard = ({
               fontWeight="bold"
               display="inline-block"
               backgroundColor="white"
-              fontSize={{ base: 'small', md: 'medium' }}
+              fontSize={{ base: 'extraSmall', md: 'medium' }}
               lineHeight={{ base: '8px', md: '12px' }}
               letterSpacing={{ base: 2, md: 4 }}
               margin={0}
