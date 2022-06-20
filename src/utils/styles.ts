@@ -75,6 +75,23 @@ export function toPropValue<T>(
   return `${propKey}: ${toThemeValueIfNeeded(propKey, prop, theme)};`
 }
 
+const SPACE_KEYS = new Set([
+  'margin',
+  'margin-top',
+  'margin-left',
+  'margin-bottom',
+  'margin-right',
+  'padding',
+  'padding-top',
+  'padding-left',
+  'padding-bottom',
+  'padding-right',
+])
+const COLOR_KEYS = new Set(['color', 'background-color'])
+const FONT_SIZE_KEYS = new Set(['font-size'])
+const LINE_SPACING_KEYS = new Set(['letter-spacing'])
+const LINE_HEIGHT_KEYS = new Set(['line-height'])
+
 /**
  * Themeに指定されたCSSプロパティの値に変換
  * @param propKey CSSプロパティ
@@ -83,55 +100,38 @@ export function toPropValue<T>(
  * @returns CSSプロパティの値
  */
 function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
-  const spaceKeys = new Set([
-    'margin',
-    'margin-top',
-    'margin-left',
-    'margin-bottom',
-    'margin-right',
-    'padding',
-    'padding-top',
-    'padding-left',
-    'padding-bottom',
-    'padding-right',
-  ])
-  const colorKeys = new Set(['color', 'background-color'])
-  const fontSizeKeys = new Set(['font-size'])
-  const lineSpacingKeys = new Set(['letter-spacing'])
-  const lineHeightKeys = new Set(['line-height'])
-
   if (
     theme &&
     theme.space &&
-    spaceKeys.has(propKey) &&
+    SPACE_KEYS.has(propKey) &&
     isSpaceThemeKeys(value, theme)
   ) {
     return theme.space[value]
   } else if (
     theme &&
     theme.colors &&
-    colorKeys.has(propKey) &&
+    COLOR_KEYS.has(propKey) &&
     isColorThemeKeys(value, theme)
   ) {
     return theme.colors[value]
   } else if (
     theme &&
     theme.fontSizes &&
-    fontSizeKeys.has(propKey) &&
+    FONT_SIZE_KEYS.has(propKey) &&
     isFontSizeThemeKeys(value, theme)
   ) {
     return theme.fontSizes[value]
   } else if (
     theme &&
     theme.letterSpacings &&
-    lineSpacingKeys.has(propKey) &&
+    LINE_SPACING_KEYS.has(propKey) &&
     isLetterSpacingThemeKeys(value, theme)
   ) {
     return theme.letterSpacings[value]
   } else if (
     theme &&
     theme.lineHeights &&
-    lineHeightKeys.has(propKey) &&
+    LINE_HEIGHT_KEYS.has(propKey) &&
     isLineHeightThemeKeys(value, theme)
   ) {
     return theme.lineHeights[value]
