@@ -11,6 +11,12 @@ export type GetAllProductsParams = {
   limit?: number
 }
 
+/**
+ * プロダクトAPI（一覧取得）
+ * @param context APIコンテキスト
+ * @param params 検索条件
+ * @returns 商品一覧
+ */
 // eslint-disable-next-line complexity
 const getAllProducts = async (
   context: ApiContext,

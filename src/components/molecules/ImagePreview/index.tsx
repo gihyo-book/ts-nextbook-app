@@ -21,15 +21,15 @@ const CloseBox = styled(Flex)`
 interface ImagePreviewProps {
   src?: string
   alt?: string
-  height?: number | string
-  width?: number | string
+  height?: string
+  width?: string
   onRemove?: (src: string) => void
 }
 
 /**
  * イメージプレビュー
  */
-const ImagePreview: React.FC<ImagePreviewProps> = ({
+const ImagePreview = ({
   src,
   alt,
   height,

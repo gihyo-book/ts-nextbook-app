@@ -16,9 +16,7 @@ interface SigninFormProps {
 /**
  * サインインフォーム
  */
-const SigninForm: React.FC<SigninFormProps> = ({
-  onSignin,
-}: SigninFormProps) => {
+const SigninForm = ({ onSignin }: SigninFormProps) => {
   // React Hook Formの使用
   const {
     register,
@@ -33,7 +31,8 @@ const SigninForm: React.FC<SigninFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Box mb={1}>
+      <Box marginBottom={1}>
+        {/* サインインユーザー名の入力 */}
         <Input
           {...register('username', { required: true })}
           name="username"
@@ -42,12 +41,13 @@ const SigninForm: React.FC<SigninFormProps> = ({
           hasError={!!errors.username}
         />
         {errors.username && (
-          <Text color="danger" variant="small" pl={1}>
+          <Text color="danger" variant="small" paddingLeft={1}>
             ユーザ名は必須です
           </Text>
         )}
       </Box>
-      <Box mb={2}>
+      <Box marginBottom={2}>
+        {/* サインインパスワードの入力 */}
         <Input
           {...register('password', { required: true })}
           name="password"
@@ -56,7 +56,7 @@ const SigninForm: React.FC<SigninFormProps> = ({
           hasError={!!errors.password}
         />
         {errors.password && (
-          <Text color="danger" variant="small" pl={1}>
+          <Text color="danger" variant="small" paddingLeft={1}>
             パスワードは必須です
           </Text>
         )}

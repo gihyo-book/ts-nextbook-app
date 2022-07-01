@@ -6,7 +6,7 @@ export default { title: 'Molecules/Breadcrumb' } as ComponentMeta<
   typeof Breadcrumb
 >
 
-export const Standard: React.FC = () => (
+export const Standard = () => (
   <Breadcrumb>
     <BreadcrumbItem>
       <a href="#">Top</a>

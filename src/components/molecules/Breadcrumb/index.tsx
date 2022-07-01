@@ -7,10 +7,14 @@ const BreadcrumbRoot = styled(Flex)`
   margin: 0px;
 `
 
+interface BreadcrumbProps {
+  children?: React.ReactNode
+}
+
 /**
  * パンくずリスト
  */
-const Breadcrumb: React.FC = ({ children }: { children?: React.ReactNode }) => {
+const Breadcrumb = ({ children }: BreadcrumbProps) => {
   return <BreadcrumbRoot as="ol">{children}</BreadcrumbRoot>
 }
 

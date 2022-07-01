@@ -9,9 +9,9 @@ import {
 
 export default { title: 'organisms/Header' } as ComponentMeta<typeof Header>
 
-export const NoLogin: React.FC = () => <Header />
+export const NoLogin = () => <Header />
 
-export const Login: React.FC = () => {
+export const Login = () => {
   const authUser = {
     id: 1,
     username: 'dummy',
@@ -21,7 +21,7 @@ export const Login: React.FC = () => {
     description: '',
   }
 
-  const ChildComponent: React.FC = () => {
+  const ChildComponent = () => {
     const { addProductToCart } = useShoppingCartContext()
 
     useEffect(() => {

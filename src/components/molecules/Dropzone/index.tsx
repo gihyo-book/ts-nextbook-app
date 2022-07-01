@@ -26,6 +26,7 @@ const getFilesFromEvent = (e: React.DragEvent | React.ChangeEvent): File[] => {
   return []
 }
 
+// ファイルのContent-Type
 type FileType =
   | 'image/png'
   | 'image/jpeg'
@@ -54,6 +55,7 @@ type DropzoneRootProps = {
   height: string | number
 }
 
+// ドロップゾーンの外側の外観
 const DropzoneRoot = styled.div<DropzoneRootProps>`
   border: 1px dashed
     ${({ theme, isFocused, hasError }) => {
@@ -72,6 +74,7 @@ const DropzoneRoot = styled.div<DropzoneRootProps>`
     typeof height === 'number' ? `${height}px` : height};
 `
 
+// ドロップゾーンの中身
 const DropzoneContent = styled.div<{
   width: string | number
   height: string | number
@@ -93,7 +96,7 @@ const DropzoneInputFile = styled.input`
  * ドロップゾーン
  * ファイルの入力を受け付ける
  */
-const Dropzone: React.FC<DropzoneProps> = (props: DropzoneProps) => {
+const Dropzone = (props: DropzoneProps) => {
   const {
     onDrop,
     onChange,
@@ -146,20 +149,20 @@ const Dropzone: React.FC<DropzoneProps> = (props: DropzoneProps) => {
   }
 
   // ドラッグ状態のマウスポインタが範囲内入っている時
-  const handleDragOver = useCallback((e) => {
+  const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
   }, [])
 
   // ドラッグ状態のマウスポインタが範囲外に消えた時にフォーカスを外す
-  const handleDragLeave = useCallback((e) => {
+  const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setIsFocused(false)
   }, [])
 
   // ドラッグ状態のマウスポインタが範囲内に来た時にフォーカスを当てる
-  const handleDragEnter = useCallback((e) => {
+  const handleDragEnter = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setIsFocused(true)

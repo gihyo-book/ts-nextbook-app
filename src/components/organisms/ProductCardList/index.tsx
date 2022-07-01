@@ -8,7 +8,7 @@ interface ProductCardListProps {
 /**
  * 商品カードリスト
  */
-const ProductCardList: React.FC<ProductCardListProps> = ({
+const ProductCardList = ({
   numberPerRow = 4,
   numberPerRowForMobile = 2,
   children,
@@ -17,7 +17,7 @@ const ProductCardList: React.FC<ProductCardListProps> = ({
     <Grid
       gridGap="16px"
       gridTemplateColumns={{
-        _: `repeat(${numberPerRowForMobile}, 1fr)`,
+        base: `repeat(${numberPerRowForMobile}, 1fr)`,
         md: `repeat(${numberPerRow}, 1fr)`,
       }}
     >

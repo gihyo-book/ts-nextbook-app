@@ -54,8 +54,19 @@ const SearchPage: NextPage = () => {
 
   return (
     <Layout>
-      <Box px={{ _: 2, md: 3 }} py={2}>
-        <Box mb={1}>
+      <Box
+        paddingLeft={{
+          base: 2,
+          md: 3,
+        }}
+        paddingRight={{
+          base: 2,
+          md: 3,
+        }}
+        paddingTop={2}
+        paddingBottom={2}
+      >
+        <Box marginBottom={1}>
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
@@ -84,8 +95,8 @@ const SearchPage: NextPage = () => {
           </Breadcrumb>
         </Box>
         <Flex>
-          <Flex flexDirection={{ _: 'column', md: 'row' }}>
-            <Box as="aside" minWidth="200px" mb={{ _: 2, md: 0 }}>
+          <Flex flexDirection={{ base: 'column', md: 'row' }}>
+            <Box as="aside" minWidth="200px" marginBottom={{ base: 2, md: 0 }}>
               {/* 商品の状態のフィルタ */}
               <FilterGroup
                 title="商品の状態"
@@ -96,7 +107,7 @@ const SearchPage: NextPage = () => {
                 value={conditions}
                 onChange={handleChange}
               />
-              <Box pt={1}>
+              <Box paddingTop={1}>
                 <Text as="h2" fontWeight="bold" variant="mediumLarge">
                   カテゴリ
                 </Text>
@@ -108,7 +119,7 @@ const SearchPage: NextPage = () => {
                 {/* カテゴリのリンク */}
                 {Object.keys(categoryNameDict).map(
                   (category: string, i: number) => (
-                    <Box key={i} mt={1}>
+                    <Box key={i} marginTop={1}>
                       <Link href={`/search/${category}`} passHref>
                         <Anchor as="a">
                           {categoryNameDict[category as Category]}
@@ -122,7 +133,7 @@ const SearchPage: NextPage = () => {
             <Box>
               <Text
                 as="h2"
-                display={{ _: 'block', md: 'none' }}
+                display={{ base: 'block', md: 'none' }}
                 fontWeight="bold"
                 variant="mediumLarge"
               >

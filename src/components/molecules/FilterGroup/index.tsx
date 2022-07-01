@@ -19,7 +19,7 @@ type FilterGroupProps = {
 /**
  * フィルターグループ
  */
-const FilterGroup: React.FC<FilterGroupProps> = ({
+const FilterGroup = ({
   title,
   items,
   value = [],
@@ -33,7 +33,7 @@ const FilterGroup: React.FC<FilterGroupProps> = ({
   }, [value])
 
   const handleChange = useCallback(
-    (e) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.name
       const newSelected = e.target.checked
         ? [...selected, value]
@@ -50,9 +50,9 @@ const FilterGroup: React.FC<FilterGroupProps> = ({
       <Text fontWeight="bold" variant="mediumLarge">
         {title}
       </Text>
-      <Box mt={2}>
+      <Box marginTop={2}>
         {items.map(({ label, name }, i) => (
-          <Box key={i} mt={i === 0 ? '0px' : '4px'}>
+          <Box key={i} marginTop={i === 0 ? 0 : '4px'}>
             <CheckBox
               name={name}
               label={label}

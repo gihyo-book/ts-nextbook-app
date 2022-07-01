@@ -81,14 +81,12 @@ interface DropdownItemProps {
   item: DropdownItem
 }
 
-const DropdownItem: React.FC<DropdownItemProps> = (
-  props: DropdownItemProps,
-) => {
+const DropdownItem = (props: DropdownItemProps) => {
   const { item } = props
 
   return (
     <Flex alignItems="center">
-      <Text m={0} variant="small">
+      <Text margin={0} variant="small">
         {item.label ?? item.value}
       </Text>
     </Flex>
@@ -112,7 +110,7 @@ interface DropdownProps {
 /**
  * ドロップダウン
  */
-const Dropdown: React.FC<DropdownProps> = (props: DropdownProps) => {
+const Dropdown = (props: DropdownProps) => {
   const { onChange, name, value, options, hasError } = props
   const initialItem = options.find((i) => i.value === value)
   const [isOpen, setIsOpenValue] = useState(false)

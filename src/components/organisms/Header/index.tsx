@@ -16,22 +16,26 @@ import BadgeIconButton from 'components/molecules/BadgeIconButton'
 import { useAuthContext } from 'contexts/AuthContext'
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 
+// ヘッダーのルート
 const HeaderRoot = styled.header`
   height: 88px;
-  padding: ${({ theme }) => theme.space.medium} 0px;
+  padding: ${({ theme }) => theme.space[2]} 0px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `
 
+// ナビゲーション
 const Nav = styled(Flex)`
   & > span:not(:first-child) {
-    margin-left: ${({ theme }) => theme.space.medium};
+    margin-left: ${({ theme }) => theme.space[2]};
   }
 `
 
+// ナビゲーションのリンク
 const NavLink = styled.span`
   display: inline;
 `
 
+// アンカー
 const Anchor = styled(Text)`
   cursor: pointer;
   &:hover {
@@ -42,13 +46,13 @@ const Anchor = styled(Text)`
 /**
  * ヘッダー
  */
-const Header: React.FC = () => {
+const Header = () => {
   const { cart } = useShoppingCartContext()
   const { authUser, isLoading } = useAuthContext()
 
   return (
     <HeaderRoot>
-      <Flex px={3} justifyContent="space-between">
+      <Flex paddingLeft={3} paddingRight={3} justifyContent="space-between">
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Link href="/" passHref>
@@ -58,28 +62,28 @@ const Header: React.FC = () => {
             </Link>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search" passHref>
                 <Anchor as="a">すべて</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/clothes" passHref>
                 <Anchor as="a">トップス</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/book" passHref>
                 <Anchor as="a">本</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Box display={{ _: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/shoes" passHref>
                 <Anchor as="a">シューズ</Anchor>
               </Link>
@@ -88,7 +92,7 @@ const Header: React.FC = () => {
         </Nav>
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
-            <Box display={{ _: 'block', md: 'none' }}>
+            <Box display={{ base: 'block', md: 'none' }}>
               <Link href="/search" passHref>
                 <Anchor as="a">
                   <SearchIcon />
@@ -110,6 +114,7 @@ const Header: React.FC = () => {
           </NavLink>
           <NavLink>
             {(() => {
+              // 認証していたらアイコンを表示
               if (authUser) {
                 return (
                   <Link href={`/users/${authUser.id}`} passHref>
@@ -125,8 +130,10 @@ const Header: React.FC = () => {
                   </Link>
                 )
               } else if (isLoading) {
+                // ロード中はスピナーを表示
                 return <Spinner size={20} strokeWidth={2} />
               } else {
+                // サインインしてない場合はアイコンを表示
                 return (
                   <Link href="/signin" passHref>
                     <Anchor as="a">

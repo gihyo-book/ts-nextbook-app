@@ -11,14 +11,17 @@ interface ProductCardProps {
   variant?: 'listing' | 'small' | 'detail'
 }
 
+// 商品カードのコンテナ
 const ProductCardContainer = styled.div`
   position: relative;
 `
 
-const ProductCardImage = styled.div`
+// 商品カード画像のコンテナ
+const ProductCardImageContainer = styled.div`
   z-index: 99;
 `
 
+// 商品カードの情報
 const ProductCardInfo = styled.div`
   position: absolute;
   z-index: 100;
@@ -29,7 +32,7 @@ const ProductCardInfo = styled.div`
 /**
  * 商品カード
  */
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCard = ({
   title,
   price,
   imageUrl,
@@ -39,11 +42,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const { size, imgSize } = (() => {
     switch (variant) {
       case 'detail':
-        return { size: { _: '320px', md: '540px' }, imgSize: 540 }
+        return { size: { base: '320px', md: '540px' }, imgSize: 540 }
       case 'listing':
-        return { size: { _: '160px', md: '320px' }, imgSize: 320 }
+        return { size: { base: '160px', md: '240px' }, imgSize: 240 }
       default:
-        return { size: { _: '160px' }, imgSize: 160 }
+        return { size: { base: '160px' }, imgSize: 160 }
     }
   })()
 
@@ -54,13 +57,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Box>
             <Text
               as="h2"
-              fontSize={{ _: 3, md: 4 }}
-              letterSpacing={{ _: 3, md: 4 }}
-              lineHeight={{ _: '32px', md: '48px' }}
+              fontSize={{ base: 'small', md: 'mediumLarge' }}
+              letterSpacing={{ base: 2, md: 3 }}
+              lineHeight={{ base: '32px', md: '48px' }}
               backgroundColor="white"
-              m={0}
-              px={2}
-              py={0}
+              margin={0}
+              paddingRight={2}
+              paddingLeft={2}
+              paddingTop={0}
+              paddingBottom={0}
             >
               {title}
             </Text>
@@ -68,24 +73,24 @@ const ProductCard: React.FC<ProductCardProps> = ({
               as="span"
               fontWeight="bold"
               display="inline-block"
-              variant="medium"
               backgroundColor="white"
-              fontSize={{ _: 2, md: 3 }}
-              letterSpacing={{ _: 2, md: 3 }}
-              m={0}
-              p={{ _: 1, md: 2 }}
+              fontSize={{ base: 'extraSmall', md: 'medium' }}
+              lineHeight={{ base: '8px', md: '12px' }}
+              letterSpacing={{ base: 2, md: 4 }}
+              margin={0}
+              padding={{ base: 1, md: 2 }}
             >
               {price}円
             </Text>
           </Box>
         </ProductCardInfo>
       )}
-      <ProductCardImage>
+      <ProductCardImageContainer>
         {blurDataUrl && (
           <ScaleImage
             src={imageUrl}
-            width={imgSize ?? 320}
-            height={imgSize ?? 320}
+            width={imgSize ?? 240}
+            height={imgSize ?? 240}
             containerWidth={size}
             containerHeight={size}
             objectFit="cover"
@@ -96,17 +101,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {!blurDataUrl && (
           <ScaleImage
             src={imageUrl}
-            width={imgSize ?? 320}
-            height={imgSize ?? 320}
+            width={imgSize ?? 240}
+            height={imgSize ?? 240}
             containerWidth={size}
             containerHeight={size}
             objectFit="cover"
           />
         )}
-      </ProductCardImage>
+      </ProductCardImageContainer>
       {variant === 'small' && (
-        <Box mt={1}>
-          <Text as="h2" variant="medium" m={0} p={0}>
+        <Box marginTop={1}>
+          <Text as="h2" variant="medium" margin={0} padding={0}>
             {title}
           </Text>
           <Text as="span" variant="medium">

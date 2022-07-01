@@ -24,9 +24,7 @@ interface ProductFormProps {
 /**
  * 商品投稿フォーム
  */
-const ProductForm: React.FC<ProductFormProps> = ({
-  onProductSave,
-}: ProductFormProps) => {
+const ProductForm = ({ onProductSave }: ProductFormProps) => {
   // React Hook Formの使用
   const {
     register,
@@ -40,12 +38,13 @@ const ProductForm: React.FC<ProductFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Box mb={3}>
-        <Box mb={2}>
+      <Box marginBottom={3}>
+        <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             商品の写真
           </Text>
         </Box>
+        {/* 商品画像の入力 */}
         <Controller
           control={control}
           name="image"
@@ -60,22 +59,23 @@ const ProductForm: React.FC<ProductFormProps> = ({
           )}
         />
         {errors.image && (
-          <Text color="danger" variant="small" pl={1}>
+          <Text color="danger" variant="small" paddingLeft={1}>
             Product image is required
           </Text>
         )}
       </Box>
 
-      <Box mb={3}>
-        <Box mb={2}>
+      <Box marginBottom={3}>
+        <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             商品情報
           </Text>
         </Box>
-        <Box mb={1}>
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             タイトル
           </Text>
+          {/* 商品タイトルの入力 */}
           <Input
             {...register('title', { required: true })}
             name="title"
@@ -84,15 +84,16 @@ const ProductForm: React.FC<ProductFormProps> = ({
             hasError={!!errors.title}
           />
           {errors.title && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft={1}>
               タイトルの入力は必須です
             </Text>
           )}
         </Box>
-        <Box mb={1}>
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             概要
           </Text>
+          {/* 商品概要の入力 */}
           <Controller
             control={control}
             name="description"
@@ -108,15 +109,16 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.description && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft={1}>
               概要の入力は必須です
             </Text>
           )}
         </Box>
-        <Box mb={1}>
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             カテゴリ
           </Text>
+          {/* カテゴリのドロップダウン */}
           <Controller
             control={control}
             name="category"
@@ -137,15 +139,16 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.category && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft={1}>
               カテゴリの選択は必須です
             </Text>
           )}
         </Box>
-        <Box mb={1}>
+        <Box marginBottom={1}>
           <Text as="label" variant="medium">
             商品の状態
           </Text>
+          {/* 商品の状態のドロップダウン */}
           <Controller
             control={control}
             name="condition"
@@ -165,7 +168,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             )}
           />
           {errors.condition && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft={1}>
               商品の状態の入力は必須です
             </Text>
           )}
@@ -174,6 +177,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <Text as="label" variant="medium">
             価格 (円)
           </Text>
+          {/* 価格の入力 */}
           <Input
             {...register('price', { required: true })}
             name="price"
@@ -182,7 +186,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             hasError={!!errors.price}
           />
           {errors.price && (
-            <Text color="danger" variant="small" pl={1}>
+            <Text color="danger" variant="small" paddingLeft={1}>
               価格の入力は必須です
             </Text>
           )}

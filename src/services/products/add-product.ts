@@ -5,6 +5,12 @@ export type AddProductsParams = {
   product: Omit<Product, 'id'>
 }
 
+/**
+ * プロダクトAPI（新規追加）
+ * @param context APIコンテキスト
+ * @param params 新規追加する商品
+ * @returns 新規追加した商品
+ */
 const addProduct = async (
   context: ApiContext,
   { product }: AddProductsParams,

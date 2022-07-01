@@ -14,7 +14,7 @@ const Container = styled.div`
   grid-template-columns: 1fr;
 `
 
-export const Standard: React.FC = () => {
+export const Standard = () => {
   const [images, setImages] = useState<FileData[]>([])
 
   const handleChange = (images: FileData[]) => {

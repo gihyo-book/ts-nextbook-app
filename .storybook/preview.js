@@ -1,7 +1,7 @@
-import { addDecorator } from '@storybook/react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { theme } from '../src/themes';
-import * as nextImage from 'next/image'
+import { addDecorator } from '@storybook/react'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { theme } from '../src/themes'
+import * as NextImage from 'next/image'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     transition: .25s;
     color: #000000;
   }
-`;
+`
 
 // Themeの適用
 addDecorator((story) => (
@@ -38,10 +38,21 @@ addDecorator((story) => (
     <GlobalStyle />
     {story()}
   </ThemeProvider>
-));
+))
 
 // next/imageの差し替え
-Object.defineProperty(nextImage, 'default', {
+const OriginalNextImage = NextImage.default;
+
+Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: props => <img {...props} />
+  value: (props) => typeof props.src === 'string' ? (
+    <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
+  ) : (
+    <OriginalNextImage {...props} unoptimized />
+  ),
+})
+
+Object.defineProperty(NextImage, '__esModule', {
+  configurable: true,
+  value: true,
 })

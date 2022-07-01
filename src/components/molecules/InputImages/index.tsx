@@ -24,15 +24,15 @@ interface InputImagesProps {
   images: FileData[]
   maximumNumber?: number
   hasError?: boolean
-  width?: string | number
-  height?: string | number
+  width?: string
+  height?: string
   onChange: (images: FileData[]) => void
 }
 
 /**
  * インプットイメージ
  */
-const InputImages: React.FC<InputImagesProps> = (props: InputImagesProps) => {
+const InputImages = (props: InputImagesProps) => {
   const {
     images,
     maximumNumber,

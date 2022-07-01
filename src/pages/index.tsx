@@ -21,7 +21,7 @@ const HomePage: NextPage<HomePageProps> = ({
     return (
       <ProductCardCarousel>
         {products.map((p: Product, i: number) => (
-          <Box pl={i === 0 ? 0 : 2} key={p.id}>
+          <Box paddingLeft={i === 0 ? 0 : 2} key={p.id}>
             <Link href={`/products/${p.id}`} passHref>
               <a>
                 <ProductCard
@@ -41,18 +41,18 @@ const HomePage: NextPage<HomePageProps> = ({
 
   return (
     <Layout>
-      <Flex p={2} justifyContent="center" backgroundColor="primary">
+      <Flex padding={2} justifyContent="center" backgroundColor="primary">
         <Flex
-          width={{ _: '100%', md: '1040px' }}
+          width={{ base: '100%', md: '1040px' }}
           justifyContent="space-between"
           alignItems="center"
-          flexDirection={{ _: 'column', md: 'row' }}
+          flexDirection={{ base: 'column', md: 'row' }}
         >
           <Box width="100%">
-            <Text as="h1" mb="0px" color="white" variant="extraLarge">
+            <Text as="h1" marginBottom={0} color="white" variant="extraLarge">
               Gihyo C2Cで
             </Text>
-            <Text as="h1" mt="0px" color="white" variant="extraLarge">
+            <Text as="h1" marginTop={0} color="white" variant="extraLarge">
               お気に入りのアイテムを見つけよう
             </Text>
           </Box>
@@ -65,7 +65,7 @@ const HomePage: NextPage<HomePageProps> = ({
                 as="a"
                 style={{ textDecoration: 'underline' }}
                 target="_blank"
-                href="https://github.com"
+                href="https://github.com/gihyo-book/ts-nextbook-app"
                 variant="mediumLarge"
                 color="white"
               >
@@ -79,15 +79,19 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
         </Flex>
       </Flex>
-      <Flex pb={2} justifyContent="center">
-        <Box px={{ _: 2, md: 0 }} width={{ _: '100%', md: '1040px' }}>
-          <Box mb={3}>
+      <Flex paddingBottom={2} justifyContent="center">
+        <Box
+          paddingLeft={{ base: 2, md: 0 }}
+          paddingRight={{ base: 2, md: 0 }}
+          width={{ base: '100%', md: '1040px' }}
+        >
+          <Box marginBottom={3}>
             <Text as="h2" variant="large">
               トップス
             </Text>
             {renderProductCardCarousel(clothesProducts)}
           </Box>
-          <Box mb={3}>
+          <Box marginBottom={3}>
             <Text as="h2" variant="large">
               本
             </Text>
@@ -109,6 +113,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
+  // 各商品のトップ6個を取得し、静的ページを作成
+  // 60秒でrevalidateな状態にし、静的ページを更新する
   const [clothesProducts, bookProducts, shoesProducts] = await Promise.all([
     getAllProducts(context, { category: 'clothes', limit: 6, page: 1 }),
     getAllProducts(context, { category: 'book', limit: 6, page: 1 }),

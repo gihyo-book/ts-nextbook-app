@@ -5,6 +5,12 @@ export type PurchaseParams = {
   productId: number
 }
 
+/**
+ * 購入API（商品購入）
+ * @param context APIコンテキスト
+ * @param params 商品ID
+ * @returns 購入結果のメッセージ
+ */
 const purchase = async (
   context: ApiContext,
   params: PurchaseParams,

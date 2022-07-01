@@ -11,7 +11,7 @@ const ImageWithShape = styled(Image)<{ shape?: ImageShape }>`
 /**
  * シェイプイメージ
  */
-const ShapeImage: React.FC<ShapeImageProps> = (props: ShapeImageProps) => {
+const ShapeImage = (props: ShapeImageProps) => {
   const { shape, ...imageProps } = props
 
   return <ImageWithShape shape={shape} {...imageProps} />

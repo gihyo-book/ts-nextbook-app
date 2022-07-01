@@ -3,13 +3,17 @@ import Box from 'components/layout/Box'
 import Footer from 'components/organisms/Footer'
 import Header from 'components/organisms/Header'
 
-const Layout: React.FC = ({ children }: { children?: React.ReactNode }) => {
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
       <main>{children}</main>
       <Separator />
-      <Box p={3}>
+      <Box padding={3}>
         <Footer />
       </Box>
     </>

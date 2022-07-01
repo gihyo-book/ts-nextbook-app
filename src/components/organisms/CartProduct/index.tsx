@@ -6,6 +6,7 @@ import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 
+// 削除ボタンのテキスト
 const RemoveText = styled(Text)`
   cursor: pointer;
   &:hover {
@@ -25,7 +26,7 @@ type CartProductProps = {
 /**
  * カート商品
  */
-const CartProduct: React.FC<CartProductProps> = ({
+const CartProduct = ({
   id,
   imageUrl,
   title,
@@ -50,7 +51,7 @@ const CartProduct: React.FC<CartProductProps> = ({
             </a>
           </Link>
         </Box>
-        <Box p={1}>
+        <Box padding={1}>
           <Flex
             height="100%"
             flexDirection="column"
@@ -60,29 +61,29 @@ const CartProduct: React.FC<CartProductProps> = ({
               <Text
                 fontWeight="bold"
                 variant="mediumLarge"
-                mt={0}
-                mb={1}
+                marginTop={0}
+                marginBottom={1}
                 as="p"
               >
                 {title}
               </Text>
-              <Text m={0} as="p">
+              <Text margin={0} as="p">
                 {price}円
               </Text>
             </Box>
-            <Flex mt={{ _: 2, md: 0 }}>
+            <Flex marginTop={{ base: 2, md: 0 }}>
               {/* 購入ボタン */}
               <Button
-                width={{ _: '100px', md: '200px' }}
+                width={{ base: '100px', md: '200px' }}
                 onClick={() => onBuyButtonClick && onBuyButtonClick(id)}
               >
                 購入
               </Button>
               {/* 削除ボタン (モバイル) */}
               <Button
-                ml={1}
-                width={{ _: '100px', md: '200px' }}
-                display={{ _: 'block', md: 'none' }}
+                marginLeft={1}
+                width={{ base: '100px', md: '200px' }}
+                display={{ base: 'block', md: 'none' }}
                 variant="danger"
                 onClick={() => onRemoveButtonClick && onRemoveButtonClick(id)}
               >
@@ -92,7 +93,7 @@ const CartProduct: React.FC<CartProductProps> = ({
           </Flex>
         </Box>
       </Flex>
-      <Box display={{ _: 'none', md: 'block' }}>
+      <Box display={{ base: 'none', md: 'block' }}>
         {/* 削除ボタン (デスクトップ) */}
         <RemoveText
           color="danger"

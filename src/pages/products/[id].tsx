@@ -56,10 +56,12 @@ const ProductPage: NextPage<ProductPageProps> = ({
   return (
     <Layout>
       <Flex
-        py={2}
-        px={{ _: 2, md: 0 }}
+        paddingTop={2}
+        paddingBottom={2}
+        paddingLeft={{ base: 2, md: 0 }}
+        paddingRight={{ base: 2, md: 0 }}
         justifyContent="center"
-        flexDirection={{ _: 'column', md: 'row' }}
+        flexDirection={{ base: 'column', md: 'row' }}
       >
         <Box>
           <Breadcrumb>
@@ -80,7 +82,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             </BreadcrumbItem>
             <BreadcrumbItem>{product.title}</BreadcrumbItem>
           </Breadcrumb>
-          <Flex pt={2} pb={1} justifyContent="center">
+          <Flex paddingTop={2} paddingBottom={1} justifyContent="center">
             <ProductCard
               variant="detail"
               title={product.title}
@@ -89,8 +91,8 @@ const ProductPage: NextPage<ProductPageProps> = ({
             />
           </Flex>
           <Separator />
-          <Box pt={1}>
-            <Text as="h2" variant="large" mt={0}>
+          <Box paddingTop={1}>
+            <Text as="h2" variant="large" marginTop={0}>
               出品者
             </Text>
             <Link href={`/users/${product.owner.id}`}>
@@ -106,11 +108,11 @@ const ProductPage: NextPage<ProductPageProps> = ({
             </Link>
           </Box>
         </Box>
-        <Box p={2} width={{ _: '100%', md: '700px' }}>
+        <Box padding={2} width={{ base: '100%', md: '700px' }}>
           <Flex
             justifyContent="space-between"
             flexDirection="column"
-            height={{ _: '', md: '100%' }}
+            height={{ base: '', md: '100%' }}
           >
             {/* 商品概要を表示、改行ごとにテキストコンポーネントでラップ */}
             <Box>

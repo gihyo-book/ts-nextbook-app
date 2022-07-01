@@ -1,21 +1,22 @@
 import styled from 'styled-components'
-import { color, ColorProps } from 'styled-system'
 
 type BadgeProps = {
   content: string
   backgroundColor: string
 }
 
-const BadgeWrapper = styled.div<ColorProps>`
+// バッジの円形
+const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   border-radius: 20px;
   height: 20px;
   min-width: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  ${color};
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `
 
+// バッジ内のテキスト
 const BadgeText = styled.p`
   color: white;
   font-size: 11px;
@@ -25,10 +26,7 @@ const BadgeText = styled.p`
 /**
  * バッジ
  */
-const Badge: React.FC<BadgeProps> = ({
-  content,
-  backgroundColor,
-}: BadgeProps) => {
+const Badge = ({ content, backgroundColor }: BadgeProps) => {
   return (
     <BadgeWrapper backgroundColor={backgroundColor}>
       <BadgeText>{content}</BadgeText>

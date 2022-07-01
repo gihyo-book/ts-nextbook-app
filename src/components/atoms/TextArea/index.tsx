@@ -32,7 +32,7 @@ const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
 /**
  * テキストエリア
  */
-const TextArea: React.FC<TextAreaProps> = (props: TextAreaProps) => {
+const TextArea = (props: TextAreaProps) => {
   const {
     rows = 5,
     minRows = 5,
@@ -88,7 +88,6 @@ const TextArea: React.FC<TextAreaProps> = (props: TextAreaProps) => {
   )
 }
 
-TextArea.displayName = 'TextArea'
 TextArea.defaultProps = {
   rows: 5,
   minRows: 5,

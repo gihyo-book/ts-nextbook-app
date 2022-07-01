@@ -17,9 +17,10 @@ interface UserProductCardListContainerProps {
 /**
  * ユーザー商品カードリストコンテナ
  */
-const UserProductCardListContainer: React.FC<
-  UserProductCardListContainerProps
-> = ({ userId, products }: UserProductCardListContainerProps) => {
+const UserProductCardListContainer = ({
+  userId,
+  products,
+}: UserProductCardListContainerProps) => {
   // ユーザーの所持する商品
   const { products: userProducts } = useSearch(context, {
     userId,

@@ -1,18 +1,21 @@
 import Image, { ImageProps } from 'next/image'
 import styled from 'styled-components'
-import { layout, LayoutProps, ResponsiveValue } from 'styled-system'
+import { Responsive } from 'types'
+import { toPropValue } from 'utils/styles'
 
 type ScaleImageProps =
   | Omit<ImageProps, 'quality'> & {
-      containerWidth?: ResponsiveValue<string>
-      containerHeight?: ResponsiveValue<string>
+      containerWidth?: Responsive<string>
+      containerHeight?: Responsive<string>
     }
 
-const ScaleEffectImageContainer = styled.div<
-  Pick<LayoutProps, 'width' | 'height'>
->`
+const ScaleEffectImageContainer = styled.div<{
+  width: Responsive<string>
+  height: Responsive<string>
+}>`
   overflow: hidden;
-  ${layout}
+  ${({ width, theme }) => toPropValue('width', width, theme)}
+  ${({ height, theme }) => toPropValue('height', height, theme)}
 `
 
 const ScaleEffectImage = styled(Image)`
@@ -26,14 +29,14 @@ const ScaleEffectImage = styled(Image)`
 /**
  * スケールイメージ
  */
-const ScaleImage: React.FC<ScaleImageProps> = ({
+const ScaleImage = ({
   containerWidth,
   containerHeight,
   ...props
 }: ScaleImageProps) => (
   <ScaleEffectImageContainer
-    width={containerWidth ?? props.width ?? 320}
-    height={containerHeight ?? props.height ?? 320}
+    width={containerWidth ?? `${props.width}` ?? '320px'}
+    height={containerHeight ?? `${props.height}` ?? '320px'}
   >
     <ScaleEffectImage
       quality="85"

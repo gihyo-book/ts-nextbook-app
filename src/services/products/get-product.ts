@@ -5,6 +5,12 @@ export type GetProductParams = {
   id: number
 }
 
+/**
+ * プロダクトAPI（個別取得）
+ * @param context APIコンテキスト
+ * @param params 商品ID
+ * @returns 商品
+ */
 const getProduct = async (
   context: ApiContext,
   { id }: GetProductParams,
