@@ -9,6 +9,9 @@ const context: ApiContext = {
 }
 
 interface ProductFormContainerProps {
+  /**
+   * 商品が保存された時のイベントハンドラ
+   */
   onSave?: (error?: Error, product?: Product) => void
 }
 

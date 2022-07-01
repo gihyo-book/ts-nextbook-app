@@ -5,7 +5,7 @@ export default {
   title: 'Organisms/SigninForm',
   argTypes: {
     onSignin: {
-      description: 'onSigninイベントハンドラ',
+      description: 'サインインボタンを押した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },

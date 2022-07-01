@@ -39,7 +39,13 @@ export default {
       },
     },
     onDrop: {
-      description: 'onDropイベントハンドラ',
+      description: 'ファイルがドロップ入力された時のイベントハンドラ',
+      table: {
+        type: { summary: 'function' },
+      },
+    },
+    onChange: {
+      description: 'ファイルが入力された時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },

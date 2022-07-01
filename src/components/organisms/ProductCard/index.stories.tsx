@@ -13,7 +13,7 @@ export default {
     },
     price: {
       control: { type: 'number' },
-      description: '価格（円）',
+      description: '商品価格',
       table: {
         type: { summary: 'number' },
       },
@@ -27,7 +27,7 @@ export default {
     },
     blurDataUrl: {
       control: { type: 'text' },
-      description: 'ぼかし商品画像URL',
+      description: '商品のぼかし画像のデータURIスキーム',
       table: {
         type: { summary: 'string' },
       },
@@ -35,8 +35,8 @@ export default {
     variant: {
       options: ['listing', 'small', 'detail'],
       control: { type: 'radio' },
-      defaultValue: 'normal',
-      description: 'バリアント',
+      defaultValue: 'listing',
+      description: 'バリアント（表示スタイル）',
       table: {
         type: { summary: 'listing | small | detail' },
         defaultValue: { summary: 'primary' },

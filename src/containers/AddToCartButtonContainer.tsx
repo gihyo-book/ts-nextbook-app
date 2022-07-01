@@ -3,7 +3,13 @@ import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 import type { Product } from 'types'
 
 interface AddToCartButtonContainerProps {
+  /**
+   * 追加される商品
+   */
   product: Product
+  /**
+   * 追加ボタンを押した時のイベントハンドラ
+   */
   onAddToCartButtonClick?: (product: Product) => void
 }
 

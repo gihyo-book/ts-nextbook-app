@@ -4,10 +4,25 @@ import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 
 interface ProductCardProps {
+  /**
+   * 商品タイトル
+   */
   title: string
+  /**
+   * 商品価格
+   */
   price: number
+  /**
+   * 商品画像URL
+   */
   imageUrl: string
+  /**
+   * 商品のぼかし画像のデータURIスキーム
+   */
   blurDataUrl?: string
+  /**
+   * バリアント（表示スタイル）
+   */
   variant?: 'listing' | 'small' | 'detail'
 }
 

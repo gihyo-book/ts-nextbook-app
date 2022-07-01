@@ -1,7 +1,13 @@
 import Grid from 'components/layout/Grid'
 
 interface ProductCardListProps {
+  /**
+   * 1行に表示する商品数
+   */
   numberPerRow?: number
+  /**
+   * モバイルで1行に表示する商品数
+   */
   numberPerRowForMobile?: number
 }
 

@@ -99,11 +99,29 @@ export interface DropdownItem {
 }
 
 interface DropdownProps {
+  /**
+   * ドロップダウンの選択肢
+   */
   options: DropdownItem[]
+  /**
+   * ドロップダウンの値
+   */
   value?: string | number
+  /**
+   * <input />のname属性
+   */
   name?: string
+  /**
+   * プレースホルダー
+   */
   placeholder?: string
+  /**
+   * バリデーションエラーフラグ
+   */
   hasError?: boolean
+  /**
+   * 値が変化した時のイベントハンドラ
+   */
   onChange?: (selected?: DropdownItem) => void
 }
 

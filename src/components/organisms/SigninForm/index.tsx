@@ -10,6 +10,9 @@ export type SigninFormData = {
 }
 
 interface SigninFormProps {
+  /**
+   * サインインボタンを押した時のイベントハンドラ
+   */
   onSignin?: (username: string, password: string) => void
 }
 

@@ -6,7 +6,7 @@ export default {
   argTypes: {
     content: {
       control: { type: 'text' },
-      description: 'バッジの中身',
+      description: 'バッジのテキスト',
       table: {
         type: { summary: 'string' },
       },

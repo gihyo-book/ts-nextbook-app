@@ -6,7 +6,7 @@ export default {
   argTypes: {
     options: {
       control: { type: 'array' },
-      description: 'オプション',
+      description: 'ドロップダウンの選択肢',
       table: {
         type: { summary: 'array' },
       },
@@ -28,13 +28,13 @@ export default {
     },
     value: {
       control: { type: 'text' },
-      description: '値',
+      description: 'ドロップダウンの値',
       table: {
         type: { summary: 'string' },
       },
     },
     onChange: {
-      description: 'onChangeイベントハンドラ',
+      description: '値が変化した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },
