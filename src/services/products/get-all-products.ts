@@ -2,12 +2,29 @@ import type { ApiContext, Category, Condition, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type GetAllProductsParams = {
+  /**
+   * 商品カテゴリ
+   */
   category?: Category
+  /**
+   * 商品状態
+   */
   conditions?: Condition[]
+  /**
+   * 所有するユーザーID
+   */
   userId?: number
+  /**
+   * ソートするキー
+   */
   sort?: keyof Omit<Product, 'owner'>
+  /**
+   * 昇順or降順
+   */
   order?: 'asc' | 'desc'
-  page?: number
+  /**
+   * 取得数
+   */
   limit?: number
 }
 

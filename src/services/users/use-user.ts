@@ -2,13 +2,28 @@ import useSWR from 'swr'
 import type { ApiContext, User } from 'types'
 
 export type UseUserProps = {
+  /**
+   * 取得するユーザーID
+   */
   id: number
+  /**
+   * 初期状態
+   */
   initial?: User
 }
 
 export type UseUser = {
+  /**
+   * 取得するユーザー
+   */
   user?: User
+  /**
+   * ロードフラグ
+   */
   isLoading: boolean
+  /**
+   * エラーフラグ
+   */
   isError: boolean
 }
 
