@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## TypeScriptとReact/Next.jsでつくる実践Webアプリケーション
 
-## Getting Started
+「[TypeScriptとReact/Next.jsでつくる実践Webアプリケーション](https://gihyo.jp/book/2022/978-4-297-12916-3)」のサンプルアプリ
 
-First, run the development server:
+![サンプルアプリ](https://user-images.githubusercontent.com/2387508/178550902-a7c1e47b-a322-413c-b9ad-2ffff79e041d.png)
+
+## インストール
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 環境変数の設定
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+.envを開く
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+API_BASE_URL=<バックエンドAPIへのベースURLの設定>
+NEXT_PUBLIC_API_BASE_PATH=/api/proxy
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 開発サーバー起動
 
-## Learn More
+開発サーバーの起動し、http://localhost:3000/ にアクセス
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Storybook起動
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Storybookを起動し、http://localhost:6006/ にアクセス
 
-## Deploy on Vercel
+```
+npm run storybook
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## テスト実行
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ユニットテスト実行
+
+```
+npm run test
+```
+
+## ソースコードリンター・フォーマッター
+
+ソースコードをリンターでチェック
+
+```
+npm run lint
+```
+
+ソースコードをフォーマッターで整形
+
+```
+npm run format
+```
+
+## ディレクトリ構成
+
+簡単にディレクトリ構成を以下に説明します。
+
+```
+├── .editorconfig
+├── .env <-- 環境変数
+├── .env.production <-- 本番用環境変数
+├── .eslintrc.json <-- ESLint設定ファイル
+├── README.md
+├── jest.config.js <-- Jestの設定ファイル
+├── jest.setup.js <-- テストファイルが実行される前に走る
+├── next-env.d.ts
+├── next.config.js <-- Next.js設定ファイル
+├── package-lock.json
+├── package.json
+├── public
+├── src
+│   ├── components <-- Presentational Components
+│   ├── containers <-- Container Compoments
+│   ├── contexts <-- React Context
+│   ├── pages <-- Next.jsのページ
+│   ├── services <-- Web API Client
+│   ├── themes <-- styled-componentsのテーマ
+│   ├── types <-- 型定義
+│   └── utils <-- 汎用関数
+└── tsconfig.json
+```
