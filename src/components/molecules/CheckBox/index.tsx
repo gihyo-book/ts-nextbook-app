@@ -9,6 +9,9 @@ import Flex from 'components/layout/Flex'
 
 export interface CheckBoxProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue'> {
+  /**
+   * 表示ラベル
+   */
   label?: string
 }
 

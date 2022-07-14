@@ -3,6 +3,9 @@ import { useAuthContext } from 'contexts/AuthContext'
 import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContext'
 
 interface SigninFormContainerProps {
+  /**
+   * サインインした時に呼ばれるイベントハンドラ
+   */
   onSignin: (error?: Error) => void
 }
 

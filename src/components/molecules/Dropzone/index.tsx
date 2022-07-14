@@ -37,14 +37,37 @@ type FileType =
   | 'application/pdf'
 
 interface DropzoneProps {
+  /**
+   * 入力ファイル
+   */
   value?: File[]
+  /**
+   * <input />のname属性
+   */
   name?: string
-  label?: string
+  /**
+   * 許可されるファイルタイプ
+   */
   acceptedFileTypes?: FileType[]
+  /**
+   * 横幅
+   */
   width?: number | string
+  /**
+   * 縦幅
+   */
   height?: number | string
+  /**
+   * バリデーションエラーフラグ
+   */
   hasError?: boolean
+  /**
+   * ファイルがドロップ入力された時のイベントハンドラ
+   */
   onDrop?: (files: File[]) => void
+  /**
+   * ファイルが入力された時のイベントハンドラ
+   */
   onChange?: (files: File[]) => void
 }
 

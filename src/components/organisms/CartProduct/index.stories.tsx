@@ -13,7 +13,7 @@ export default {
     },
     title: {
       control: { type: 'text' },
-      description: '商品名',
+      description: '商品タイトル',
       table: {
         type: { summary: 'string' },
       },
@@ -27,19 +27,19 @@ export default {
     },
     price: {
       control: { type: 'number' },
-      description: '価格（円）',
+      description: '商品価格',
       table: {
         type: { summary: 'number' },
       },
     },
     onBuyButtonClick: {
-      description: 'onBuyButtonClickイベントハンドラ',
+      description: '購入ボタンを押した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },
     },
     onRemoveButtonClick: {
-      description: 'onRemoveButtonClickイベントハンドラ',
+      description: '削除ボタンを押した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },

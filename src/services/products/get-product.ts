@@ -2,6 +2,9 @@ import type { ApiContext, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type GetProductParams = {
+  /**
+   * 取得する商品
+   */
   id: number
 }
 

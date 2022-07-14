@@ -4,10 +4,25 @@ import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 
 interface UserProfileProps {
+  /**
+   * バリアント（表示スタイル）
+   */
   variant?: 'normal' | 'small'
+  /**
+   * ユーザー名
+   */
   username: string
+  /**
+   * ユーザー画像URL
+   */
   profileImageUrl: string
+  /**
+   * ユーザーが所有する商品数
+   */
   numberOfProducts: number
+  /**
+   * ユーザーの説明
+   */
   description?: string
 }
 

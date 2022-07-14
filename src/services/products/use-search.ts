@@ -2,19 +2,44 @@ import useSWR from 'swr'
 import type { ApiContext, Category, Condition, Product } from 'types'
 
 export type UseSearchProps = {
+  /**
+   * 商品カテゴリ
+   */
   category?: Category
+  /**
+   * 商品状態
+   */
   conditions?: Condition[]
+  /**
+   * 所有するユーザーID
+   */
   userId?: number
+  /**
+   * ソートするキー
+   */
   sort?: keyof Omit<Product, 'owner'>
+  /**
+   * 昇順or降順
+   */
   order?: 'asc' | 'desc'
-  page?: number // TODO
-  limit?: number // TODO
+  /**
+   * 初期状態
+   */
   initial?: Product[]
 }
 
 export type UseSearch = {
+  /**
+   * 検索にヒットした商品リスト
+   */
   products: Product[]
+  /**
+   * ロードフラグ
+   */
   isLoading: boolean
+  /**
+   * エラーフラグ
+   */
   isError: boolean
 }
 

@@ -6,7 +6,7 @@ export default {
   argTypes: {
     label: {
       control: { type: 'text' },
-      description: 'ラベル',
+      description: '表示ラベル',
       table: {
         type: { summary: 'text' },
       },
@@ -19,7 +19,7 @@ export default {
       },
     },
     onChange: {
-      description: 'onChangeイベントハンドラ',
+      description: '値が変化した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },

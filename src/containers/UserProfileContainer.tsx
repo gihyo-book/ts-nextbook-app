@@ -7,7 +7,13 @@ const context: ApiContext = {
 }
 
 interface UserProfileContainerProps {
+  /**
+   * ユーザーID
+   */
   userId: number
+  /**
+   * 初期で表示するユーザー
+   */
   user?: User
 }
 

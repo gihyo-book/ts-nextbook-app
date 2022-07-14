@@ -18,6 +18,9 @@ export type ProductFormData = {
 }
 
 interface ProductFormProps {
+  /**
+   * 出品ボタンを押した時のイベントハンドラ
+   */
   onProductSave?: (data: ProductFormData) => void
 }
 

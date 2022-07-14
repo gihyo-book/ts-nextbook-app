@@ -36,7 +36,7 @@ export default {
       },
     },
     onRemove: {
-      description: 'onRemoveイベントハンドラ',
+      description: '削除ボタンを押した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },

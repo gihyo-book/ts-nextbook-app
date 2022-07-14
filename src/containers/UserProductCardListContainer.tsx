@@ -10,7 +10,13 @@ const context: ApiContext = {
 }
 
 interface UserProductCardListContainerProps {
+  /**
+   * 商品を所有するユーザーID
+   */
   userId: number
+  /**
+   * 初期で表示する商品リスト
+   */
   products?: Product[]
 }
 

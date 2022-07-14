@@ -1,10 +1,5 @@
 import styled from 'styled-components'
 
-type BadgeProps = {
-  content: string
-  backgroundColor: string
-}
-
 // バッジの円形
 const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   border-radius: 20px;
@@ -22,6 +17,17 @@ const BadgeText = styled.p`
   font-size: 11px;
   user-select: none;
 `
+
+interface BadgeProps {
+  /**
+   * バッジのテキスト
+   */
+  content: string
+  /**
+   * バッジの色
+   */
+  backgroundColor: string
+}
 
 /**
  * バッジ

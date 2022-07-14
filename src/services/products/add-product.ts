@@ -2,6 +2,9 @@ import type { ApiContext, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type AddProductsParams = {
+  /**
+   * 追加する商品
+   */
   product: Omit<Product, 'id'>
 }
 

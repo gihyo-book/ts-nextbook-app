@@ -8,7 +8,7 @@ export default {
       options: ['normal', 'small'],
       control: { type: 'radio' },
       defaultValue: 'normal',
-      description: 'バリアント',
+      description: 'バリアント（表示スタイル）',
       table: {
         type: { summary: 'normal | small' },
         defaultValue: { summary: 'normal' },
@@ -23,14 +23,14 @@ export default {
     },
     profileImageUrl: {
       control: { type: 'text' },
-      description: 'ユーザーの画像URL',
+      description: 'ユーザー画像URL',
       table: {
         type: { summary: 'string' },
       },
     },
     numberOfProducts: {
       control: { type: 'number' },
-      description: '出品数',
+      description: 'ユーザーが所有する商品数',
       table: {
         type: { summary: 'number' },
       },

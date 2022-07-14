@@ -3,8 +3,17 @@ import styled from 'styled-components'
 
 export interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /**
+   * 最小行数
+   */
   minRows?: number
+  /**
+   * 最大行数
+   */
   maxRows?: number
+  /**
+   * バリデーションエラーフラグ
+   */
   hasError?: boolean
 }
 

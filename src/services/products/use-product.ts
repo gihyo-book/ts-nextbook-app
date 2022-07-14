@@ -2,13 +2,28 @@ import useSWR from 'swr'
 import type { ApiContext, Product } from 'types'
 
 export type UseProductProps = {
+  /**
+   * 取得する商品ID
+   */
   id: number
+  /**
+   * 初期状態
+   */
   initial?: Product
 }
 
 export type UseProduct = {
+  /**
+   * 取得する商品
+   */
   product?: Product
+  /**
+   * ロードフラグ
+   */
   isLoading: boolean
+  /**
+   * エラーフラグ
+   */
   isError: boolean
 }
 
