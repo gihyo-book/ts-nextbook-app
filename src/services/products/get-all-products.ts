@@ -26,6 +26,10 @@ export type GetAllProductsParams = {
    * 取得数
    */
   limit?: number
+  /**
+   * ページ数
+   */
+  page?: number
 }
 
 /**
