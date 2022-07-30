@@ -4,6 +4,17 @@
 
 ![サンプルアプリ](https://user-images.githubusercontent.com/2387508/178550902-a7c1e47b-a322-413c-b9ad-2ffff79e041d.png)
 
+## 初版からのアップデート
+
+- [ビルドが失敗する問題を修正](https://github.com/gihyo-book/ts-nextbook-app/pull/6)
+- [Storybookが最新のNext.jsで動作しない問題を修正](https://github.com/gihyo-book/ts-nextbook-app/pull/5)
+
+## 環境
+
+- Node.js: 16.14.0
+- Next.js: 12.2.3
+- React: 18.2.0
+
 ## インストール
 
 ```bash
