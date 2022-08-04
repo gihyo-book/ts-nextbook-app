@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useAuthContext } from 'contexts/AuthContext'
 
-export const useAuthGaurd = (): void => {
+export const useAuthGuard = (): void => {
   const router = useRouter()
   const { authUser, isLoading } = useAuthContext()
 

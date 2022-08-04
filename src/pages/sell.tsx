@@ -6,7 +6,7 @@ import Flex from 'components/layout/Flex'
 import Layout from 'components/templates/Layout'
 import ProductFormContainer from 'containers/ProductFormContainer'
 import { useAuthContext } from 'contexts/AuthContext'
-import { useAuthGaurd } from 'utils/hooks'
+import { useAuthGuard } from 'utils/hooks'
 
 const SellPage: NextPage = () => {
   const router = useRouter()
@@ -20,7 +20,7 @@ const SellPage: NextPage = () => {
   }
 
   // 認証ガード
-  useAuthGaurd()
+  useAuthGuard()
 
   return (
     <Layout>
