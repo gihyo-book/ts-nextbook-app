@@ -25,7 +25,7 @@ const addProductToCart = (product: Product, state: Product[]) => {
 
 /**
  * 商品削除アクション
- * @param product 商品
+ * @param productId 商品のid
  * @param state 現在の状態
  * @returns 次の状態
  */
