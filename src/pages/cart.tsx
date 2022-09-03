@@ -7,11 +7,11 @@ import Flex from 'components/layout/Flex'
 import Breadcrumb from 'components/molecules/Breadcrumb'
 import Layout from 'components/templates/Layout'
 import CartContainer from 'containers/CartContainer'
-import { useAuthGaurd } from 'utils/hooks'
+import { useAuthGuard } from 'utils/hooks'
 
 const CartPage: NextPage = () => {
   // 認証ガード
-  useAuthGaurd()
+  useAuthGuard()
 
   return (
     <Layout>
