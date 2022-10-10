@@ -43,7 +43,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box marginBottom={3}>
         <Box marginBottom={2}>
-          <Text as="label" variant="mediumLarge" fontWeight="bold">
+          <Text as="h2" variant="mediumLarge" fontWeight="bold">
             商品の写真
           </Text>
         </Box>
@@ -70,17 +70,18 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
 
       <Box marginBottom={3}>
         <Box marginBottom={2}>
-          <Text as="label" variant="mediumLarge" fontWeight="bold">
+          <Text as="h2" variant="mediumLarge" fontWeight="bold">
             商品情報
           </Text>
         </Box>
         <Box marginBottom={1}>
-          <Text as="label" variant="medium">
+          <Text as="label" htmlFor="title" variant="medium">
             タイトル
           </Text>
           {/* 商品タイトルの入力 */}
           <Input
             {...register('title', { required: true })}
+            id="title"
             name="title"
             type="text"
             placeholder="商品のタイトル"
@@ -93,7 +94,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           )}
         </Box>
         <Box marginBottom={1}>
-          <Text as="label" variant="medium">
+          <Text as="label" htmlFor="description" variant="medium">
             概要
           </Text>
           {/* 商品概要の入力 */}
@@ -103,6 +104,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             rules={{ required: true }}
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <TextArea
+                id="description"
                 placeholder="最高の商品です！"
                 hasError={!!error}
                 onChange={onChange}
@@ -118,7 +120,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           )}
         </Box>
         <Box marginBottom={1}>
-          <Text as="label" variant="medium">
+          <Text as="label" htmlFor="category" variant="medium">
             カテゴリ
           </Text>
           {/* カテゴリのドロップダウン */}
@@ -134,6 +136,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                   { value: 'clothes', label: 'トップス' },
                   { value: 'book', label: '本' },
                 ]}
+                id="category"
                 hasError={!!error}
                 value={value}
                 placeholder="カテゴリを選択して下さい"
@@ -148,7 +151,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           )}
         </Box>
         <Box marginBottom={1}>
-          <Text as="label" variant="medium">
+          <Text as="label" htmlFor="condition" variant="medium">
             商品の状態
           </Text>
           {/* 商品の状態のドロップダウン */}
@@ -163,6 +166,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                   { value: 'used', label: '中古' },
                   { value: 'new', label: '新品' },
                 ]}
+                id="condition"
                 hasError={!!error}
                 value={value ?? 'used'}
                 placeholder="Please select condition"
@@ -177,12 +181,13 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           )}
         </Box>
         <Box>
-          <Text as="label" variant="medium">
+          <Text as="label" htmlFor="price" variant="medium">
             価格 (円)
           </Text>
           {/* 価格の入力 */}
           <Input
             {...register('price', { required: true })}
+            id="price"
             name="price"
             type="number"
             placeholder="100"
