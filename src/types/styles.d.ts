@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /**
  * Responsiveプロパティ
+ * CSSプロパティの値をブレークポイントごとに設定できる
+ * TはCSSプロパティの値の型
  */
 export type ResponsiveProp<T> = {
   base?: T
