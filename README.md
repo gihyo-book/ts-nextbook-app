@@ -32,7 +32,19 @@ NEXT_PUBLIC_API_BASE_PATH=/api/proxy
 
 ## 開発サーバー起動
 
-開発サーバーの起動し、http://localhost:3000/ にアクセス
+JSON Serverの設定と起動
+
+
+こちらのリポジトリとは別のディレクトリで作業する
+
+```
+cd https://github.com/gihyo-book/ts-nextbook-json
+cd ts-nextbook-json
+npm ci
+npm start
+```
+
+開発サーバーを起動し、http://localhost:3000/ にアクセス
 
 ```
 npm run dev
