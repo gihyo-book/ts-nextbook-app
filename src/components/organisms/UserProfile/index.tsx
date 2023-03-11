@@ -68,7 +68,7 @@ const UserProfile = ({
             >
               {username}
             </Text>
-            {/* 商品出店数 */}
+            {/* 商品出品数 */}
             <Text marginBottom={1} marginTop={0} as="p">
               {numberOfProducts}点出品済
             </Text>
