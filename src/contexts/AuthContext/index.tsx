@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import useSWR from 'swr'
 import signin from 'services/auth/signin'
 import signout from 'services/auth/signout'
@@ -20,7 +20,7 @@ type AuthContextProviderProps = {
   authUser?: User
 }
 
-const AuthContext = React.createContext<AuthContextType>({
+const AuthContext = createContext<AuthContextType>({
   authUser: undefined,
   isLoading: false,
   signin: async () => Promise.resolve(),
