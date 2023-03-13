@@ -32,7 +32,7 @@ describe('SigninForm', () => {
     await act(async () => {
       // ユーザー名入力
       const inputUsernameNode = screen.getByPlaceholderText(
-        /ユーザ名/,
+        /ユーザー名/,
       ) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
       // パスワード入力
