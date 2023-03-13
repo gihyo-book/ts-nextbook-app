@@ -40,12 +40,12 @@ const SigninForm = ({ onSignin }: SigninFormProps) => {
           {...register('username', { required: true })}
           name="username"
           type="text"
-          placeholder="ユーザ名"
+          placeholder="ユーザー名"
           hasError={!!errors.username}
         />
         {errors.username && (
           <Text color="danger" variant="small" paddingLeft={1}>
-            ユーザ名は必須です
+            ユーザー名は必須です
           </Text>
         )}
       </Box>
