@@ -66,10 +66,8 @@ const getAllProducts = async (
 
   return await fetcher(query.length > 0 ? `${path}?${query}` : path, {
     headers: {
-      Origin: '*',
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      credentials: 'include',
     },
   })
 }

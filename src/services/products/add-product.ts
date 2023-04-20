@@ -21,10 +21,8 @@ const addProduct = async (
   return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/products`, {
     method: 'POST',
     headers: {
-      Origin: '*',
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      credentials: 'include',
     },
     body: JSON.stringify(product),
   })

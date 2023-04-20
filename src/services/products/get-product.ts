@@ -22,7 +22,6 @@ const getProduct = async (
     `${context.apiRootUrl.replace(/\/$/g, '')}/products/${id}`,
     {
       headers: {
-        Origin: '*',
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
