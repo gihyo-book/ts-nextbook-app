@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from 'react'
+import React, { createContext, useReducer, useContext } from 'react'
 import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from './reducers'
 import type { Product } from 'types'
 
@@ -8,7 +8,7 @@ type ShoppingCartContextType = {
   removeProductFromCart: (productId: number) => void
 }
 
-const ShoppingCartContext = React.createContext<ShoppingCartContextType>({
+const ShoppingCartContext = createContext<ShoppingCartContextType>({
   cart: [],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   addProductToCart: () => {},
