@@ -27,12 +27,12 @@ describe('SigninForm', () => {
     renderResult.unmount()
   })
 
-  it('ユーザ名とパスワード入力後、onSigninが呼ばれる', async () => {
+  it('ユーザー名とパスワード入力後、onSigninが呼ばれる', async () => {
     // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
     await act(async () => {
       // ユーザー名入力
       const inputUsernameNode = screen.getByPlaceholderText(
-        /ユーザ名/,
+        /ユーザー名/,
       ) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
       // パスワード入力
@@ -48,12 +48,12 @@ describe('SigninForm', () => {
     expect(handleSignin).toHaveBeenCalledTimes(1)
   })
 
-  it('ユーザ名入力だけでは、バリデーションエラーでonSigninが呼ばれない', async () => {
+  it('ユーザー名入力だけでは、バリデーションエラーでonSigninが呼ばれない', async () => {
     // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
     await act(async () => {
       // ユーザー名入力
       const inputUsernameNode = screen.getByPlaceholderText(
-        /ユーザ名/,
+        /ユーザー名/,
       ) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
       // サインインボタンをクリック
