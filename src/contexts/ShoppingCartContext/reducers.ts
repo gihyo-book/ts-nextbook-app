@@ -34,7 +34,9 @@ const removeProductFromCart = (productId: number, state: Product[]) => {
 
   state.splice(removedItemIndex, 1)
 
-  return [...state]
+  const newState = [...state]
+  newState.splice(removedItemIndex, 1)
+  return newState
 }
 
 /**
