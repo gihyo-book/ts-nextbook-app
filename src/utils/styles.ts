@@ -89,7 +89,7 @@ const SPACE_KEYS = new Set([
 ])
 const COLOR_KEYS = new Set(['color', 'background-color'])
 const FONT_SIZE_KEYS = new Set(['font-size'])
-const LINE_SPACING_KEYS = new Set(['letter-spacing'])
+const LETTER_SPACING_KEYS = new Set(['letter-spacing'])
 const LINE_HEIGHT_KEYS = new Set(['line-height'])
 
 /**
@@ -124,7 +124,7 @@ function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   } else if (
     theme &&
     theme.letterSpacings &&
-    LINE_SPACING_KEYS.has(propKey) &&
+    LETTER_SPACING_KEYS.has(propKey) &&
     isLetterSpacingThemeKeys(value, theme)
   ) {
     return theme.letterSpacings[value]
