@@ -104,6 +104,10 @@ interface DropdownProps {
    */
   options: DropdownItem[]
   /**
+   * ID属性
+   */
+  id?: string
+  /**
    * ドロップダウンの値
    */
   value?: string | number
@@ -129,7 +133,7 @@ interface DropdownProps {
  * ドロップダウン
  */
 const Dropdown = (props: DropdownProps) => {
-  const { onChange, name, value, options, hasError } = props
+  const { onChange, id, name, value, options, hasError } = props
   const initialItem = options.find((i) => i.value === value)
   const [isOpen, setIsOpenValue] = useState(false)
   const [selectedItem, setSelectedItem] = useState(initialItem)

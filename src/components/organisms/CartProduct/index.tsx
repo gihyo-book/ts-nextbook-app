@@ -8,8 +8,11 @@ import Flex from 'components/layout/Flex'
 
 // 削除ボタンのテキスト
 const RemoveText = styled(Text)`
-  cursor: pointer;
-  &:hover {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 `
@@ -114,6 +117,7 @@ const CartProduct = ({
       <Box display={{ base: 'none', md: 'block' }}>
         {/* 削除ボタン (デスクトップ) */}
         <RemoveText
+          as="button"
           color="danger"
           onClick={() => onRemoveButtonClick && onRemoveButtonClick(id)}
         >
